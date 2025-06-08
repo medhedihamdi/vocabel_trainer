@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Translation Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+<button onclick="location.href='index.html'">🔙"Back to the homepage"</button>
+
+  <h3>Select Topic:</h3>
+  <select id="mainDropdown"><option value="">--Select--</option></select>
+
+  <h3>Select Translation Language:</h3>
+  <select id="languageDropdown"><option value="">--Select--</option></select>
+
+  <h3>Select Source Language (for Random Word):</h3>
+  <select id="sourceLangDropdown"><option value="">--Select--</option></select>
+
+  <button id="randomBtn" disabled>Pick Random Word</button>
+
+  <div id="quiz" style="display:none; margin-top:20px;">
+    <p id="wordDisplay" style="font-weight:bold;"></p>
+    <input type="text" id="userInput" placeholder="Write translation">
+    <button id="checkBtn">Check Answer</button>
+    <button id="nextBtn" style="display:none;">Next</button>
+    <p id="feedback"></p>
+    <p id="correctAnswer"></p>
+  </div>
+
+  <script>
+    let jsonData = {};
+    let currentWord = "";
+    let currentTopic = "";
+    let currentLang = "";
+    let sourceLang = "";
+
+    fetch("vocab.json")
+      .then(res => res.json())
+      .then(data => {
+        jsonData = data;
+        for (const topic in data) {
+          const opt = document.createElement("option");
+          opt.value = topic;
+          opt.textContent = topic;
+          mainDropdown.appendChild(opt);
+        }
+      });
+
+    mainDropdown.addEventListener("change", function () {
+      currentTopic = this.value;
+      if (!jsonData[currentTopic]) return;
+
+      const firstKey = Object.keys(jsonData[currentTopic])[0];
+      const langs = Object.keys(jsonData[currentTopic][firstKey]);
+
+      // تحديث قائمة اللغات
+      languageDropdown.innerHTML = '<option value="">--Select--</option>';
+      sourceLangDropdown.innerHTML = '<option value="">--Select--</option>';
+      langs.concat("english").forEach(lang => {
+        const opt1 = document.createElement("option");
+        opt1.value = lang;
+        opt1.textContent = lang;
+        languageDropdown.appendChild(opt1);
+
+        const opt2 = document.createElement("option");
+        opt2.value = lang;
+        opt2.textContent = lang;
+        sourceLangDropdown.appendChild(opt2);
+      });
+    });
+
+    languageDropdown.addEventListener("change", () => {
+      currentLang = languageDropdown.value;
+      enableButtonIfReady();
+    });
+
+    sourceLangDropdown.addEventListener("change", () => {
+      sourceLang = sourceLangDropdown.value;
+      enableButtonIfReady();
+    });
+
+    function enableButtonIfReady() {
+      randomBtn.disabled = !(currentTopic && currentLang && sourceLang);
+    }
+
+    randomBtn.addEventListener("click", () => {
+      const entries = Object.entries(jsonData[currentTopic]);
+      const filtered = entries.filter(([key, val]) => {
+        return sourceLang === "english" || val[sourceLang];
+      });
+      const [wordKey, wordData] = filtered[Math.floor(Math.random() * filtered.length)];
+
+      currentWord = wordKey;
+      const wordShown = sourceLang === "english" ? wordKey : wordData[sourceLang];
+
+      document.getElementById("wordDisplay").textContent = `Word (${sourceLang}): ${wordShown}`;
+      document.getElementById("quiz").style.display = "block";
+      document.getElementById("userInput").value = "";
+      document.getElementById("feedback").textContent = "";
+      document.getElementById("correctAnswer").textContent = "";
+      document.getElementById("nextBtn").style.display = "none";
+    });
+
+    checkBtn.addEventListener("click", () => {
+      const input = document.getElementById("userInput").value.trim().toLowerCase();
+      let correct;
+      if (currentLang === "english") {
+        correct = currentWord.toLowerCase();
+      } else {
+        correct = jsonData[currentTopic][currentWord][currentLang].toLowerCase();
+      }
+
+      if (input === correct) {
+        document.getElementById("feedback").textContent = "✅ Correct!";
+        document.getElementById("feedback").style.color = "green";
+      } else {
+        document.getElementById("feedback").textContent = "❌ Wrong!";
+        document.getElementById("feedback").style.color = "red";
+      }
+
+      document.getElementById("correctAnswer").textContent = `Correct answer: ${correct}`;
+      document.getElementById("nextBtn").style.display = "inline";
+    });
+
+    nextBtn.addEventListener("click", () => {
+      document.getElementById("quiz").style.display = "none";
+      randomBtn.click(); // يعيد تشغيل التمرين بكلمة جديدة
+    });
+  </script>
+
+  </div>
+</body>
+</html>

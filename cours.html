@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Multi-Language Translation Table</title>
+
+    <link rel="stylesheet" href="style.css">
+  <style>
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    select, button { margin: 5px 0; display: block; }
+  </style>
+</head>
+<body>
+  <div class="container">
+   <button onclick="location.href='index.html'">🔙"Back to the homepage"</button>
+
+  <h2>Translation Table</h2>
+
+  <label>Select Topic:</label>
+  <select id="topicDropdown"><option value="">--Select--</option></select>
+
+  <label>Select Your Language:</label>
+  <select id="fromLangDropdown"><option value="">--Select--</option></select>
+
+  <label>Select Translation Language 1 (required):</label>
+  <select id="toLangDropdown1"><option value="">--Select--</option></select>
+
+  <label>Select Translation Language 2 (optional):</label>
+  <select id="toLangDropdown2"><option value="">--Select--</option></select>
+
+  <label>Select Translation Language 3 (optional):</label>
+  <select id="toLangDropdown3"><option value="">--Select--</option></select>
+
+  <label>Select Translation Language 4 (optional):</label>
+  <select id="toLangDropdown4"><option value="">--Select--</option></select>
+
+  <button id="showTableBtn" disabled>Show Table</button>
+
+  <table id="translationTable" style="display:none;">
+    <thead>
+      <tr id="tableHeadRow">
+        <th>Word (Your Language)</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  </div>
+
+  <script>
+    let jsonData = {};
+    let selectedTopic = '';
+    let availableLanguages = [];
+
+    const topicDropdown = document.getElementById('topicDropdown');
+    const fromLangDropdown = document.getElementById('fromLangDropdown');
+    const toLangDropdown1 = document.getElementById('toLangDropdown1');
+    const toLangDropdown2 = document.getElementById('toLangDropdown2');
+    const toLangDropdown3 = document.getElementById('toLangDropdown3');
+    const toLangDropdown4 = document.getElementById('toLangDropdown4');
+    const showTableBtn = document.getElementById('showTableBtn');
+
+    fetch('vocab.json')
+      .then(res => res.json())
+      .then(data => {
+        jsonData = data;
+        for (const topic in data) {
+          const opt = document.createElement('option');
+          opt.value = topic;
+          opt.textContent = topic;
+          topicDropdown.appendChild(opt);
+        }
+      });
+
+    topicDropdown.addEventListener('change', function () {
+      selectedTopic = this.value;
+      const dropdowns = [fromLangDropdown, toLangDropdown1, toLangDropdown2, toLangDropdown3, toLangDropdown4];
+      dropdowns.forEach(dropdown => dropdown.innerHTML = '<option value="">--Select--</option>');
+      showTableBtn.disabled = true;
+
+      if (!selectedTopic) return;
+
+      const firstEntry = Object.values(jsonData[selectedTopic])[0];
+      availableLanguages = Object.keys(firstEntry).concat("english");
+
+      dropdowns.forEach(dropdown => {
+        availableLanguages.forEach(lang => {
+          const opt = document.createElement('option');
+          opt.value = lang;
+          opt.textContent = lang;
+          dropdown.appendChild(opt.cloneNode(true));
+        });
+      });
+    });
+
+    function checkEnable() {
+      if (topicDropdown.value && fromLangDropdown.value && toLangDropdown1.value) {
+        showTableBtn.disabled = false;
+      } else {
+        showTableBtn.disabled = true;
+      }
+    }
+
+    fromLangDropdown.addEventListener('change', checkEnable);
+    toLangDropdown1.addEventListener('change', checkEnable);
+
+    showTableBtn.addEventListener('click', function () {
+      const fromLang = fromLangDropdown.value;
+      const toLangs = [
+        toLangDropdown1.value,
+        toLangDropdown2.value,
+        toLangDropdown3.value,
+        toLangDropdown4.value
+      ].filter(Boolean); // Remove empty values
+
+      const table = document.getElementById('translationTable');
+      const tableHeadRow = document.getElementById('tableHeadRow');
+      const tableBody = document.querySelector('#translationTable tbody');
+
+      // Clear previous content
+      tableHeadRow.innerHTML = '<th>Word (Your Language)</th>';
+      tableBody.innerHTML = '';
+
+      // Add headers
+      toLangs.forEach(lang => {
+        const th = document.createElement('th');
+        th.textContent = `Translation (${lang})`;
+        tableHeadRow.appendChild(th);
+      });
+
+      for (const [englishWord, translations] of Object.entries(jsonData[selectedTopic])) {
+        const fromWord = (fromLang === 'english') ? englishWord : translations[fromLang] || '-';
+        const row = document.createElement('tr');
+        const fromCell = document.createElement('td');
+        fromCell.textContent = fromWord;
+        row.appendChild(fromCell);
+
+        toLangs.forEach(lang => {
+          const cell = document.createElement('td');
+          const toWord = (lang === 'english') ? englishWord : translations[lang] || '-';
+          cell.textContent = toWord;
+          row.appendChild(cell);
+        });
+
+        tableBody.appendChild(row);
+      }
+
+      table.style.display = 'table';
+    });
+
+
+  </script>
+</body>
+</html>
