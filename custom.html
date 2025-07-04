@@ -2,8 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Free Training</title>
+  <title>Custom Training</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    #wordListContainer {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 10px;
+      display: none;
+    }
+
+    #wordListContainer label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .custom-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      align-items: center;
+    }
+
+    #returnSettingsBtn {
+      color: red;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -17,11 +43,16 @@
       <h3>Select Translation Language:</h3>
       <select id="languageDropdown"><option value="">--Select--</option></select>
 
-      <h3>Select Source Language:</h3>
+      <h3>Select Source Language (for Word Display):</h3>
       <select id="sourceLangDropdown"><option value="">--Select--</option></select>
-
-      <button id="randomBtn" disabled>Start Free Training</button>
     </div>
+
+    <div class="custom-actions" id="customActions" style="display: none;">
+      <button id="startCustomBtn">Start Custom Training</button>
+      <div id="returnSettingsBtn">❌ Return to Settings</div>
+    </div>
+
+    <div id="wordListContainer"></div>
 
     <button id="exitQuizBtn" style="display:none; margin-top:10px;">⏹ Exit & Return to Settings</button>
 
@@ -39,18 +70,22 @@
 
 <script>
   let jsonData = {};
-  let currentWord = "";
   let currentTopic = "";
   let currentLang = "";
   let sourceLang = "";
+  let selectedWords = [];
+  let currentWord = "";
 
   const mainDropdown = document.getElementById("mainDropdown");
   const languageDropdown = document.getElementById("languageDropdown");
   const sourceLangDropdown = document.getElementById("sourceLangDropdown");
-  const randomBtn = document.getElementById("randomBtn");
+  const wordListContainer = document.getElementById("wordListContainer");
+  const startCustomBtn = document.getElementById("startCustomBtn");
   const exitQuizBtn = document.getElementById("exitQuizBtn");
+  const returnSettingsBtn = document.getElementById("returnSettingsBtn");
   const quiz = document.getElementById("quiz");
   const settingsContainer = document.querySelector(".settings-container");
+  const customActions = document.getElementById("customActions");
 
   fetch("vocab.json")
     .then(res => res.json())
@@ -64,8 +99,13 @@
       }
     });
 
-  mainDropdown.addEventListener("change", function () {
-    currentTopic = this.value;
+  mainDropdown.addEventListener("change", () => {
+    currentTopic = mainDropdown.value;
+    populateLanguages();
+    clearWordList();
+  });
+
+  function populateLanguages() {
     if (!jsonData[currentTopic]) return;
 
     const firstKey = Object.keys(jsonData[currentTopic])[0];
@@ -85,53 +125,87 @@
       opt2.textContent = lang;
       sourceLangDropdown.appendChild(opt2);
     });
-    checkEnableButtons();
-  });
-
-  languageDropdown.addEventListener("change", () => {
-    currentLang = languageDropdown.value;
-    checkEnableButtons();
-  });
-
-  sourceLangDropdown.addEventListener("change", () => {
-    sourceLang = sourceLangDropdown.value;
-    checkEnableButtons();
-  });
-
-  function checkEnableButtons() {
-    const enabled = currentTopic && currentLang && sourceLang;
-    randomBtn.disabled = !enabled;
   }
 
-  randomBtn.addEventListener("click", () => {
-    startQuiz();
-    nextWord();
+  languageDropdown.addEventListener("change", checkEnableStart);
+  sourceLangDropdown.addEventListener("change", checkEnableStart);
+
+  function checkEnableStart() {
+    currentLang = languageDropdown.value;
+    sourceLang = sourceLangDropdown.value;
+
+    if (currentTopic && currentLang && sourceLang) {
+      renderWordCheckboxes();
+      settingsContainer.style.display = "none";
+      wordListContainer.style.display = "block";
+      customActions.style.display = "flex";
+    } else {
+      clearWordList();
+      customActions.style.display = "none";
+    }
+  }
+
+  function renderWordCheckboxes() {
+    wordListContainer.innerHTML = "";
+    const words = Object.entries(jsonData[currentTopic]);
+
+    words.forEach(([wordKey, wordData]) => {
+      const fromWord = sourceLang === "english" ? wordKey : wordData[sourceLang];
+      const toWord = currentLang === "english" ? wordKey : wordData[currentLang];
+      if (!fromWord || !toWord) return;
+
+      const label = document.createElement("label");
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.value = wordKey;
+      checkbox.name = "customWord";
+
+      label.appendChild(checkbox);
+      label.append(` ${fromWord} ➜ ${toWord}`);
+
+      wordListContainer.appendChild(label);
+    });
+  }
+
+  returnSettingsBtn.addEventListener("click", () => {
+    settingsContainer.style.display = "block";
+    wordListContainer.style.display = "none";
+    customActions.style.display = "none";
+  });
+
+  startCustomBtn.addEventListener("click", () => {
+    const checked = Array.from(document.querySelectorAll("input[name='customWord']:checked"))
+      .map(cb => cb.value);
+
+    if (checked.length < 5) {
+      alert("Please select at least 5 words to begin training.");
+      return;
+    }
+
+    selectedWords = checked;
+
+    // Hide everything except quiz
+    settingsContainer.style.display = "none";
+    wordListContainer.style.display = "none";
+    customActions.style.display = "none";
+
+    quiz.style.display = "block";
+    exitQuizBtn.style.display = "inline-block";
+
+    shuffleArray(selectedWords);
+    nextCustomWord();
   });
 
   exitQuizBtn.addEventListener("click", () => {
     exitQuiz();
   });
 
-  function startQuiz() {
-    // إخفاء الإعدادات
-    settingsContainer.style.display = "none";
-    // إظهار الكويز وزر الخروج
-    quiz.style.display = "block";
-    exitQuizBtn.style.display = "inline-block";
-  }
-
   function exitQuiz() {
-    // إخفاء الكويز وزر الخروج
     quiz.style.display = "none";
     exitQuizBtn.style.display = "none";
-    // إظهار الإعدادات مجددًا
     settingsContainer.style.display = "block";
-
-    resetQuiz();
-  }
-
-  function resetQuiz() {
     currentWord = "";
+    selectedWords = [];
     document.getElementById("wordDisplay").textContent = "";
     document.getElementById("userInput").value = "";
     document.getElementById("feedback").textContent = "";
@@ -139,15 +213,18 @@
     document.getElementById("nextBtn").style.display = "none";
   }
 
-  function nextWord() {
-    const entries = Object.entries(jsonData[currentTopic]);
-    const filtered = entries.filter(([key, val]) => sourceLang === "english" || val[sourceLang]);
-    const [wordKey, wordData] = filtered[Math.floor(Math.random() * filtered.length)];
+  function nextCustomWord() {
+    if (selectedWords.length === 0) {
+      alert("🎉 You finished all selected words.");
+      exitQuiz();
+      return;
+    }
 
-    currentWord = wordKey;
-    const wordShown = sourceLang === "english" ? wordKey : wordData[sourceLang];
+    currentWord = selectedWords.pop();
+    const wordData = jsonData[currentTopic][currentWord];
+    const fromWord = sourceLang === "english" ? currentWord : wordData[sourceLang];
 
-    document.getElementById("wordDisplay").textContent = `Word (${sourceLang}): ${wordShown}`;
+    document.getElementById("wordDisplay").textContent = `Word: ${fromWord}`;
     document.getElementById("userInput").value = "";
     document.getElementById("feedback").textContent = "";
     document.getElementById("correctAnswer").textContent = "";
@@ -160,6 +237,7 @@
   checkBtn.addEventListener("click", () => {
     const input = document.getElementById("userInput").value.trim().toLowerCase();
     let correct;
+
     if (currentLang === "english") {
       correct = currentWord.toLowerCase();
     } else {
@@ -179,8 +257,21 @@
   });
 
   nextBtn.addEventListener("click", () => {
-    nextWord();
+    nextCustomWord();
   });
+
+  function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+  }
+
+  function clearWordList() {
+    wordListContainer.innerHTML = "";
+    wordListContainer.style.display = "none";
+    customActions.style.display = "none";
+  }
 </script>
 </body>
 </html>

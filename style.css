@@ -1,94 +1,110 @@
-/* Welcome! Basic CSS reset and starter styles for your word game */
-
 html, body {
     height: 100%;
+    font-size: 1.2rem; /* زيادة حجم الخط الأساسي */
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url('bg2.jpg');
+    color: #cee6e7;
+    background-image: url('bg4.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    color: #cee6e7 ; 
-
     background-attachment: fixed;
 }
 
 .container {
-    max-width:90%;
-    margin: 40px auto;
-    padding: 24px;
+    max-width: 95%;
+    margin: 5vh auto;
+    padding: 2rem;
     background: #19113d6c;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
- 
+    border-radius: 1rem;
+    box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.07);
+    font-size: 1.2rem;
 }
-
 
 .buttons {
     display: flex;
-    margin: 50px 20 px;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem 1rem;
 }
 
 button {
     background: linear-gradient(135deg, #6ec6ff 0%, #2196f3 100%);
     color: #fff;
     border: none;
-    border-radius:12px;
-    padding: 15px 35px;
-    margin: 20px 20px;
-    font-size: 1rem;
+    border-radius: 0.75rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
     font-weight: 600;
-    box-shadow: 0 2px 6px rgba(33,150,243,0.15);
+    box-shadow: 0 0.125rem 0.375rem rgba(33,150,243,0.15);
     cursor: pointer;
     transition: background 0.2s, transform 0.1s;
     outline: none;
+    flex: 1 1 40%; /* يجعل الأزرار تستجيب للشاشة */
+    min-width: 150px;
 }
 
 button:hover, button:focus {
     background: linear-gradient(135deg, #2196f3 0%, #1565c0 100%);
-    transform: translateY(-2px) scale(1.03);
+    transform: translateY(-0.125rem) scale(1.03);
 }
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  font-weight: bold; /* كل النص غليظ */
+    width: 100%;
+    border-collapse: collapse;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 thead {
-  background-color: green;
-  color: yellow;
+    background-color: green;
+    color: yellow;
 }
 
 thead th {
-  padding: 10px;
+    padding: 0.75rem;
+    text-align: left;
 }
 
 tbody {
-  background-color: white;
+    background-color: white;
 }
 
 tbody td {
-  padding: 10px;
+    padding: 0.75rem;
 }
 
-/* العمود الأول */
 tbody td:first-child {
-  color: brown;
-  font-weight: bold;
+    color: brown;
+    font-weight: bold;
 }
 
-/* باقي الأعمدة */
 tbody td:not(:first-child) {
-  color: black;
-  font-weight: bold;
+    color: black;
+    font-weight: bold;
 }
 
-/* إضافة حدود للجدول */
 table, th, td {
-  border: 1px solid #000;
+    border: 1px solid #000;
+}
+
+/* عناصر الإدخال مثل النصوص والقوائم */
+input[type="text"], select, textarea {
+    font-size: 1.2rem;
+    padding: 0.75rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+
+p{
+  margin: 10px 10px;
 }
