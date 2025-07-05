@@ -67,6 +67,7 @@
   let examScore = 0;
   let examTotal = 0;
   let isExamMode = false;
+  let currentWord = "";
 
   const mainDropdown = document.getElementById("mainDropdown");
   const languageDropdown = document.getElementById("languageDropdown");
@@ -75,6 +76,8 @@
   const exitQuizBtn = document.getElementById("exitQuizBtn");
   const quiz = document.getElementById("quiz");
   const settingsContainer = document.querySelector(".settings-container");
+  const progressContainer = document.getElementById("progressContainer");
+  const progressBar = document.getElementById("progressBar");
 
   fetch("vocab.json")
     .then(res => res.json())
@@ -109,6 +112,12 @@
       opt2.textContent = lang;
       sourceLangDropdown.appendChild(opt2);
     });
+
+    languageDropdown.selectedIndex = 0;
+    sourceLangDropdown.selectedIndex = 0;
+    currentLang = "";
+    sourceLang = "";
+
     checkEnableButtons();
   });
 
@@ -123,25 +132,24 @@
   });
 
   function checkEnableButtons() {
-    const enabled = currentTopic && currentLang && sourceLang;
-    examBtn.disabled = !enabled;
+    examBtn.disabled = !(currentTopic && currentLang && sourceLang);
   }
 
   examBtn.addEventListener("click", () => {
     if (!currentTopic || !currentLang || !sourceLang) return;
-
     startExam();
-
   });
 
   exitQuizBtn.addEventListener("click", () => {
-    exitQuiz();
+    quiz.style.display = "none";
+    exitQuizBtn.style.display = "none";
+    settingsContainer.style.display = "block";
+    resetExam();
+    resetSettings();
   });
 
   function startExam() {
-    // إخفاء الإعدادات
     settingsContainer.style.display = "none";
-    // إظهار الكويز وزر الخروج
     quiz.style.display = "block";
     exitQuizBtn.style.display = "inline-block";
 
@@ -150,7 +158,6 @@
     shuffleArray(examWords);
 
     const wordCount = examWords.length;
-
     if (wordCount >= 50) examTotal = 50;
     else if (wordCount >= 21) examTotal = 20;
     else if (wordCount >= 11) examTotal = 10;
@@ -162,7 +169,7 @@
     isExamMode = true;
 
     showExamWord();
-    document.getElementById("progressContainer").style.display = "block";
+    progressContainer.style.display = "block";
   }
 
   function showExamWord() {
@@ -179,19 +186,17 @@
     updateProgressBar();
   }
 
+  function updateProgressBar() {
+    const progress = ((examIndex) / examTotal) * 100;
+    progressBar.style.width = progress + "%";
+  }
+
   const checkBtn = document.getElementById("checkBtn");
   const nextBtn = document.getElementById("nextBtn");
-  let currentWord = "";
 
   checkBtn.addEventListener("click", () => {
     const input = document.getElementById("userInput").value.trim().toLowerCase();
-    let correct;
-
-    if (currentLang === "english") {
-      correct = currentWord.toLowerCase();
-    } else {
-      correct = jsonData[currentTopic][currentWord][currentLang].toLowerCase();
-    }
+    let correct = currentLang === "english" ? currentWord.toLowerCase() : jsonData[currentTopic][currentWord][currentLang].toLowerCase();
 
     if (input === correct) {
       document.getElementById("feedback").textContent = "✅ Correct!";
@@ -207,14 +212,12 @@
   });
 
   nextBtn.addEventListener("click", () => {
-    if (isExamMode) {
-      examIndex++;
-      if (examIndex < examTotal) {
-        showExamWord();
-      } else {
-        isExamMode = false;
-        showExamResult();
-      }
+    examIndex++;
+    if (examIndex < examTotal) {
+      showExamWord();
+    } else {
+      isExamMode = false;
+      showExamResult();
     }
   });
 
@@ -236,81 +239,47 @@
     exitQuizBtn.style.display = "none";
   }
 
-  function exitQuiz() {
-    quiz.style.display = "none";
-    exitQuizBtn.style.display = "none";
-    settingsContainer.style.display = "block";
-    resetExam();
-  }
-
   function resetExam() {
-    currentWord = "";
     examWords = [];
     examIndex = 0;
     examScore = 0;
     examTotal = 0;
     isExamMode = false;
+    progressBar.style.width = "0%";
+    progressContainer.style.display = "none";
 
     quiz.innerHTML = `
       <p id="wordDisplay" style="font-weight:bold;"></p>
       <input type="text" id="userInput" placeholder="Write translation" />
       <button id="checkBtn">Check Answer</button>
       <button id="nextBtn" style="display:none;">Next</button>
-
-      <div id="progressContainer" style="width: 100%; background-color: #eee; height: 20px; margin-bottom: 10px; margin-top: 10px; display:none;">
-        <div id="progressBar" style="height: 100%; width: 0%; background-color: #4caf50;"></div>
+      <div id="progressContainer">
+        <div id="progressBar"></div>
       </div>
-
       <p id="feedback"></p>
       <p id="correctAnswer"></p>
     `;
-
-    // إعادة إضافة الأحداث على الأزرار لأن innerHTML أعاد إنشاء العناصر
     attachExamEvents();
   }
 
+  function resetSettings() {
+    currentTopic = "";
+    currentLang = "";
+    sourceLang = "";
+
+    mainDropdown.selectedIndex = 0;
+    languageDropdown.innerHTML = '<option value="">--Select--</option>';
+    sourceLangDropdown.innerHTML = '<option value="">--Select--</option>';
+    examBtn.disabled = true;
+  }
+
   function attachExamEvents() {
-    const checkBtn = document.getElementById("checkBtn");
-    const nextBtn = document.getElementById("nextBtn");
-
-    checkBtn.addEventListener("click", () => {
-      const input = document.getElementById("userInput").value.trim().toLowerCase();
-      let correct;
-
-      if (currentLang === "english") {
-        correct = currentWord.toLowerCase();
-      } else {
-        correct = jsonData[currentTopic][currentWord][currentLang].toLowerCase();
-      }
-
-      if (input === correct) {
-        document.getElementById("feedback").textContent = "✅ Correct!";
-        document.getElementById("feedback").style.color = "green";
-        if (isExamMode) examScore++;
-      } else {
-        document.getElementById("feedback").textContent = "❌ Wrong!";
-        document.getElementById("feedback").style.color = "red";
-      }
-
-      document.getElementById("correctAnswer").textContent = `Correct answer: ${correct}`;
-      document.getElementById("nextBtn").style.display = "inline";
-    });
-
-    nextBtn.addEventListener("click", () => {
-      if (isExamMode) {
-        examIndex++;
-        if (examIndex < examTotal) {
-          showExamWord();
-        } else {
-          isExamMode = false;
-          showExamResult();
-        }
-      }
-    });
+    document.getElementById("checkBtn").addEventListener("click", checkBtn.onclick);
+    document.getElementById("nextBtn").addEventListener("click", nextBtn.onclick);
   }
 
   function shuffleArray(arr) {
-    for (let i = arr.length -1; i > 0; i--) {
+    for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }

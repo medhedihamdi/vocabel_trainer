@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <title>Custom Training</title>
-  <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
   <style>
     #wordListContainer {
       border: 1px solid #ccc;
       padding: 10px;
       margin-top: 10px;
       display: none;
+      max-height: 300px;
+      overflow-y: auto;
     }
 
     #wordListContainer label {
       display: block;
       margin-bottom: 5px;
+      cursor: pointer;
     }
 
     .custom-actions {
@@ -28,6 +31,55 @@
       color: red;
       cursor: pointer;
       font-weight: bold;
+    }
+
+    #customAlert {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      background: #0127a3;
+      border: 2px solid #444;
+      padding: 20px;
+      text-align: center;
+      z-index: 1000;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+    }
+
+    #customAlert button {
+      margin: 5px;
+      padding: 8px 14px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* فقط زر "All" دائري */
+    input[type="checkbox"].round-checkbox {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border: 2px solid #555;
+      border-radius: 50%;
+      outline: none;
+      cursor: pointer;
+      position: relative;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    input[type="checkbox"].round-checkbox:checked::before {
+      content: "";
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 10px;
+      height: 10px;
+      background-color: #444;
+      border-radius: 50%;
     }
   </style>
 </head>
@@ -61,9 +113,15 @@
       <input type="text" id="userInput" placeholder="Write translation" />
       <button id="checkBtn">Check Answer</button>
       <button id="nextBtn" style="display:none;">Next</button>
-
       <p id="feedback"></p>
       <p id="correctAnswer"></p>
+    </div>
+
+    <!-- تنبيه مخصص بعد الانتهاء -->
+    <div id="customAlert">
+      <p id="customAlertMsg">🎉 You finished all selected words.</p>
+      <button id="replayBtn">🔁 Replay Words</button>
+      <button id="backToSettingsBtn">🔙 Return to Settings</button>
     </div>
 
   </div>
@@ -86,6 +144,8 @@
   const quiz = document.getElementById("quiz");
   const settingsContainer = document.querySelector(".settings-container");
   const customActions = document.getElementById("customActions");
+  const replayBtn = document.getElementById("replayBtn");
+  const backToSettingsBtn = document.getElementById("backToSettingsBtn");
 
   fetch("vocab.json")
     .then(res => res.json())
@@ -147,6 +207,18 @@
 
   function renderWordCheckboxes() {
     wordListContainer.innerHTML = "";
+
+    // زر "All" دائري فقط
+    const selectAllLabel = document.createElement("label");
+    selectAllLabel.style.fontWeight = "bold";
+    const selectAllCheckbox = document.createElement("input");
+    selectAllCheckbox.type = "checkbox";
+    selectAllCheckbox.classList.add("round-checkbox"); // دائري فقط هنا
+    selectAllCheckbox.id = "selectAllWords";
+    selectAllLabel.appendChild(selectAllCheckbox);
+    selectAllLabel.append(" ✅ All");
+    wordListContainer.appendChild(selectAllLabel);
+
     const words = Object.entries(jsonData[currentTopic]);
 
     words.forEach(([wordKey, wordData]) => {
@@ -159,18 +231,48 @@
       checkbox.type = "checkbox";
       checkbox.value = wordKey;
       checkbox.name = "customWord";
+      // لا تضيف class => يبقى مربع افتراضي
+
+      checkbox.addEventListener("change", () => {
+        const allWordCheckboxes = document.querySelectorAll("input[name='customWord']");
+        const allChecked = Array.from(allWordCheckboxes).every(cb => cb.checked);
+        selectAllCheckbox.checked = allChecked;
+      });
 
       label.appendChild(checkbox);
       label.append(` ${fromWord} ➜ ${toWord}`);
-
       wordListContainer.appendChild(label);
+    });
+
+    selectAllCheckbox.addEventListener("change", () => {
+      const allWordCheckboxes = document.querySelectorAll("input[name='customWord']");
+      allWordCheckboxes.forEach(cb => {
+        cb.checked = selectAllCheckbox.checked;
+      });
     });
   }
 
-  returnSettingsBtn.addEventListener("click", () => {
-    settingsContainer.style.display = "block";
+  function resetSettings() {
+    mainDropdown.selectedIndex = 0;
+    languageDropdown.selectedIndex = 0;
+    sourceLangDropdown.selectedIndex = 0;
+    wordListContainer.innerHTML = "";
     wordListContainer.style.display = "none";
     customActions.style.display = "none";
+    quiz.style.display = "none";
+    exitQuizBtn.style.display = "none";
+    document.getElementById("userInput").value = "";
+    document.getElementById("wordDisplay").textContent = "";
+    document.getElementById("feedback").textContent = "";
+    document.getElementById("correctAnswer").textContent = "";
+    document.getElementById("nextBtn").style.display = "none";
+    currentWord = "";
+    selectedWords = [];
+  }
+
+  returnSettingsBtn.addEventListener("click", () => {
+    resetSettings();
+    settingsContainer.style.display = "block";
   });
 
   startCustomBtn.addEventListener("click", () => {
@@ -183,47 +285,30 @@
     }
 
     selectedWords = checked;
-
-    // Hide everything except quiz
     settingsContainer.style.display = "none";
     wordListContainer.style.display = "none";
     customActions.style.display = "none";
-
     quiz.style.display = "block";
     exitQuizBtn.style.display = "inline-block";
-
     shuffleArray(selectedWords);
     nextCustomWord();
   });
 
   exitQuizBtn.addEventListener("click", () => {
-    exitQuiz();
-  });
-
-  function exitQuiz() {
-    quiz.style.display = "none";
-    exitQuizBtn.style.display = "none";
+    resetSettings();
     settingsContainer.style.display = "block";
-    currentWord = "";
-    selectedWords = [];
-    document.getElementById("wordDisplay").textContent = "";
-    document.getElementById("userInput").value = "";
-    document.getElementById("feedback").textContent = "";
-    document.getElementById("correctAnswer").textContent = "";
-    document.getElementById("nextBtn").style.display = "none";
-  }
+  });
 
   function nextCustomWord() {
     if (selectedWords.length === 0) {
-      alert("🎉 You finished all selected words.");
-      exitQuiz();
+      quiz.style.display = "none";
+      document.getElementById("customAlert").style.display = "block";
       return;
     }
 
     currentWord = selectedWords.pop();
     const wordData = jsonData[currentTopic][currentWord];
     const fromWord = sourceLang === "english" ? currentWord : wordData[sourceLang];
-
     document.getElementById("wordDisplay").textContent = `Word: ${fromWord}`;
     document.getElementById("userInput").value = "";
     document.getElementById("feedback").textContent = "";
@@ -258,6 +343,28 @@
 
   nextBtn.addEventListener("click", () => {
     nextCustomWord();
+  });
+
+  replayBtn.addEventListener("click", () => {
+    // نعيد تحميل الكلمات المختارة في التدريب السابق
+    selectedWords = Array.from(document.querySelectorAll("input[name='customWord']:checked")).map(cb => cb.value);
+    if(selectedWords.length === 0){
+      alert("Please select words first!");
+      document.getElementById("customAlert").style.display = "none";
+      resetSettings();
+      settingsContainer.style.display = "block";
+      return;
+    }
+    shuffleArray(selectedWords);
+    document.getElementById("customAlert").style.display = "none";
+    quiz.style.display = "block";
+    nextCustomWord();
+  });
+
+  backToSettingsBtn.addEventListener("click", () => {
+    document.getElementById("customAlert").style.display = "none";
+    resetSettings();
+    settingsContainer.style.display = "block";
   });
 
   function shuffleArray(arr) {

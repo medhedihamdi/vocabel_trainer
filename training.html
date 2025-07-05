@@ -66,7 +66,12 @@
 
   mainDropdown.addEventListener("change", function () {
     currentTopic = this.value;
-    if (!jsonData[currentTopic]) return;
+    if (!jsonData[currentTopic]) {
+      languageDropdown.innerHTML = '<option value="">--Select--</option>';
+      sourceLangDropdown.innerHTML = '<option value="">--Select--</option>';
+      checkEnableButtons();
+      return;
+    }
 
     const firstKey = Object.keys(jsonData[currentTopic])[0];
     const langs = Object.keys(jsonData[currentTopic][firstKey]);
@@ -85,6 +90,12 @@
       opt2.textContent = lang;
       sourceLangDropdown.appendChild(opt2);
     });
+
+    languageDropdown.selectedIndex = 0;
+    sourceLangDropdown.selectedIndex = 0;
+    currentLang = "";
+    sourceLang = "";
+
     checkEnableButtons();
   });
 
@@ -109,29 +120,32 @@
   });
 
   exitQuizBtn.addEventListener("click", () => {
-    exitQuiz();
+    resetSettings();
+    settingsContainer.style.display = "block";
+    quiz.style.display = "none";
+    exitQuizBtn.style.display = "none";
   });
 
   function startQuiz() {
-    // إخفاء الإعدادات
     settingsContainer.style.display = "none";
-    // إظهار الكويز وزر الخروج
     quiz.style.display = "block";
     exitQuizBtn.style.display = "inline-block";
   }
 
-  function exitQuiz() {
-    // إخفاء الكويز وزر الخروج
-    quiz.style.display = "none";
-    exitQuizBtn.style.display = "none";
-    // إظهار الإعدادات مجددًا
-    settingsContainer.style.display = "block";
-
-    resetQuiz();
-  }
-
-  function resetQuiz() {
+  function resetSettings() {
     currentWord = "";
+    currentTopic = "";
+    currentLang = "";
+    sourceLang = "";
+
+    mainDropdown.selectedIndex = 0;
+
+    // Reset language and source language dropdowns but keep their options intact
+    languageDropdown.selectedIndex = 0;
+    sourceLangDropdown.selectedIndex = 0;
+
+    randomBtn.disabled = true;
+
     document.getElementById("wordDisplay").textContent = "";
     document.getElementById("userInput").value = "";
     document.getElementById("feedback").textContent = "";
