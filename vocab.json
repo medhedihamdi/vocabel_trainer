@@ -12,13 +12,18 @@
     "Uncle": { "arabic": "عم", "french": "l'Oncle", "german": "der Onkel", "hungarian": "a Nagybácsi" },
     "Aunt": { "arabic": "عمة", "french": "la Tante", "german": "die Tante", "hungarian": "a Nagynéni" },
     "Son": { "arabic": "ابن", "french": "le Fils", "german": "der Sohn", "hungarian": "a Fiú" },
-    "Daughter": { "arabic": "ابنة", "french": "la Fille", "german": "die Tochter", "hungarian": "a Lány" },
-    "Cousin": { "arabic": "ابن عم", "french": "le Cousin", "german": "der Cousin", "hungarian": "az Unokatestvér" },
+   
+    "Daughter": { "arabic": "ابنة", "french": "la Fille", "german": "die Tochter", "hungarian": "a Lány" }, 
+      "Grandchild": { "arabic": "حفيد", "french": "le Petit-enfant", "german": "das Enkelkind", "hungarian": "az Unoka" },
+    "Granddaughter": { "arabic": "حفيدة", "french": "la Petite-fille", "german": "die Enkelin", "hungarian": "az Unokahúg" },
+     "Cousin": { "arabic": "ابن عم", "french": "le Cousin", "german": "der Cousin", "hungarian": "az Unokatestvér" },
     "Nephew": { "arabic": "ابن أخ", "french": "le Neveu", "german": "der Neffe", "hungarian": "az Unokaöccs" },
     "Niece": { "arabic": "ابنة أخ", "french": "la Nièce", "german": "die Nichte", "hungarian": "az Unokahúg" },
     "Husband": { "arabic": "زوج", "french": "le Mari", "german": "der Ehemann", "hungarian": "a Férj" },
     "Wife": { "arabic": "زوجة", "french": "la Femme", "german": "die Ehefrau", "hungarian": "a Feleség" },
-    "Stepmother": { "arabic": "زوجة الأب", "french": "la Belle-mère", "german": "die Stiefmutter", "hungarian": "a Mostohaanya" },
+    "Fiancé": { "arabic": "خطيب", "french": "le fiancé", "german": "der Verlobte", "hungarian": "a Vőlegény" },
+    "Fiancée": { "arabic": "خطيبة", "french": "la fiancée", "german": "die Verlobte", "hungarian": "a Menyasszony" },  
+     "Stepmother": { "arabic": "زوجة الأب", "french": "la Belle-mère", "german": "die Stiefmutter", "hungarian": "a Mostohaanya" },
     "Stepfather": { "arabic": "زوج الأم", "french": "le Beau-père", "german": "der Stiefvater", "hungarian": "a Mostohaapa" },
     "Stepbrother": { "arabic": "أخ غير شقيق", "french": "le Demi-frère", "german": "der Stiefbruder", "hungarian": "a Mostohatestvér" },
     "Stepsister": { "arabic": "أخت غير شقيقة", "french": "la Demi-sœur", "german": "die Stiefschwester", "hungarian": "a Mostohanővér" },
@@ -27,15 +32,15 @@
     "Father-in-law": { "arabic": "حمو", "french": "le Beau-père", "german": "der Schwiegervater", "hungarian": "az Apos" },
     "Brother-in-law": { "arabic": "صهر", "french": "le Beau-frère", "german": "der Schwager", "hungarian": "a Sógor" },
     "Sister-in-law": { "arabic": "سلفة", "french": "la Belle-sœur", "german": "die Schwägerin", "hungarian": "a Sógornő" },
-    "Godfather": { "arabic": "عراب", "french": "le Parrain", "german": "der Pate", "hungarian": "a Keresztapa" },
-    "Godmother": { "arabic": "عرابة", "french": "la Marraine", "german": "die Patin", "hungarian": "a Keresztanya" },
     "Friend": { "arabic": "صديق", "french": "l'Ami", "german": "der Freund", "hungarian": "a Barát" },
     "Neighbor": { "arabic": "جار", "french": "le Voisin", "german": "der Nachbar", "hungarian": "a Szomszéd" },
-    "Guardian": { "arabic": "ولي أمر", "french": "le Tuteur", "german": "der Vormund", "hungarian": "a Gyám" },
+    "Colleague": { "arabic": "زميل", "french": "le Collègue", "german": "der Kollege", "hungarian": "a Kolléga" }, 
+      "Guardian": { "arabic": "ولي أمر", "french": "le Tuteur", "german": "der Vormund", "hungarian": "a Gyám" },
     "Relative": { "arabic": "قريب", "french": "le Parent", "german": "der Verwandter", "hungarian": "a Rokon" },
     "Ancestor": { "arabic": "سلف", "french": "l'Ancêtre", "german": "der Ahn", "hungarian": "az Ős" },
     "Descendant": { "arabic": "نسل", "french": "le Descendant", "german": "der Nachkomme", "hungarian": "a Leszármazott" },
     "Family Tree": { "arabic": "شجرة العائلة", "french": "l'Arbre généalogique", "german": "der Stammbaum", "hungarian": "a Családfa" },
+    "Age": { "arabic": "عمر", "french": "Âge", "german": "das Alter", "hungarian": "az Életkor" },
     "Adopted Child": { "arabic": "طفل متبنى", "french": "l'Enfant adopté", "german": "das Adoptivkind", "hungarian": "az Örökbefogadott gyerek" },
     "Baby": { "arabic": "رضيع", "french": "le Bébé", "german": "das Baby", "hungarian": "a Baba" },
     "Child": { "arabic": "طفل", "french": "l'Enfant", "german": "das Kind", "hungarian": "a Gyerek" },
@@ -198,71 +203,21 @@
 
 
 
+ 
+    "Person Adjectives": { 
 
-"adjectives": {
-  "Adjective":     { "arabic": "صفة",         "french": "Adjectif",       "german": "Adjektiv",       "hungarian": "Melléknév" },
-
-
-  "Full": { "arabic": "ممتلئ", "french": "Plein", "german": "Voll", "hungarian": "Teli" },
-  "Empty": { "arabic": "فارغ", "french": "Vide", "german": "Leer", "hungarian": "Üres" },
-
-  "Rich": { "arabic": "غني", "french": "Riche", "german": "Reich", "hungarian": "Gazdag" },
+     "Rich": { "arabic": "غني", "french": "Riche", "german": "Reich", "hungarian": "Gazdag" },
   "Poor": { "arabic": "فقير", "french": "Pauvre", "german": "Arm", "hungarian": "Szegény" },
 
-  "Smart": { "arabic": "ذكي", "french": "Intelligent", "german": "Klug", "hungarian": "Okos" },
-  "Stupid": { "arabic": "غبي", "french": "Stupide", "german": "Dumm", "hungarian": "Buta" },
-  "Excellent": { "arabic": "ممتاز", "french": "Excellent", "german": "Ausgezeichnet", "hungarian": "Kiváló" },
-
-  "Right": { "arabic": "صحيح", "french": "Correct", "german": "Richtig", "hungarian": "Helyes" },
-  "Wrong": { "arabic": "خاطئ", "french": "Faux", "german": "Falsch", "hungarian": "Hibás" },
-
-  "Many": { "arabic": "كثير", "french": "Beaucoup", "german": "Viele", "hungarian": "Sok" },
-  "Few": { "arabic": "قليل", "french": "Peu", "german": "Wenig", "hungarian": "Kevés" },
-
-  "Easy": { "arabic": "سهل", "french": "Facile", "german": "Einfach", "hungarian": "Könnyű" },
-  "Difficult": { "arabic": "صعب", "french": "Difficile", "german": "Schwierig", "hungarian": "Nehéz" },
-
-  "Sick": { "arabic": "مريض", "french": "Malade", "german": "Krank", "hungarian": "Beteg" },
+   "Sick": { "arabic": "مريض", "french": "Malade", "german": "Krank", "hungarian": "Beteg" },
   "Healthy": { "arabic": "سليم", "french": "En bonne santé", "german": "Gesund", "hungarian": "Egészséges" },
 
-  "Big": { "arabic": "كبير", "french": "Grand", "german": "Groß", "hungarian": "Nagy" },
-  "Small": { "arabic": "صغير", "french": "Petit", "german": "Klein", "hungarian": "Kicsi" },
-
-  "Old": { "arabic": "قديم", "french": "Vieux", "german": "Alt", "hungarian": "Régi" },
-  "New": { "arabic": "جديد", "french": "Nouveau", "german": "Neu", "hungarian": "Új" },
-
-  "Good": { "arabic": "جيد", "french": "Bon", "german": "Gut", "hungarian": "Jó" },
-    "Bad": { "arabic": "سيئ", "french": "Mauvais", "german": "Schlecht", "hungarian": "Rossz" },
-
-    "Beautiful": { "arabic": "جميل", "french": "Beau", "german": "Schön", "hungarian": "Szép" },
-    "Ugly": { "arabic": "قبيح", "french": "Laid", "german": "Hässlich", "hungarian": "Csúnya" },
-
-    "Strong": { "arabic": "قوي", "french": "Fort", "german": "Stark", "hungarian": "Erős" },
-    "Weak": { "arabic": "ضعيف", "french": "Faible", "german": "Schwach", "hungarian": "Gyenge" },
-
-    "Delicious": { "arabic": "لذيذ", "french": "Délicieux", "german": "Lecker", "hungarian": "Finom" },
-    "Disgusting": { "arabic": "سيئ الطعم", "french": "Dégueulasse", "german": "Widerlich", "hungarian": "Undorító" },
-
-    "Tall": { "arabic": "طويل", "french": "Grand", "german": "Groß", "hungarian": "Magas" },
-    "Short": { "arabic": "قصير", "french": "Petit", "german": "Klein", "hungarian": "Alacsony" },
-
-    "High": { "arabic": "عالٍ", "french": "Haut", "german": "Hoch", "hungarian": "Magas" },
-    "Low": { "arabic": "منخفض", "french": "Bas", "german": "Niedrig", "hungarian": "Alacsony" },
-
-    "Wide": { "arabic": "عريض", "french": "Large", "german": "Breit", "hungarian": "Széles" },
-    "Narrow": { "arabic": "ضيق", "french": "Étroit", "german": "Schmal", "hungarian": "Keskeny" },
-
-    "Fat": { "arabic": "سمين", "french": "Gros", "german": "Dick", "hungarian": "Kövér" },
-    "Thin": { "arabic": "نحيف", "french": "Mince", "german": "Dünn", "hungarian": "Vékony" },
-
-    "Heavy": { "arabic": "ثقيل", "french": "Lourd", "german": "Schwer", "hungarian": "Nehéz" },
-    "Light": { "arabic": "خفيف", "french": "Léger", "german": "Leicht", "hungarian": "Könnyű" },
-
-    "Near": { "arabic": "قريب", "french": "Près", "german": "Nah", "hungarian": "Közel" },
-    "Far": { "arabic": "بعيد", "french": "Loin", "german": "Weit", "hungarian": "Távol" },
 
 
-    "Happy": { "arabic": "سعيد", "french": "Heureux", "german": "Glücklich", "hungarian": "Boldog"  },
+    "Smart": { "arabic": "ذكي", "french": "Intelligent", "german": "Klug", "hungarian": "Okos" },
+  "Stupid": { "arabic": "غبي", "french": "Stupide", "german": "Dumm", "hungarian": "Buta" },
+
+     "Happy": { "arabic": "سعيد", "french": "Heureux", "german": "Glücklich", "hungarian": "Boldog"  },
     "Sad": { "arabic": "حزين", "french": "Triste", "german": "Traurig", "hungarian": "Szomorú" },
 
     "Calm": { "arabic": "هادئ", "french": "Calme", "german": "Ruhig", "hungarian": "Nyugodt" },
@@ -323,7 +278,11 @@
     "Curious": { "arabic": "فضولي", "french": "Curieux", "german": "Neugierig", "hungarian": "Kíváncsi" },
     "Indifferent": { "arabic": "غير مبالٍ", "french": "Indifférent", "german": "Gleichgültig", "hungarian": "Közömbös" },
 
-    "Hypocrite":       { "arabic": "منافق",          "french": "Hypocrite",         "german": "Heuchler",         "hungarian": "Álszent" },
+   
+
+
+
+ "Hypocrite":       { "arabic": "منافق",          "french": "Hypocrite",         "german": "Heuchler",         "hungarian": "Álszent" },
   "Greedy":          { "arabic": "جشع",            "french": "Avaricieux",        "german": "Gierig",           "hungarian": "Kapzsi" },
   "Selfish":         { "arabic": "أناني",           "french": "Égoïste",           "german": "Egoistisch",       "hungarian": "Önző" },
   "Arrogant":        { "arabic": "متكبر",           "french": "Arrogant",          "german": "Arrogant",          "hungarian": "Beképzelt" },
@@ -371,7 +330,75 @@
   "Diplomatic":      { "arabic": "دبلوماسي",      "french": "Diplomate",         "german": "Diplomatisch",      "hungarian": "Diplomatikus" },
   "Fair":            { "arabic": "منصف",          "french": "Juste",             "german": "Fair",              "hungarian": "Méltányos" },
   "Faithful":        { "arabic": "وفي",           "french": "Fidèle",            "german": "Treuer",            "hungarian": "Hűséges" },
-  "Foolish":         { "arabic": "أحمق",          "french": "Imbécile",          "german": "Dumm",              "hungarian": "Butus" },
+  "Foolish":         { "arabic": "أحمق",          "french": "Imbécile",          "german": "Dumm",              "hungarian": "Butus" }
+
+
+
+
+    } ,
+
+
+
+
+"Object Adjectives": { 
+
+
+ "Adjective":     { "arabic": "صفة",         "french": "Adjectif",       "german": "Adjektiv",       "hungarian": "Melléknév" },
+
+
+  "Full": { "arabic": "ممتلئ", "french": "Plein", "german": "Voll", "hungarian": "Teli" },
+  "Empty": { "arabic": "فارغ", "french": "Vide", "german": "Leer", "hungarian": "Üres" },
+
+ 
+  
+  "Excellent": { "arabic": "ممتاز", "french": "Excellent", "german": "Ausgezeichnet", "hungarian": "Kiváló" },
+
+  "Right": { "arabic": "صحيح", "french": "Correct", "german": "Richtig", "hungarian": "Helyes" },
+  "Wrong": { "arabic": "خاطئ", "french": "Faux", "german": "Falsch", "hungarian": "Hibás" },
+
+  "Many": { "arabic": "كثير", "french": "Beaucoup", "german": "Viele", "hungarian": "Sok" },
+  "Few": { "arabic": "قليل", "french": "Peu", "german": "Wenig", "hungarian": "Kevés" },
+
+  "Easy": { "arabic": "سهل", "french": "Facile", "german": "Einfach", "hungarian": "Könnyű" },
+  "Difficult": { "arabic": "صعب", "french": "Difficile", "german": "Schwierig", "hungarian": "Nehéz" },
+
+ 
+  "Big": { "arabic": "كبير", "french": "Grand", "german": "Groß", "hungarian": "Nagy" },
+  "Small": { "arabic": "صغير", "french": "Petit", "german": "Klein", "hungarian": "Kicsi" },
+
+  "Old": { "arabic": "قديم", "french": "Vieux", "german": "Alt", "hungarian": "Régi" },
+  "New": { "arabic": "جديد", "french": "Nouveau", "german": "Neu", "hungarian": "Új" },
+
+  "Good": { "arabic": "جيد", "french": "Bon", "german": "Gut", "hungarian": "Jó" },
+    "Bad": { "arabic": "سيئ", "french": "Mauvais", "german": "Schlecht", "hungarian": "Rossz" },
+
+    "Beautiful": { "arabic": "جميل", "french": "Beau", "german": "Schön", "hungarian": "Szép" },
+    "Ugly": { "arabic": "قبيح", "french": "Laid", "german": "Hässlich", "hungarian": "Csúnya" },
+
+    "Strong": { "arabic": "قوي", "french": "Fort", "german": "Stark", "hungarian": "Erős" },
+    "Weak": { "arabic": "ضعيف", "french": "Faible", "german": "Schwach", "hungarian": "Gyenge" },
+
+    "Delicious": { "arabic": "لذيذ", "french": "Délicieux", "german": "Lecker", "hungarian": "Finom" },
+    "Disgusting": { "arabic": "سيئ الطعم", "french": "Dégueulasse", "german": "Widerlich", "hungarian": "Undorító" },
+
+    "Tall": { "arabic": "طويل", "french": "Grand", "german": "Groß", "hungarian": "Magas" },
+    "Short": { "arabic": "قصير", "french": "Petit", "german": "Klein", "hungarian": "Alacsony" },
+
+    "High": { "arabic": "عالٍ", "french": "Haut", "german": "Hoch", "hungarian": "Magas" },
+    "Low": { "arabic": "منخفض", "french": "Bas", "german": "Niedrig", "hungarian": "Alacsony" },
+
+    "Wide": { "arabic": "عريض", "french": "Large", "german": "Breit", "hungarian": "Széles" },
+    "Narrow": { "arabic": "ضيق", "french": "Étroit", "german": "Schmal", "hungarian": "Keskeny" },
+
+    "Fat": { "arabic": "سمين", "french": "Gros", "german": "Dick", "hungarian": "Kövér" },
+    "Thin": { "arabic": "نحيف", "french": "Mince", "german": "Dünn", "hungarian": "Vékony" },
+
+    "Heavy": { "arabic": "ثقيل", "french": "Lourd", "german": "Schwer", "hungarian": "Nehéz" },
+    "Light": { "arabic": "خفيف", "french": "Léger", "german": "Leicht", "hungarian": "Könnyű" },
+
+    "Near": { "arabic": "قريب", "french": "Près", "german": "Nah", "hungarian": "Közel" },
+    "Far": { "arabic": "بعيد", "french": "Loin", "german": "Weit", "hungarian": "Távol" },
+
 
 
  "Hungry":        { "arabic": "جائع",        "french": "Affamé",        "german": "Hungrig",       "hungarian": "Éhes" },
@@ -388,9 +415,8 @@
   "Cold":          { "arabic": "بارد",        "french": "Froid",         "german": "Kalt",          "hungarian": "Hideg" },
   "Rotten":        { "arabic": "متعفن",       "french": "Pourri",        "german": "Verdorben",     "hungarian": "Rohadt" }
 
-  },
 
-
+} ,
 
 
 
