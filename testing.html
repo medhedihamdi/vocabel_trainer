@@ -19,15 +19,15 @@
       background-color: #4caf50;
     }
   </style>
-</head>
-<body>
+</head><body>
   <div class="container">
 
     <button onclick="location.href='index.html'">🔙 Back to Homepage</button>
 
     <div class="settings-container">
-      <h3>Select Topic:</h3>
-      <select id="mainDropdown"><option value="">--Select--</option></select>
+      <h3>Select Topics and Levels:</h3>
+      <div id="topicLevelContainer"></div>
+      <button id="addTopicBtn">➕ Add Topic + Level</button>
 
       <h3>Select Translation Language:</h3>
       <select id="languageDropdown"><option value="">--Select--</option></select>
@@ -42,6 +42,7 @@
 
     <div id="quiz" style="display:none; margin-top:20px;">
       <p id="wordDisplay" style="font-weight:bold;"></p>
+      <p id="questionCounter" style="font-weight:bold; color:blue;"></p>
       <input type="text" id="userInput" placeholder="Write translation" />
       <button id="checkBtn">Check Answer</button>
       <button id="nextBtn" style="display:none;">Next</button>
@@ -55,236 +56,372 @@
     </div>
 
   </div>
-
 <script>
-  let jsonData = {};
-  let currentTopic = "";
-  let currentLang = "";
-  let sourceLang = "";
+let jsonData = {};
+let selectedCombos = [];
+let currentLang = "";
+let sourceLang = "";
 
-  let examWords = [];
-  let examIndex = 0;
-  let examScore = 0;
-  let examTotal = 0;
-  let isExamMode = false;
-  let currentWord = "";
+let examWords = [];
+let examIndex = 0;
+let examScore = 0;
+let examTotal = 0;
+let isExamMode = false;
+let currentWord = "";
 
-  const mainDropdown = document.getElementById("mainDropdown");
-  const languageDropdown = document.getElementById("languageDropdown");
-  const sourceLangDropdown = document.getElementById("sourceLangDropdown");
-  const examBtn = document.getElementById("examBtn");
-  const exitQuizBtn = document.getElementById("exitQuizBtn");
-  const quiz = document.getElementById("quiz");
-  const settingsContainer = document.querySelector(".settings-container");
-  const progressContainer = document.getElementById("progressContainer");
-  const progressBar = document.getElementById("progressBar");
+const topicLevelContainer = document.getElementById("topicLevelContainer");
+const addTopicBtn = document.getElementById("addTopicBtn");
+const languageDropdown = document.getElementById("languageDropdown");
+const sourceLangDropdown = document.getElementById("sourceLangDropdown");
+const examBtn = document.getElementById("examBtn");
+const exitQuizBtn = document.getElementById("exitQuizBtn");
+const quiz = document.getElementById("quiz");
+const settingsContainer = document.querySelector(".settings-container");
+const progressContainer = document.getElementById("progressContainer");
+const progressBar = document.getElementById("progressBar");
 
-  fetch("vocab.json")
-    .then(res => res.json())
-    .then(data => {
-      jsonData = data;
-      for (const topic in data) {
-        const opt = document.createElement("option");
-        opt.value = topic;
-        opt.textContent = topic;
-        mainDropdown.appendChild(opt);
+fetch("vocab-l.json")
+  .then(res => res.json())
+  .then(data => {
+    jsonData = data;
+    addTopicLevelSelector();
+  });
+
+function addTopicLevelSelector() {
+  const wrapper = document.createElement("div");
+  wrapper.className = "topic-level-row";
+  wrapper.style.marginBottom = "10px";
+
+  const topicSelect = document.createElement("select");
+  topicSelect.innerHTML = '<option value="">--Select Topic--</option><option value="ALL">ALL</option>';
+  for (const topic in jsonData) {
+    const opt = document.createElement("option");
+    opt.value = topic;
+    opt.textContent = topic;
+    topicSelect.appendChild(opt);
+  }
+
+  const levelSelect = document.createElement("select");
+  levelSelect.innerHTML = `
+    <option value="">--Select Level--</option>
+    <option value="A">A</option>
+    <option value="B">B</option>
+    <option value="C">C</option>
+    <option value="A+B">A+B</option>
+    <option value="A+C">A+C</option>
+    <option value="B+C">B+C</option>
+    <option value="ALL">ALL</option>
+  `;
+  levelSelect.disabled = true;
+
+  topicSelect.addEventListener("change", () => {
+    levelSelect.disabled = !topicSelect.value;
+    enforceComboLogic();
+    updateLangOptions();
+  });
+
+  levelSelect.addEventListener("change", () => {
+    enforceComboLogic();
+    updateLangOptions();
+  });
+
+  const removeBtn = document.createElement("button");
+  removeBtn.textContent = "❌";
+  removeBtn.style.marginLeft = "10px";
+  removeBtn.addEventListener("click", () => {
+    wrapper.remove();
+    enforceComboLogic();
+    updateLangOptions();
+  });
+
+  wrapper.appendChild(topicSelect);
+  wrapper.appendChild(levelSelect);
+  wrapper.appendChild(removeBtn);
+  topicLevelContainer.appendChild(wrapper);
+}
+
+addTopicBtn.addEventListener("click", () => addTopicLevelSelector());
+
+
+// ======================
+// ✅ منطق ذكي جديد هنا
+// ======================
+function enforceComboLogic() {
+  const rows = Array.from(document.querySelectorAll(".topic-level-row"));
+
+  const combos = [];
+  for (const row of rows) {
+    const topic = row.children[0].value;
+    const level = row.children[1].value;
+    if (topic && level) combos.push({ topic, level, row });
+  }
+
+  function levelToSet(level) {
+    if (!level) return new Set();
+    if (level === "ALL") return new Set(["A","B","C"]);
+    return new Set(level.split("+"));
+  }
+
+  const rowsToRemove = new Set();
+
+  // 🔹 أولاً: إذا كان هناك ALL+ALL نحذف كل ما قبله
+  const hasAllAll = combos.some(c => c.topic === "ALL" && c.level === "ALL");
+  if (hasAllAll) {
+    combos.forEach(c => {
+      if (!(c.topic === "ALL" && c.level === "ALL")) rowsToRemove.add(c.row);
+    });
+  }
+
+  // 🔹 المقارنة المنطقية بين الفلاتر
+  for (let i = 0; i < combos.length; i++) {
+    for (let j = i + 1; j < combos.length; j++) {
+      const A = combos[i];
+      const B = combos[j];
+      if (rowsToRemove.has(A.row) || rowsToRemove.has(B.row)) continue;
+
+      const sameOrAllTopic = (A.topic === B.topic) || A.topic === "ALL" || B.topic === "ALL";
+      if (!sameOrAllTopic) continue;
+
+      const setA = levelToSet(A.level);
+      const setB = levelToSet(B.level);
+
+      const AcoversB = [...setB].every(x => setA.has(x));
+      const BcoversA = [...setA].every(x => setB.has(x));
+
+      // 🔹 إذا كان A أشمل من B → نحذف B
+      if (AcoversB && (A.topic === B.topic || A.topic === "ALL")) {
+        rowsToRemove.add(B.row);
+      }
+      // 🔹 إذا كان B أشمل من A → نحذف A
+      else if (BcoversA && (A.topic === B.topic || B.topic === "ALL")) {
+        rowsToRemove.add(A.row);
+      }
+    }
+  }
+
+  // 🔹 حذف الصفوف الأضعف
+  rowsToRemove.forEach(r => {
+    if (r.parentElement) r.parentElement.removeChild(r);
+  });
+
+  // تحديث selectedCombos
+  selectedCombos = [];
+  document.querySelectorAll(".topic-level-row").forEach(row => {
+    const topic = row.children[0].value;
+    const level = row.children[1].value;
+    if (topic && level) selectedCombos.push({ topic, level });
+  });
+
+  // 🔹 تعطيل زر الإضافة في حالة ALL+ALL
+  addTopicBtn.disabled = hasAllAll;
+  checkEnableButtons();
+}
+// ======================
+
+
+
+function updateLangOptions() {
+  if (selectedCombos.length === 0) {
+    examBtn.disabled = true;
+    return;
+  }
+
+  let firstEntry;
+  for (const combo of selectedCombos) {
+    const { topic, level } = combo;
+    let chosenLevel = level.includes("+") ? level.split("+")[0] : level;
+    const entries = topic === "ALL"
+      ? Object.values(jsonData[Object.keys(jsonData)[0]][chosenLevel])
+      : Object.values(jsonData[topic][chosenLevel]);
+    if (entries && entries.length > 0) {
+      firstEntry = entries[0];
+      break;
+    }
+  }
+
+  if (!firstEntry) return;
+  const langs = Object.keys(firstEntry).concat("english");
+
+  languageDropdown.innerHTML = '<option value="">--Select--</option>';
+  sourceLangDropdown.innerHTML = '<option value="">--Select--</option>';
+  langs.forEach(lang => {
+    const opt1 = document.createElement("option");
+    opt1.value = lang;
+    opt1.textContent = lang;
+    languageDropdown.appendChild(opt1);
+
+    const opt2 = document.createElement("option");
+    opt2.value = lang;
+    opt2.textContent = lang;
+    sourceLangDropdown.appendChild(opt2);
+  });
+}
+
+languageDropdown.addEventListener("change", () => {
+  currentLang = languageDropdown.value;
+  checkEnableButtons();
+});
+
+sourceLangDropdown.addEventListener("change", () => {
+  sourceLang = sourceLangDropdown.value;
+  checkEnableButtons();
+});
+
+function checkEnableButtons() {
+  examBtn.disabled = !(selectedCombos.length && currentLang && sourceLang);
+}
+
+examBtn.addEventListener("click", () => {
+  if (!selectedCombos.length || !currentLang || !sourceLang) return;
+  startExam();
+});
+
+exitQuizBtn.addEventListener("click", () => {
+  quiz.style.display = "none";
+  exitQuizBtn.style.display = "none";
+  settingsContainer.style.display = "block";
+  resetExam();
+});
+
+function startExam() {
+  settingsContainer.style.display = "none";
+  quiz.style.display = "block";
+  exitQuizBtn.style.display = "inline-block";
+
+  examWords = [];
+
+  selectedCombos.forEach(({ topic, level }) => {
+    let levelsToInclude = [];
+    if (level === "ALL") levelsToInclude = ["A","B","C"];
+    else levelsToInclude = level.split("+");
+
+    levelsToInclude.forEach(lvl => {
+      if (topic === "ALL") {
+        for (const t in jsonData) {
+          if (jsonData[t][lvl]) {
+            examWords.push(...Object.entries(jsonData[t][lvl]));
+          }
+        }
+      } else {
+        if (jsonData[topic][lvl]) {
+          examWords.push(...Object.entries(jsonData[topic][lvl]));
+        }
       }
     });
-
-  mainDropdown.addEventListener("change", function () {
-    currentTopic = this.value;
-    if (!jsonData[currentTopic]) return;
-
-    const firstKey = Object.keys(jsonData[currentTopic])[0];
-    const langs = Object.keys(jsonData[currentTopic][firstKey]);
-
-    languageDropdown.innerHTML = '<option value="">--Select--</option>';
-    sourceLangDropdown.innerHTML = '<option value="">--Select--</option>';
-
-    langs.concat("english").forEach(lang => {
-      const opt1 = document.createElement("option");
-      opt1.value = lang;
-      opt1.textContent = lang;
-      languageDropdown.appendChild(opt1);
-
-      const opt2 = document.createElement("option");
-      opt2.value = lang;
-      opt2.textContent = lang;
-      sourceLangDropdown.appendChild(opt2);
-    });
-
-    languageDropdown.selectedIndex = 0;
-    sourceLangDropdown.selectedIndex = 0;
-    currentLang = "";
-    sourceLang = "";
-
-    checkEnableButtons();
   });
 
-  languageDropdown.addEventListener("change", () => {
-    currentLang = languageDropdown.value;
-    checkEnableButtons();
-  });
+  shuffleArray(examWords);
 
-  sourceLangDropdown.addEventListener("change", () => {
-    sourceLang = sourceLangDropdown.value;
-    checkEnableButtons();
-  });
+  const wordCount = examWords.length;
+  if (wordCount >= 50) examTotal = 50;
+  else if (wordCount >= 21) examTotal = 20;
+  else if (wordCount >= 11) examTotal = 10;
+  else examTotal = wordCount;
 
-  function checkEnableButtons() {
-    examBtn.disabled = !(currentTopic && currentLang && sourceLang);
+  examWords = examWords.slice(0, examTotal);
+  examIndex = 0;
+  examScore = 0;
+  isExamMode = true;
+
+  showExamWord();
+  progressContainer.style.display = "block";
+}
+
+function showExamWord() {
+  const [wordKey, wordData] = examWords[examIndex];
+  currentWord = wordKey;
+  const wordShown = sourceLang === "english" ? wordKey : wordData[sourceLang];
+  document.getElementById("wordDisplay").textContent = `Word (${sourceLang}): ${wordShown}`;
+  document.getElementById("questionCounter").textContent = `Question ${examIndex + 1} / ${examTotal}`;
+  document.getElementById("userInput").value = "";
+  document.getElementById("feedback").textContent = "";
+  document.getElementById("correctAnswer").textContent = "";
+  document.getElementById("nextBtn").style.display = "none";
+  updateProgressBar();
+}
+
+function updateProgressBar() {
+  const progress = ((examIndex) / examTotal) * 100;
+  progressBar.style.width = progress + "%";
+}
+
+const checkBtn = document.getElementById("checkBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+checkBtn.addEventListener("click", () => {
+  const input = document.getElementById("userInput").value.trim().toLowerCase();
+  const wordData = examWords[examIndex][1];
+  let correct = currentLang === "english" ? examWords[examIndex][0].toLowerCase() : wordData[currentLang]?.toLowerCase();
+
+  if (input === correct) {
+    document.getElementById("feedback").textContent = "✅ Correct!";
+    document.getElementById("feedback").style.color = "green";
+    if (isExamMode) examScore++;
+  } else {
+    document.getElementById("feedback").textContent = "❌ Wrong!";
+    document.getElementById("feedback").style.color = "red";
   }
 
-  examBtn.addEventListener("click", () => {
-    if (!currentTopic || !currentLang || !sourceLang) return;
-    startExam();
-  });
+  document.getElementById("correctAnswer").textContent = `Correct answer: ${correct}`;
+  document.getElementById("nextBtn").style.display = "inline";
+});
 
-  exitQuizBtn.addEventListener("click", () => {
-    quiz.style.display = "none";
-    exitQuizBtn.style.display = "none";
-    settingsContainer.style.display = "block";
-    resetExam();
-    resetSettings();
-  });
-
-  function startExam() {
-    settingsContainer.style.display = "none";
-    quiz.style.display = "block";
-    exitQuizBtn.style.display = "inline-block";
-
-    const entries = Object.entries(jsonData[currentTopic]);
-    examWords = entries.filter(([key, val]) => sourceLang === "english" || val[sourceLang]);
-    shuffleArray(examWords);
-
-    const wordCount = examWords.length;
-    if (wordCount >= 50) examTotal = 50;
-    else if (wordCount >= 21) examTotal = 20;
-    else if (wordCount >= 11) examTotal = 10;
-    else examTotal = wordCount;
-
-    examWords = examWords.slice(0, examTotal);
-    examIndex = 0;
-    examScore = 0;
-    isExamMode = true;
-
+nextBtn.addEventListener("click", () => {
+  examIndex++;
+  if (examIndex < examTotal) {
     showExamWord();
-    progressContainer.style.display = "block";
-  }
-
-  function showExamWord() {
-    const [wordKey, wordData] = examWords[examIndex];
-    currentWord = wordKey;
-    const wordShown = sourceLang === "english" ? wordKey : wordData[sourceLang];
-
-    document.getElementById("wordDisplay").textContent = `Word (${sourceLang}): ${wordShown}`;
-    document.getElementById("userInput").value = "";
-    document.getElementById("feedback").textContent = "";
-    document.getElementById("correctAnswer").textContent = "";
-    document.getElementById("nextBtn").style.display = "none";
-
-    updateProgressBar();
-  }
-
-  function updateProgressBar() {
-    const progress = ((examIndex) / examTotal) * 100;
-    progressBar.style.width = progress + "%";
-  }
-
-  const checkBtn = document.getElementById("checkBtn");
-  const nextBtn = document.getElementById("nextBtn");
-
-  checkBtn.addEventListener("click", () => {
-    const input = document.getElementById("userInput").value.trim().toLowerCase();
-    let correct = currentLang === "english" ? currentWord.toLowerCase() : jsonData[currentTopic][currentWord][currentLang].toLowerCase();
-
-    if (input === correct) {
-      document.getElementById("feedback").textContent = "✅ Correct!";
-      document.getElementById("feedback").style.color = "green";
-      if (isExamMode) examScore++;
-    } else {
-      document.getElementById("feedback").textContent = "❌ Wrong!";
-      document.getElementById("feedback").style.color = "red";
-    }
-
-    document.getElementById("correctAnswer").textContent = `Correct answer: ${correct}`;
-    document.getElementById("nextBtn").style.display = "inline";
-  });
-
-  nextBtn.addEventListener("click", () => {
-    examIndex++;
-    if (examIndex < examTotal) {
-      showExamWord();
-    } else {
-      isExamMode = false;
-      showExamResult();
-    }
-  });
-
-  function showExamResult() {
-    const errors = examTotal - examScore;
-    let remark = "";
-
-    if (errors <= 3) remark = "✨ Excellent!";
-    else if (errors <= examTotal * 0.25) remark = "👍 Very Good";
-    else if (errors <= examTotal * 0.5) remark = "🙂 Good";
-    else remark = "💡 You need to work more";
-
-    quiz.innerHTML = `
-      <h3>Your Exam Grade:</h3>
-      <p>Score: ${examScore} / ${examTotal}</p>
-      <p>${remark}</p>
-      <button onclick="location.reload()">🔄 Try Again</button>
-    `;
-    exitQuizBtn.style.display = "none";
-  }
-
-  function resetExam() {
-    examWords = [];
-    examIndex = 0;
-    examScore = 0;
-    examTotal = 0;
+  } else {
     isExamMode = false;
-    progressBar.style.width = "0%";
-    progressContainer.style.display = "none";
-
-    quiz.innerHTML = `
-      <p id="wordDisplay" style="font-weight:bold;"></p>
-      <input type="text" id="userInput" placeholder="Write translation" />
-      <button id="checkBtn">Check Answer</button>
-      <button id="nextBtn" style="display:none;">Next</button>
-      <div id="progressContainer">
-        <div id="progressBar"></div>
-      </div>
-      <p id="feedback"></p>
-      <p id="correctAnswer"></p>
-    `;
-    attachExamEvents();
+    showExamResult();
   }
+});
 
-  function resetSettings() {
-    currentTopic = "";
-    currentLang = "";
-    sourceLang = "";
+function showExamResult() {
+  const errors = examTotal - examScore;
+  const percent = ((examScore / examTotal) * 100).toFixed(2);
+  let remark = "";
 
-    mainDropdown.selectedIndex = 0;
-    languageDropdown.innerHTML = '<option value="">--Select--</option>';
-    sourceLangDropdown.innerHTML = '<option value="">--Select--</option>';
-    examBtn.disabled = true;
+  if (errors <= 3) remark = "✨ Excellent!";
+  else if (errors <= examTotal * 0.25) remark = "👍 Very Good";
+  else if (errors <= examTotal * 0.5) remark = "🙂 Good";
+  else remark = "💡 You need to work more";
+
+  quiz.innerHTML = `
+    <h3>Your Exam Grade:</h3>
+    <p>Score: ${examScore} / ${examTotal}</p>
+    <p>Percentage: ${percent}%</p>
+    <p>${remark}</p>
+    <button onclick="location.reload()">🔄 Try Again</button>
+  `;
+  exitQuizBtn.style.display = "none";
+}
+
+function resetExam() {
+  examWords = [];
+  examIndex = 0;
+  examScore = 0;
+  examTotal = 0;
+  isExamMode = false;
+  progressBar.style.width = "0%";
+  progressContainer.style.display = "none";
+}
+
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
   }
-
-  function attachExamEvents() {
-    document.getElementById("checkBtn").addEventListener("click", checkBtn.onclick);
-    document.getElementById("nextBtn").addEventListener("click", nextBtn.onclick);
-  }
-
-  function shuffleArray(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-  }
-
+}
 </script>
+
 </body>
+
+
+
+
+
+
+
+
+
 </html>

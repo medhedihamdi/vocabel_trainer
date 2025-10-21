@@ -51,6 +51,18 @@ table button {
     <label>Select Topic:</label>
     <select id="topicDropdown"><option value="">--Select--</option></select>
 
+    <label>Select Level:</label>
+    <select id="levelDropdown" disabled>
+      <option value="">--Select--</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="A+B">A+B</option>
+      <option value="A+C">A+C</option>
+      <option value="B+C">B+C</option>
+      <option value="ALL">ALL</option>
+    </select>
+
     <label>Select Your Language:</label>
     <select id="fromLangDropdown"><option value="">--Select--</option></select>
 
@@ -71,6 +83,7 @@ table button {
     <table id="translationTable" style="display:none;">
       <thead>
         <tr id="tableHeadRow">
+          <th>#</th>
           <th></th>
           <th>Word (Your Language)</th>
         </tr>
@@ -83,8 +96,10 @@ table button {
     let jsonData = {};
     let selectedTopic = '';
     let availableLanguages = [];
+    let selectedLevel = '';
 
     const topicDropdown = document.getElementById('topicDropdown');
+    const levelDropdown = document.getElementById('levelDropdown');
     const fromLangDropdown = document.getElementById('fromLangDropdown');
     const toLangDropdown1 = document.getElementById('toLangDropdown1');
     const toLangDropdown2 = document.getElementById('toLangDropdown2');
@@ -92,7 +107,7 @@ table button {
     const toLangDropdown4 = document.getElementById('toLangDropdown4');
     const showTableBtn = document.getElementById('showTableBtn');
 
-    fetch('vocab.json')
+    fetch('vocab-l.json')
       .then(res => res.json())
       .then(data => {
         jsonData = data;
@@ -106,13 +121,45 @@ table button {
 
     topicDropdown.addEventListener('change', function () {
       selectedTopic = this.value;
+      selectedLevel = '';
+      levelDropdown.disabled = !selectedTopic;
+      levelDropdown.selectedIndex = 0;
+
       const dropdowns = [fromLangDropdown, toLangDropdown1, toLangDropdown2, toLangDropdown3, toLangDropdown4];
       dropdowns.forEach(dropdown => dropdown.innerHTML = '<option value="">--Select--</option>');
       showTableBtn.disabled = true;
 
       if (!selectedTopic) return;
+    });
 
-      const firstEntry = Object.values(jsonData[selectedTopic])[0];
+    levelDropdown.addEventListener('change', function () {
+      selectedLevel = this.value;
+
+      const dropdowns = [fromLangDropdown, toLangDropdown1, toLangDropdown2, toLangDropdown3, toLangDropdown4];
+      dropdowns.forEach(dropdown => dropdown.innerHTML = '<option value="">--Select--</option>');
+      showTableBtn.disabled = true;
+
+      if (!selectedTopic || !selectedLevel) return;
+
+      // الحصول على أول مستوى متاح لاستخراج اللغات
+      let firstEntry;
+      if (selectedLevel === "ALL") {
+        const allLevels = Object.keys(jsonData[selectedTopic]);
+        for (const lvl of allLevels) {
+          const entries = Object.values(jsonData[selectedTopic][lvl]);
+          if (entries && entries.length > 0) {
+            firstEntry = entries[0];
+            break;
+          }
+        }
+      } else {
+        const levels = selectedLevel.split('+');
+        const firstLevel = levels[0];
+        const entries = Object.values(jsonData[selectedTopic][firstLevel]);
+        firstEntry = entries && entries[0];
+      }
+
+      if (!firstEntry) return;
       availableLanguages = Object.keys(firstEntry).concat("english");
 
       dropdowns.forEach(dropdown => {
@@ -126,7 +173,7 @@ table button {
     });
 
     function checkEnable() {
-      if (topicDropdown.value && fromLangDropdown.value && toLangDropdown1.value) {
+      if (topicDropdown.value && levelDropdown.value && fromLangDropdown.value && toLangDropdown1.value) {
         showTableBtn.disabled = false;
       } else {
         showTableBtn.disabled = true;
@@ -149,7 +196,8 @@ table button {
       const tableHeadRow = document.getElementById('tableHeadRow');
       const tableBody = document.querySelector('#translationTable tbody');
 
-      tableHeadRow.innerHTML = '<th></th><th>Word (Your Language)</th>';
+      // تعديل رأس الجدول بحيث يكون العمود الأول الرقم والثاني زر الإخفاء
+      tableHeadRow.innerHTML = '<th>#</th><th></th><th>Word (Your Language)</th>';
       tableBody.innerHTML = '';
 
       toLangs.forEach(lang => {
@@ -158,104 +206,122 @@ table button {
         tableHeadRow.appendChild(th);
       });
 
-      for (const [englishWord, translations] of Object.entries(jsonData[selectedTopic])) {
-        const row = document.createElement('tr');
+      let selectedLevels = [];
+      if (selectedLevel === "ALL") {
+        selectedLevels = Object.keys(jsonData[selectedTopic]);
+      } else {
+        selectedLevels = selectedLevel.split('+');
+      }
 
-        // Column 1: Toggle row
-        const toggleCell = document.createElement('td');
-        const toggleBtn = document.createElement('button');
-        toggleBtn.textContent = '−';
-        toggleBtn.className = 'toggle-row-btn';
-        toggleCell.appendChild(toggleBtn);
-        row.appendChild(toggleCell);
+      let wordCounter = 1; // عداد الكلمات
 
-        // Function to create word cell with "hide" logic
-        function createHideableCell(word) {
-          const cell = document.createElement('td');
-          const span = document.createElement('span');
-          span.textContent = word;
+      selectedLevels.forEach(level => {
+        if (!jsonData[selectedTopic][level]) return;
 
-          const hideBtn = document.createElement('button');
-          hideBtn.textContent = 'إخفاء';
-          hideBtn.style.marginLeft = '10px';
+        for (const [englishWord, translations] of Object.entries(jsonData[selectedTopic][level])) {
+          const row = document.createElement('tr');
 
-          cell.appendChild(span);
-          cell.appendChild(hideBtn);
+          // العمود 1: الرقم التسلسلي
+          const numberCell = document.createElement('td');
+          numberCell.textContent = wordCounter++;
+          row.appendChild(numberCell);
 
-          hideBtn.addEventListener('click', function () {
-            cell.innerHTML = '';
+          // العمود 2: زر الإخفاء
+          const toggleCell = document.createElement('td');
+          const toggleBtn = document.createElement('button');
+          toggleBtn.textContent = '−';
+          toggleBtn.className = 'toggle-row-btn';
+          toggleCell.appendChild(toggleBtn);
+          row.appendChild(toggleCell);
 
-            const input = document.createElement('input');
-            input.type = 'text';
-            input.placeholder = 'اكتب الكلمة';
+          // دالة إنشاء خلية قابلة للإخفاء
+          function createHideableCell(word) {
+            const cell = document.createElement('td');
+            const span = document.createElement('span');
+            span.textContent = word;
 
-            const checkBtn = document.createElement('button');
-            checkBtn.textContent = 'نفذ';
+            const hideBtn = document.createElement('button');
+            hideBtn.textContent = 'إخفاء';
+            hideBtn.style.marginLeft = '10px';
 
-            const result = document.createElement('span');
-            result.style.marginLeft = '10px';
+            cell.appendChild(span);
+            cell.appendChild(hideBtn);
 
-            checkBtn.addEventListener('click', function () {
-              if (input.value.trim() === word) {
-                result.textContent = 'Correct';
-                result.style.color = 'green';
-              } else {
-                result.textContent = 'False';
-                result.style.color = 'red';
-              }
+            hideBtn.addEventListener('click', function () {
+              cell.innerHTML = '';
 
-              setTimeout(() => {
-                cell.innerHTML = '';
-                cell.appendChild(span);
-                cell.appendChild(hideBtn);
-              }, 1500);
+              const input = document.createElement('input');
+              input.type = 'text';
+              input.placeholder = 'اكتب الكلمة';
+
+              const checkBtn = document.createElement('button');
+              checkBtn.textContent = 'نفذ';
+
+              const result = document.createElement('span');
+              result.style.marginLeft = '10px';
+
+              checkBtn.addEventListener('click', function () {
+                if (input.value.trim() === word) {
+                  result.textContent = 'Correct';
+                  result.style.color = 'green';
+                } else {
+                  result.textContent = 'False';
+                  result.style.color = 'red';
+                }
+
+                setTimeout(() => {
+                  cell.innerHTML = '';
+                  cell.appendChild(span);
+                  cell.appendChild(hideBtn);
+                }, 1500);
+              });
+
+              cell.appendChild(input);
+              cell.appendChild(checkBtn);
+              cell.appendChild(result);
             });
 
-            cell.appendChild(input);
-            cell.appendChild(checkBtn);
-            cell.appendChild(result);
+            return cell;
+          }
+
+          const fromWord = (fromLang === 'english') ? englishWord : translations[fromLang] || '-';
+          row.appendChild(createHideableCell(fromWord));
+
+          toLangs.forEach(lang => {
+            const word = (lang === 'english') ? englishWord : translations[lang] || '-';
+            row.appendChild(createHideableCell(word));
           });
 
-          return cell;
+          tableBody.appendChild(row);
+
+          toggleBtn.addEventListener('click', function () {
+            const placeholderRow = document.createElement('tr');
+            const placeholderCell = document.createElement('td');
+            placeholderCell.colSpan = toLangs.length + 3;
+
+            const showBtn = document.createElement('button');
+            showBtn.textContent = '+';
+            showBtn.className = 'toggle-row-btn';
+
+            showBtn.addEventListener('click', function () {
+              row.style.display = '';
+              placeholderRow.remove();
+            });
+
+            placeholderCell.appendChild(showBtn);
+            placeholderRow.appendChild(placeholderCell);
+
+            row.style.display = 'none';
+            row.parentNode.insertBefore(placeholderRow, row);
+          });
         }
-
-        // Column 2: From Language Word
-        const fromWord = (fromLang === 'english') ? englishWord : translations[fromLang] || '-';
-        row.appendChild(createHideableCell(fromWord));
-
-        // Columns 3..n: Translations
-        toLangs.forEach(lang => {
-          const word = (lang === 'english') ? englishWord : translations[lang] || '-';
-          row.appendChild(createHideableCell(word));
-        });
-
-        tableBody.appendChild(row);
-
-        // Toggle row hide/show
-        toggleBtn.addEventListener('click', function () {
-          const placeholderRow = document.createElement('tr');
-          const placeholderCell = document.createElement('td');
-          placeholderCell.colSpan = toLangs.length + 2;
-
-          const showBtn = document.createElement('button');
-          showBtn.textContent = '+';
-          showBtn.className = 'toggle-row-btn';
-
-          showBtn.addEventListener('click', function () {
-            row.style.display = '';
-            placeholderRow.remove();
-          });
-
-          placeholderCell.appendChild(showBtn);
-          placeholderRow.appendChild(placeholderCell);
-
-          row.style.display = 'none';
-          row.parentNode.insertBefore(placeholderRow, row);
-        });
-      }
+      });
 
       table.style.display = 'table';
     });
   </script>
 </body>
+
+
+
 </html>

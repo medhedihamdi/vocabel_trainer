@@ -1006,7 +1006,9 @@
 
 
     "Food": {
-      "Food":          { "arabic": "طعام",        "french": "la Nourriture",     "german": "das Essen",          "hungarian": "az Étel" },
+
+      "A":{
+          "Food":          { "arabic": "طعام",        "french": "la Nourriture",     "german": "das Essen",          "hungarian": "az Étel" },
       "Bakery":           { "arabic": "مخبزة",         "french": "la Boulangerie",       "german": "die Bäckerei",       "hungarian": "a Pékség" },
       "Patisserie":       { "arabic": "محل بيع حلويات",  "french": "la Pâtisserie",         "german": "die Konditorei",      "hungarian": "a Cukrászda" },
       "Grocery store":    { "arabic": "بقال",           "french": "l'Épicerie",          "german": "das Lebensmittelgeschäft", "hungarian": "az Élelmiszerbolt" },
@@ -1015,17 +1017,28 @@
       "Milk":          { "arabic": "حليب",        "french": "le Lait",        "german": "die Milch",         "hungarian": "a Tej" },
       "Cheese":        { "arabic": "جبن",         "french": "le Fromage",     "german": "der Käse",          "hungarian": "a Sajt" },
       "Butter":        { "arabic": "زبدة",        "french": "le Beurre",      "german": "die Butter",        "hungarian": "a Vaj" },
-      "Yogurt":        { "arabic": "زبادي",       "french": "le Yaourt",      "german": "der Joghurt",       "hungarian": "a Joghurt" },
+       "Yogurt":        { "arabic": "زبادي",       "french": "le Yaourt",      "german": "der Joghurt",       "hungarian": "a Joghurt" },
       "Cream":         { "arabic": "كريمة",       "french": "la Crème",       "german": "die Sahne",         "hungarian": "a Tejszín" },
       "Ice Cream":     { "arabic": "آيس كريم",    "french": "la Glace",       "german": "das Eiscreme",      "hungarian": "a Fagylalt" },
       "Sour Cream":    { "arabic": "قشدة حامضة",  "french": "la Crème aigre", "german": "die Saure Sahne",   "hungarian": "a Tejföl" },
       "Egg":          { "arabic": "بيض",         "french": "l'Œuf",         "german": "das Ei",            "hungarian": "a Tojás" },
       "Sausage":     { "arabic": "نقانق",       "french": "la Saucisse",   "german": "die Wurst",        "hungarian": "a Kolbász" },
-      "Minced Meat": { "arabic": "لحم مفروم",  "french": "la Viande hachée","german": "das Hackfleisch", "hungarian": "a Darált hús" },
-      "Steak":       { "arabic": "شريحة لحم",   "french": "le Steak",      "german": "das Steak",        "hungarian": "a Szték" },
-      "Meatball":    { "arabic": "كُرة لحم",    "french": "la Boulette de viande", "german": "das Fleischklößchen", "hungarian": "a Húsgolyó" },
-      "Salami":      { "arabic": "سلامي",       "french": "le Salami",     "german": "die Salami",       "hungarian": "a Szalámi" },
-      "Oil":         {"arabic": "زيت",          "french": "l'Huile",     "german": "das Öl",              "hungarian": "az Olaj"    },
+       "Sugar":            { "arabic": "سكر",         "french": "le Sucre",           "german": "der Zucker",         "hungarian": "a Cukor" },
+      "Salt":             { "arabic": "ملح",         "french": "le Sel",             "german": "das Salz",           "hungarian": "a Só" },
+      "Bread":        { "arabic": "خبز",        "french": "le Pain",       "german": "das Brot",       "hungarian": "a Kenyér" },
+
+      "sandwich":     { "arabic": "شطيرة",      "french": "le Sandwich",   "german": "das Sandwich",    "hungarian": "a Szendvics" },
+      "Cake":         { "arabic": "كعكة",       "french": "le Gâteau",     "german": "der Kuchen",     "hungarian": "a Torta" },
+      "Pie":          { "arabic": "فطيرة",      "french": "la Tarte",      "german": "der Kuchen",     "hungarian": "a Pite" },
+      "Chocolate":    { "arabic": "شوكولاتة",   "french": "le Chocolat",  "german": "die Schokolade","hungarian": "a Csokoládé" },
+      "torte":        { "arabic": "تورته",      "french": "la Tarte",     "german": "die Torte",     "hungarian": "a Torta" },
+      
+  "Vegetables": { "arabic": "خضر", "french": "Légumes", "german": "Gemüse", "hungarian": "Zöldségek" },
+  "Fruits": { "arabic": "فواكه", "french": "Fruits", "german": "Früchte / Obst", "hungarian": "Gyümölcsök" },
+  "Legumes": { "arabic": "بقول", "french": "Légumineuses", "german": "Hülsenfrüchte", "hungarian": "Hüvelyesek" },
+      
+
+     
 
       "Honey":        { "arabic": "عسل",        "french": "le Miel",        "german": "der Honig",         "hungarian": "a Méz" },
       "Jam":          { "arabic": "مربى",       "french": "la Confiture",   "german": "die Marmelade",     "hungarian": "a Lekvár" },
@@ -1034,6 +1047,12 @@
       "Soup":        { "arabic": "حساء",    "french": "la Soupe",      "german": "die Suppe",     "hungarian": "a Leves" },
       "Mayonnaise":  { "arabic": "مايونيز", "french": "la Mayonnaise", "german": "die Mayonnaise","hungarian": "a Majonéz" },
       "Ketchup":     { "arabic": "كاتشب",   "french": "le Ketchup",    "german": "der Ketchup",   "hungarian": "a Ketchup" },
+ "Oil":         {"arabic": "زيت",          "french": "l'Huile",     "german": "das Öl",              "hungarian": "az Olaj"    },
+
+      "Beer":          { "arabic": "جعة",        "french": "la Bière",        "german": "das Bier",          "hungarian": "a Sör" },
+      "Raisin":        { "arabic": "زبيب",       "french": "le Raisin sec",   "german": "die Rosine",        "hungarian": "a Mazsola" },
+      "Wine":          { "arabic": "نبيذ",       "french": "le Vin",          "german": "der Wein",          "hungarian": "a Bor" },
+
 
       "Apple":         { "arabic": "تفاح",       "french": "la Pomme",        "german": "der Apfel",         "hungarian": "az Alma" },
       "Banana":        { "arabic": "موز",        "french": "la Banane",       "german": "die Banane",        "hungarian": "a Banán" },
@@ -1054,14 +1073,7 @@
       "Date":          { "arabic": "تمر",        "french": "la Datte",        "german": "die Dattel",        "hungarian": "a Dátum" },
       "Lemon":         { "arabic": "ليمون",      "french": "le Citron",       "german": "die Zitrone",       "hungarian": "a Citrom" },
       "Apricot":       { "arabic": "مشمش",       "french": "l'Abricot",      "german": "die Aprikose",      "hungarian": "a Sárgabarack" },
-      "Guava":         { "arabic": "جوافة",      "french": "la Goyave",       "german": "die Guave",         "hungarian": "a Guáva" },
-      "Prickly Pear":  { "arabic": "تين شوكي",   "french": "la Figue de barbarie", "german": "die Kaktusfeige", "hungarian": "a Kaktuszfüge" },
-      "Raisin":        { "arabic": "زبيب",       "french": "le Raisin sec",   "german": "die Rosine",        "hungarian": "a Mazsola" },
-      "Wine":          { "arabic": "نبيذ",       "french": "le Vin",          "german": "der Wein",          "hungarian": "a Bor" },
-      "Beer":          { "arabic": "جعة",        "french": "la Bière",        "german": "das Bier",          "hungarian": "a Sör" },
-      "Olive":         { "arabic": "زيتون",      "french": "l'Olive",        "german": "die Olive",         "hungarian": "az Olajbogyó" },
-
-      "Tomato":        { "arabic": "طماطم",      "french": "la Tomate",        "german": "die Tomate",        "hungarian": "a Paradicsom" },
+       "Tomato":        { "arabic": "طماطم",      "french": "la Tomate",        "german": "die Tomate",        "hungarian": "a Paradicsom" },
       "Cucumber":      { "arabic": "خيار",       "french": "le Concombre",     "german": "die Gurke",         "hungarian": "az Uborka" },
       "Carrot":        { "arabic": "جزر",        "french": "la Carotte",       "german": "die Karotte",       "hungarian": "a Répa" },
       "Potato":        { "arabic": "بطاطس",      "french": "la Pomme de terre","german": "die Kartoffel",     "hungarian": "a Krumpli" },
@@ -1070,8 +1082,29 @@
       "Pepper":        { "arabic": "فلفل",       "french": "le Poivron",       "german": "die Paprika",       "hungarian": "a Paprika" },
       "Lettuce":       { "arabic": "خس",         "french": "la Laitue",        "german": "der Kopfsalat",     "hungarian": "a Fejes saláta" },
       "Spinach":       { "arabic": "سبانخ",      "french": "les Épinards",      "german": "der Spinat",        "hungarian": "a Spenót" },
-      "Zucchini":      { "arabic": "كوسة",       "french": "la Courgette",     "german": "die Zucchini",      "hungarian": "a Cukkini" },
-      "Eggplant":      { "arabic": "باذنجان",    "french": "l'Aubergine",     "german": "die Aubergine",     "hungarian": "a Padlizsán" },
+    "Olive":         { "arabic": "زيتون",      "french": "l'Olive",        "german": "die Olive",         "hungarian": "az Olajbogyó" },
+"Wheat":            { "arabic": "قمح",         "french": "le Blé",             "german": "der Weizen",         "hungarian": "a Búza" },
+      "Barley":           { "arabic": "شعير",        "french": "l'Orge",            "german": "die Gerste",         "hungarian": "az Árpa" },
+      "Oats":             { "arabic": "شوفان",       "french": "l'Avoine",          "german": "der Hafer",          "hungarian": "a Zab" },
+      "Corn":             { "arabic": "ذرة",         "french": "le Maïs",            "german": "der Mais",           "hungarian": "a Kukorica" },
+      "Rice":             { "arabic": "أرز",         "french": "le Riz",             "german": "der Reis",           "hungarian": "a Rizs" }
+
+
+
+
+      },
+      "B":{
+
+
+
+"Minced Meat": { "arabic": "لحم مفروم",  "french": "la Viande hachée","german": "das Hackfleisch", "hungarian": "a Darált hús" },
+      "Steak":       { "arabic": "شريحة لحم",   "french": "le Steak",      "german": "das Steak",        "hungarian": "a Szték" },
+      "Meatball":    { "arabic": "كُرة لحم",    "french": "la Boulette de viande", "german": "das Fleischklößchen", "hungarian": "a Húsgolyó" },
+      "Salami":      { "arabic": "سلامي",       "french": "le Salami",     "german": "die Salami",       "hungarian": "a Szalámi" },
+     
+      "Buttermilk":   { "arabic": "لبن",        "french": "le Babeurre",    "german": "die Buttermilch",  "hungarian": "a Kefir" },
+
+       "Eggplant":      { "arabic": "باذنجان",    "french": "l'Aubergine",     "german": "die Aubergine",     "hungarian": "a Padlizsán" },
       "Cabbage":       { "arabic": "كرنب",       "french": "le Chou",          "german": "der Kohl",          "hungarian": "a Káposzta" },
       "Cauliflower":   { "arabic": "قرنبيط",     "french": "le Chou-fleur",    "german": "der Blumenkohl",    "hungarian": "a Karfiol" },
       "Broccoli":      { "arabic": "بروكلي",     "french": "le Brocoli",       "german": "der Brokkoli",      "hungarian": "a Brokkoli" },
@@ -1085,70 +1118,77 @@
       "Lentils":        { "arabic": "عدس",       "french": "les Lentilles",        "german": "die Linsen",         "hungarian": "a Lencse" },
       "Chickpeas":      { "arabic": "حمص",       "french": "les Pois chiches",     "german": "die Kichererbsen",   "hungarian": "a Csicseriborsó" },
       "Peas":           { "arabic": "بازلاء",     "french": "les Petits pois",      "german": "die Erbsen",         "hungarian": "a Borsó" },
-      "Green beans":    { "arabic": "فاصوليا خضراء", "french": "les Haricots verts", "german": "die Grüne Bohnen",   "hungarian": "a Zöldbab" },
-      "Kidney beans":   { "arabic": "فاصوليا حمراء", "french": "les Haricots rouges", "german": "die Rote Bohnen",   "hungarian": "a Vörösbab" },
-      "White beans":    { "arabic": "فاصوليا بيضاء", "french": "les Haricots blancs", "german": "die Weiße Bohnen",  "hungarian": "a Fehérbab" },
-      "Black beans":    { "arabic": "فاصوليا سوداء", "french": "les Haricots noirs",  "german": "die Schwarze Bohnen","hungarian": "a Fekete bab" },
+      "beans":           { "arabic":" فاصولياء", "french": "les Haricots",    "german": "die  Bohnen",            "hungarian": "a bab" },
+      
       "Soybeans":       { "arabic": "فول الصويا",  "french": "le Soja",             "german": "die Sojabohnen",     "hungarian": "a Szójabab" },
       "Broad beans":    { "arabic": "فول",        "french": "les Fèves",            "german": "die Dicke Bohnen",   "hungarian": "a Lóbab" },
-      "Lupins":         { "arabic": "ترمس",       "french": "les Lupins",            "german": "die Lupinen",         "hungarian": "a Csicseriborsó" },
+     
 
-      "Cinnamon":     { "arabic": "قرفة",     "french": "la Cannelle",     "german": "der Zimt",        "hungarian": "a Fahéj" },
+     
       "Cumin":        { "arabic": "كمون",     "french": "le Cumin",        "german": "der Kümmel",      "hungarian": "a Kömény" },
-      "Cardamom":     { "arabic": "هيل",      "french": "la Cardamome",    "german": "der Kardamom",    "hungarian": "a Kardamom" },
-      "Cloves":       { "arabic": "قرنفل",    "french": "les Clous de girofle", "german": "die Nelken", "hungarian": "a Szegfűszeg" },
+    
+      
       "Black pepper": { "arabic": "فلفل أسود","french": "le Poivre noir",  "german": "der Schwarzer Pfeffer", "hungarian": "a Feketebors" },
       "Turmeric":     { "arabic": "كركم",     "french": "le Curcuma",      "german": "der Kurkuma",     "hungarian": "a Kurkuma" },
-      "Nutmeg":       { "arabic": "جوزة الطيب","french": "la Noix de muscade","german": "die Muskatnuss","hungarian": "a Szerecsendió" },
+     
 
-      "Saffron":      { "arabic": "زعفران",   "french": "le Safran",       "german": "der Safran",      "hungarian": "a Sáfrány" },
-      "Ginger":       { "arabic": "زنجبيل",   "french": "le Gingembre",    "german": "der Ingwer",      "hungarian": "a Gyömbér" },
+     
 
       "Pistachio":       { "arabic": "فستق",        "french": "la Pistache",       "german": "die Pistazie",        "hungarian": "a Pisztácia" },
       "Almond":          { "arabic": "لوز",         "french": "l'Amande",         "german": "die Mandel",          "hungarian": "a Mandula" },
       "Cashew":          { "arabic": "كاجو",        "french": "la Noix de cajou",  "german": "die Cashewnuss",      "hungarian": "a Kesudió" },
       "Walnut":          { "arabic": "جوز",         "french": "la Noix",           "german": "die Walnuss",         "hungarian": "a Dió" },
       "Hazelnut":        { "arabic": "بندق",        "french": "la Noisette",       "german": "die Haselnuss",       "hungarian": "a Mogyoró" },
-      "Coconut":         { "arabic": "جوز الهند",   "french": "la Noix de coco",   "german": "die Kokosnuss",       "hungarian": "a Kókuszdió" },
+      "Coconut":         { "arabic": "جوز الهند",   "french": "la Noix de coco",   "german": "die Kokosnuss",       "hungarian": "a Kókuszdió" }
 
-      "Sugar":            { "arabic": "سكر",         "french": "le Sucre",           "german": "der Zucker",         "hungarian": "a Cukor" },
-      "Salt":             { "arabic": "ملح",         "french": "le Sel",             "german": "das Salz",           "hungarian": "a Só" },
-      "Wheat":            { "arabic": "قمح",         "french": "le Blé",             "german": "der Weizen",         "hungarian": "a Búza" },
-      "Barley":           { "arabic": "شعير",        "french": "l'Orge",            "german": "die Gerste",         "hungarian": "az Árpa" },
-      "Oats":             { "arabic": "شوفان",       "french": "l'Avoine",          "german": "der Hafer",          "hungarian": "a Zab" },
-      "Corn":             { "arabic": "ذرة",         "french": "le Maïs",            "german": "der Mais",           "hungarian": "a Kukorica" },
-      "Rice":             { "arabic": "أرز",         "french": "le Riz",             "german": "der Reis",           "hungarian": "a Rizs" },
-      "Flour":            { "arabic": "طحين",        "french": "la Farine",          "german": "das Mehl",           "hungarian": "a Liszt" },
-      "Bread":            { "arabic": "خبز",         "french": "le Pain",            "german": "das Brot",           "hungarian": "a Kenyér" },
-      "Pasta":            { "arabic": "معكرونة",     "french": "les Pâtes",           "german": "die Nudeln",         "hungarian": "a Tészta" },
-      "Couscous":         { "arabic": "كسكس",       "french": "le Couscous",        "german": "der Couscous",       "hungarian": "a Kuszkusz" },
+      
 
-      "Water":              { "arabic": "ماء",           "french": "l'Eau",              "german": "das Wasser",          "hungarian": "a Víz" },
-      "Tea":                { "arabic": "شاي",           "french": "le Thé",              "german": "der Tee",             "hungarian": "a Tea" },
-      "Coffee":             { "arabic": "قهوة",          "french": "le Café",             "german": "der Kaffee",          "hungarian": "a Kávé" },
-      "Juice":              { "arabic": "عصير",          "french": "le Jus",              "german": "der Saft",            "hungarian": "a Lé" },
+      
+    
 
-      "Soda":               { "arabic": "مشروب غازي",    "french": "le Soda",             "german": "die Limonade",        "hungarian": "a Szénsavas ital" },
-      "Cake":               { "arabic": "كيك",           "french": "le Gâteau",           "german": "der Kuchen",          "hungarian": "a Sütemény" },
-      "Cookie":             { "arabic": "بسكويت",        "french": "le Biscuit",          "german": "der Keks",            "hungarian": "a Keksz" },
-      "Chocolate":          { "arabic": "شوكولاتة",      "french": "le Chocolat",         "german": "die Schokolade",      "hungarian": "a Csokoládé" },
-      "Ice cream":          { "arabic": "آيس كريم",      "french": "la Glace",            "german": "das Eis",             "hungarian": "a Fagylalt" },
-      "Sandwich":           { "arabic": "ساندويتش",      "french": "le Sandwich",         "german": "das Sandwich",        "hungarian": "a Szendvics" },
-      "Pizza":              { "arabic": "بيتزا",         "french": "la Pizza",            "german": "die Pizza",           "hungarian": "a Pizza" },
-      "Salad":              { "arabic": "سلطة",          "french": "la Salade",           "german": "der Salat",           "hungarian": "a Saláta" },
 
-      "Breakfast":          { "arabic": "فطور",          "french": "le Petit déjeuner",   "german": "das Frühstück",       "hungarian": "a Reggeli" },
-      "Lunch":              { "arabic": "غداء",          "french": "le Déjeuner",         "german": "das Mittagessen",     "hungarian": "az Ebéd" },
-      "Dinner":             { "arabic": "عشاء",          "french": "le Dîner",            "german": "das Abendessen",      "hungarian": "a Vacsora" },
-      "Snack":              { "arabic": "وجبة خفيفة",    "french": "la Collation",        "german": "der Snack",           "hungarian": "a Nasi" },
 
-      "Pancakes":           { "arabic": "فطائر",         "french": "les Crêpes",           "german": "die Pfannkuchen",     "hungarian": "a Palacsinta" },
-      "Croissant":          { "arabic": "كرواسون",       "french": "le Croissant",        "german": "das Croissant",       "hungarian": "a Kroászán" },
 
-      "Lemonade":           { "arabic": "ليمونادة",      "french": "la Limonade",         "german": "die Limonade",        "hungarian": "a Limonádé" },
-      "Cereal":             { "arabic": "حبوب الإفطار", "french": "les Céréales",         "german": "das Müsli",           "hungarian": "a Gabona" },
 
-      "Toast":              { "arabic": "توست",          "french": "le Toast",            "german": "der Toast",           "hungarian": "a Pirítós" }
+      },
+      "C":{
+
+      "Prickly Pear":  { "arabic": "تين شوكي",   "french": "la Figue de barbarie", "german": "die Kaktusfeige", "hungarian": "a Kaktuszfüge" },
+        "Guava":         { "arabic": "جوافة",      "french": "la Goyave",       "german": "die Guave",         "hungarian": "a Guáva" },
+ "Lupins":         { "arabic": "ترمس",       "french": "les Lupins",            "german": "die Lupinen",         "hungarian": "a Csicseriborsó" },
+ "Cinnamon":     { "arabic": "قرفة",     "french": "la Cannelle",     "german": "der Zimt",        "hungarian": "a Fahéj" },
+ "Zucchini":      { "arabic": "كوسة",       "french": "la Courgette",     "german": "die Zucchini",      "hungarian": "a Cukkini" },
+   "Cardamom":     { "arabic": "هيل",      "french": "la Cardamome",    "german": "der Kardamom",    "hungarian": "a Kardamom" },
+ "Saffron":      { "arabic": "زعفران",   "french": "le Safran",       "german": "der Safran",      "hungarian": "a Sáfrány" },
+      "Ginger":       { "arabic": "زنجبيل",   "french": "le Gingembre",    "german": "der Ingwer",      "hungarian": "a Gyömbér" },
+      "Cloves":       { "arabic": "قرنفل",    "french": "les Clous de girofle", "german": "die Nelken", "hungarian": "a Szegfűszeg" },
+       "Nutmeg":       { "arabic": "جوزة الطيب","french": "la Noix de muscade","german": "die Muskatnuss","hungarian": "a Szerecsendió" }
+
+
+
+
+
+
+
+
+      }
+
+
+
+
+    
+     
+      
+      
+    
+
+     
+      
+     
+
+     
+      
+      
     },
 
 
@@ -1656,6 +1696,7 @@
   "Can": { "arabic": "يستطيع", "french": "Pouvoir", "german": "Können", "hungarian": "Tud / Képes" },
    "Hide": { "arabic": "يخبي", "french": "Cacher", "german": "Verstecken", "hungarian": "Elrejteni" },
 
+ "Find": { "arabic": "يجد", "french": "Trouver", "german": "Finden", "hungarian": "Talál" },
     "Open": { "arabic": "يفتح", "french": "Ouvrir", "german": "Öffnen", "hungarian": "Kinyit" },
   "Close": { "arabic": "يغلق", "french": "Fermer", "german": "Schließen", "hungarian": "Becsuk" },
 
@@ -2420,6 +2461,14 @@
   "Finish":        { "arabic": "ينهي",            "french": "Finir",            "german": "Beenden",          "hungarian": "Befejez" },
   "Begin": { "arabic": "يبدأ", "french": "Commencer", "german": "Beginnen", "hungarian": "Kezd" },
  "Start": { "arabic": "يبدأ", "french": "Démarrer", "german": "Starten", "hungarian": "Indít" },
+"Continue": { "arabic": "يكمل", "french": "Continuer", "german": "Fortsetzen", "hungarian": "Folytatni" },
+  "Complete": { "arabic": "يتم", "french": "Compléter", "german": "Vervollständigen", "hungarian": "Befejezni" },
+
+  "Assist": { "arabic": "يعاون", "french": "Assister / Aider", "german": "Helfen / Unterstützen", "hungarian": "Segíteni / Támogatni" },
+  "Resist": { "arabic": "يقاوم", "french": "Résister", "german": "Widerstehen", "hungarian": "Ellenállni" },
+  "Help": { "arabic": "يساعد", "french": "Aider", "german": "Helfen", "hungarian": "Segíteni" },
+
+
  "Repair":         { "arabic": "يُصلح",           "french": "Réparer",          "german": "Reparieren",       "hungarian": "Javít" },
  
   "Pay":            { "arabic": "يدفع",            "french": "Payer",            "german": "Bezahlen",         "hungarian": "Fizet" },
@@ -2435,6 +2484,12 @@
 "Register":       { "arabic": "يسجل",            "french": "Enregistrer",      "german": "Registrieren",     "hungarian": "Regisztrál" },
  "Heat":            { "arabic": "يسخن",             "french": "Chauffer",           "german": "Erhitzen",           "hungarian": "Melegít" },
   "Cool":            { "arabic": "يبرد",             "french": "Refroidir",          "german": "Kühlen",             "hungarian": "Hűt" },
+
+ "Draw": { "arabic": "يرسم", "french": "Dessiner", "german": "Zeichnen", "hungarian": "Rajzol" },
+  "Sing": { "arabic": "يغني", "french": "Chanter", "german": "Singen", "hungarian": "Énekel" },
+  "Kill": { "arabic": "يقتل", "french": "Tuer", "german": "Töten", "hungarian": "Megöl" },
+  "Fight": { "arabic": "يعارك", "french": "Se battre", "german": "Kämpfen", "hungarian": "Verekedni" },
+  "Battle": { "arabic": "يحارب", "french": "Combattre", "german": "Bekämpfen", "hungarian": "Harcolni" },
 
 "Examine":      { "arabic": "يفحص",          "french": "Examiner",       "german": "Untersuchen",     "hungarian": "Megvizsgál" }
 
@@ -2653,6 +2708,7 @@
 
   "Attack":         { "arabic": "يهاجم",        "french": "Attaquer",       "german": "Angreifen",       "hungarian": "Támad" },
   "Defend":         { "arabic": "يدافع",        "french": "Défendre",       "german": "Verteidigen",    "hungarian": "Védekezik" },
+
   "Siege":          { "arabic": "يحاصر",        "french": "Assiéger",       "german": "Belagern",       "hungarian": "Oszlat" },
   "Conquer":        { "arabic": "يحتل",         "french": "Conquérir",      "german": "Erobern",        "hungarian": "Meghódít" },
   "Surrender":      { "arabic": "يستسلم",       "french": "Se rendre",      "german": "Sich ergeben",   "hungarian": "Megadja magát" },
@@ -4830,7 +4886,7 @@
     "Fairness": {"arabic": "عدل", "french": "Équité", "german": "Gerechtigkeit", "hungarian": "Méltányosság"},
     "Optimism": {"arabic": "تفاؤل", "french": "Optimisme", "german": "Optimismus", "hungarian": "Optimizmus"},
    
-    "Tolerance": {"arabic": "تسامح", "french": "Tolérance", "german": "Toleranz", "hungarian": "Tolerancia"},
+    "Tolerance": {"arabic": "تسامح", "french": "Tolérance", "german": "Toleranz", "hungarian": "Tolerancia"}
 
 
 
@@ -4984,7 +5040,7 @@
   "Affection": {"arabic": "الود", "french": "Affection", "german": "Zuneigung", "hungarian": "Ráhangolódás"},
   "Attraction": {"arabic": "الانجذاب", "french": "Attraction", "german": "Anziehung", "hungarian": "Vonzalom"},
   "Yearning": {"arabic": "الاشتياق", "french": "Désir", "german": "Sehnsucht", "hungarian": "Vágyódás"},
-  "Romance": {"arabic": "الرومانسية", "french": "Romance", "german": "Romantik", "hungarian": "Romantika"},
+  "Romance": {"arabic": "الرومانسية", "french": "Romance", "german": "Romantik", "hungarian": "Romantika"}
 
 
 

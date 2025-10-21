@@ -41,15 +41,7 @@
     <select id="topicDropdown"><option value="">--Select--</option></select>
 
     <label>Select Level:</label>
-    <select id="levelDropdown">
-      <option value="All">All</option>
-      <option value="A">A</option>
-      <option value="B">B</option>
-      <option value="C">C</option>
-      <option value="A+B">A+B</option>
-      <option value="A+C">A+C</option>
-      <option value="B+C">B+C</option>
-    </select>
+    <select id="levelDropdown" disabled><option value="">--Select--</option></select>
 
     <label>Select Your Language:</label>
     <select id="fromLangDropdown"><option value="">--Select--</option></select>
@@ -111,6 +103,8 @@
     // عند اختيار الموضوع
     topicDropdown.addEventListener('change', function () {
       selectedTopic = this.value;
+      levelDropdown.innerHTML = '<option value="">--Select--</option>';
+      levelDropdown.disabled = true;
 
       const dropdowns = [fromLangDropdown, toLangDropdown1, toLangDropdown2, toLangDropdown3, toLangDropdown4];
       dropdowns.forEach(dropdown => dropdown.innerHTML = '<option value="">--Select--</option>');
@@ -118,17 +112,16 @@
 
       if (!selectedTopic) return;
 
-      // إضافة المستويات الخاصة بالموضوع دون حذف الثوابت
+      // تعبئة قائمة المستويات (A / B / C)
       const levels = Object.keys(jsonData[selectedTopic]);
-      const existingOptions = Array.from(levelDropdown.options).map(o => o.value);
       levels.forEach(level => {
-        if (!existingOptions.includes(level)) {
-          const opt = document.createElement('option');
-          opt.value = level;
-          opt.textContent = level;
-          levelDropdown.appendChild(opt);
-        }
+        const opt = document.createElement('option');
+        opt.value = level;
+        opt.textContent = level;
+        levelDropdown.appendChild(opt);
       });
+
+      levelDropdown.disabled = false;
     });
 
     // عند اختيار المستوى
@@ -141,26 +134,7 @@
 
       if (!selectedLevel) return;
 
-      // تحديد المستويات المطلوبة
-      let levelsToShow = [];
-      if (selectedLevel === 'All') {
-        levelsToShow = Object.keys(jsonData[selectedTopic]);
-      } else if (selectedLevel.includes('+')) {
-        levelsToShow = selectedLevel.split('+');
-      } else {
-        levelsToShow = [selectedLevel];
-      }
-
-      // جمع كل الترجمات من المستويات المطلوبة
-      let firstEntry;
-      for (const lvl of levelsToShow) {
-        if (jsonData[selectedTopic][lvl]) {
-          firstEntry = Object.values(jsonData[selectedTopic][lvl])[0];
-          break;
-        }
-      }
-
-      if (!firstEntry) return;
+      const firstEntry = Object.values(jsonData[selectedTopic][selectedLevel])[0];
       availableLanguages = Object.keys(firstEntry).concat("english");
 
       dropdowns.forEach(dropdown => {
@@ -208,24 +182,10 @@
         tableHeadRow.appendChild(th);
       });
 
-      let levelsToShow = [];
-      if (selectedLevel === 'All') {
-        levelsToShow = Object.keys(jsonData[selectedTopic]);
-      } else if (selectedLevel.includes('+')) {
-        levelsToShow = selectedLevel.split('+');
-      } else {
-        levelsToShow = [selectedLevel];
-      }
-
-      let allWords = {};
-      levelsToShow.forEach(lvl => {
-        if (jsonData[selectedTopic][lvl]) {
-          Object.assign(allWords, jsonData[selectedTopic][lvl]);
-        }
-      });
-
+      const words = jsonData[selectedTopic][selectedLevel];
       let counter = 1;
-      for (const [englishWord, translations] of Object.entries(allWords)) {
+
+      for (const [englishWord, translations] of Object.entries(words)) {
         const fromWord = (fromLang === 'english') ? englishWord : translations[fromLang] || '-';
 
         const row = document.createElement('tr');
@@ -233,6 +193,7 @@
         // رقم الكلمة
         const numCell = document.createElement('td');
         numCell.textContent = counter++;
+        row.appendChild(numCell);
 
         // زر الإخفاء
         const toggleCell = document.createElement('td');
@@ -240,13 +201,11 @@
         toggleBtn.textContent = '−';
         toggleBtn.className = 'toggle-row-btn';
         toggleCell.appendChild(toggleBtn);
+        row.appendChild(toggleCell);
 
         // الكلمة الأصلية
         const fromCell = document.createElement('td');
         fromCell.textContent = fromWord;
-
-        row.appendChild(numCell);
-        row.appendChild(toggleCell);
         row.appendChild(fromCell);
 
         // الترجمات
@@ -259,11 +218,11 @@
 
         tableBody.appendChild(row);
 
-        // حدث الإخفاء
+        // حدث الإخفاء/الإظهار
         toggleBtn.addEventListener('click', function () {
           const placeholderRow = document.createElement('tr');
           const placeholderCell = document.createElement('td');
-          placeholderCell.colSpan = toLangs.length + 3; 
+          placeholderCell.colSpan = toLangs.length + 3; // +3 لأننا أضفنا رقم و زر
           const showBtn = document.createElement('button');
           showBtn.textContent = '+';
           showBtn.className = 'toggle-row-btn';

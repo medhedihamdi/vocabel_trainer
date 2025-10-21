@@ -91,6 +91,12 @@
       <h3>Select Topic:</h3>
       <select id="mainDropdown"><option value="">--Select--</option></select>
 
+      <!-- ✅ المستوى الجديد -->
+      <h3 id="levelLabel" style="display:none;">Select Level:</h3>
+      <select id="levelDropdown" style="display:none;">
+        <option value="">--Select--</option>
+      </select>
+
       <h3>Select Translation Language:</h3>
       <select id="languageDropdown"><option value="">--Select--</option></select>
 
@@ -116,7 +122,6 @@
       <p id="correctAnswer"></p>
     </div>
 
-    <!-- تنبيه مخصص بعد الانتهاء -->
     <div id="customAlert">
       <p id="customAlertMsg">🎉 You finished all selected words.</p>
       <button id="replayBtn">🔁 Replay Words</button>
@@ -128,12 +133,15 @@
 <script>
   let jsonData = {};
   let currentTopic = "";
+  let currentLevel = "";
   let currentLang = "";
   let sourceLang = "";
   let selectedWords = [];
   let currentWord = "";
 
   const mainDropdown = document.getElementById("mainDropdown");
+  const levelDropdown = document.getElementById("levelDropdown");
+  const levelLabel = document.getElementById("levelLabel");
   const languageDropdown = document.getElementById("languageDropdown");
   const sourceLangDropdown = document.getElementById("sourceLangDropdown");
   const wordListContainer = document.getElementById("wordListContainer");
@@ -146,7 +154,7 @@
   const replayBtn = document.getElementById("replayBtn");
   const backToSettingsBtn = document.getElementById("backToSettingsBtn");
 
-  fetch("vocab.json")
+  fetch("vocab-l.json")
     .then(res => res.json())
     .then(data => {
       jsonData = data;
@@ -160,15 +168,66 @@
 
   mainDropdown.addEventListener("change", () => {
     currentTopic = mainDropdown.value;
-    populateLanguages();
+    currentLevel = "";
+    hideLanguages();
+    clearWordList();
+
+    if (currentTopic && jsonData[currentTopic]) {
+      populateLevels();
+      levelLabel.style.display = "block";
+      levelDropdown.style.display = "block";
+    } else {
+      levelLabel.style.display = "none";
+      levelDropdown.style.display = "none";
+    }
+  });
+
+  function populateLevels() {
+    levelDropdown.innerHTML = '<option value="">--Select--</option>';
+
+    const levels = Object.keys(jsonData[currentTopic]);
+    if (levels.length === 0) return;
+
+    levels.forEach(level => {
+      const opt = document.createElement("option");
+      opt.value = level;
+      opt.textContent = level;
+      levelDropdown.appendChild(opt);
+    });
+
+    const combos = [
+      { value: "ALL", label: "ALL " },
+      { value: "A+B", label: "A + B" },
+      { value: "A+C", label: "A + C" },
+      { value: "B+C", label: "B + C" }
+    ];
+    combos.forEach(c => {
+      const opt = document.createElement("option");
+      opt.value = c.value;
+      opt.textContent = c.label;
+      levelDropdown.appendChild(opt);
+    });
+  }
+
+  levelDropdown.addEventListener("change", () => {
+    currentLevel = levelDropdown.value;
+    if (currentLevel) populateLanguages();
     clearWordList();
   });
 
-  function populateLanguages() {
-    if (!jsonData[currentTopic]) return;
+  function getSelectedLevels() {
+    if (currentLevel === "ALL") return Object.keys(jsonData[currentTopic]);
+    if (currentLevel.includes("+")) return currentLevel.split("+");
+    return [currentLevel];
+  }
 
-    const firstKey = Object.keys(jsonData[currentTopic])[0];
-    const langs = Object.keys(jsonData[currentTopic][firstKey]);
+  function populateLanguages() {
+    const levels = getSelectedLevels();
+    if (levels.length === 0) return;
+
+    const firstLevel = levels[0];
+    const firstKey = Object.keys(jsonData[currentTopic][firstLevel])[0];
+    const langs = Object.keys(jsonData[currentTopic][firstLevel][firstKey]);
 
     languageDropdown.innerHTML = '<option value="">--Select--</option>';
     sourceLangDropdown.innerHTML = '<option value="">--Select--</option>';
@@ -184,6 +243,16 @@
       opt2.textContent = lang;
       sourceLangDropdown.appendChild(opt2);
     });
+
+    languageDropdown.disabled = false;
+    sourceLangDropdown.disabled = false;
+  }
+
+  function hideLanguages() {
+    languageDropdown.innerHTML = '<option value="">--Select--</option>';
+    sourceLangDropdown.innerHTML = '<option value="">--Select--</option>';
+    languageDropdown.disabled = true;
+    sourceLangDropdown.disabled = true;
   }
 
   languageDropdown.addEventListener("change", checkEnableStart);
@@ -193,7 +262,7 @@
     currentLang = languageDropdown.value;
     sourceLang = sourceLangDropdown.value;
 
-    if (currentTopic && currentLang && sourceLang) {
+    if (currentTopic && currentLevel && currentLang && sourceLang) {
       renderWordCheckboxes();
       settingsContainer.style.display = "none";
       wordListContainer.style.display = "block";
@@ -207,18 +276,25 @@
   function renderWordCheckboxes() {
     wordListContainer.innerHTML = "";
 
-    // زر "All" دائري فقط
     const selectAllLabel = document.createElement("label");
     selectAllLabel.style.fontWeight = "bold";
     const selectAllCheckbox = document.createElement("input");
     selectAllCheckbox.type = "checkbox";
-    selectAllCheckbox.classList.add("round-checkbox"); // دائري فقط هنا
+    selectAllCheckbox.classList.add("round-checkbox");
     selectAllCheckbox.id = "selectAllWords";
+    selectAllCheckbox.checked = true; // ✅ مفعلة تلقائيا
     selectAllLabel.appendChild(selectAllCheckbox);
     selectAllLabel.append(" ✅ All");
     wordListContainer.appendChild(selectAllLabel);
 
-    const words = Object.entries(jsonData[currentTopic]);
+    const levels = getSelectedLevels();
+    let combinedWords = {};
+    levels.forEach(level => {
+      const words = jsonData[currentTopic][level];
+      Object.assign(combinedWords, words);
+    });
+
+    const words = Object.entries(combinedWords);
 
     words.forEach(([wordKey, wordData]) => {
       const fromWord = sourceLang === "english" ? wordKey : wordData[sourceLang];
@@ -230,7 +306,7 @@
       checkbox.type = "checkbox";
       checkbox.value = wordKey;
       checkbox.name = "customWord";
-      // لا تضيف class => يبقى مربع افتراضي
+      checkbox.checked = true; // ✅ كل الكلمات محددة تلقائيًا
 
       checkbox.addEventListener("change", () => {
         const allWordCheckboxes = document.querySelectorAll("input[name='customWord']");
@@ -251,10 +327,14 @@
     });
   }
 
+  // باقي الكود كما هو تمامًا
   function resetSettings() {
     mainDropdown.selectedIndex = 0;
+    levelDropdown.selectedIndex = 0;
     languageDropdown.selectedIndex = 0;
     sourceLangDropdown.selectedIndex = 0;
+    levelDropdown.style.display = "none";
+    levelLabel.style.display = "none";
     wordListContainer.innerHTML = "";
     wordListContainer.style.display = "none";
     customActions.style.display = "none";
@@ -306,7 +386,16 @@
     }
 
     currentWord = selectedWords.pop();
-    const wordData = jsonData[currentTopic][currentWord];
+
+    const levels = getSelectedLevels();
+    let wordData = null;
+    for (const level of levels) {
+      if (jsonData[currentTopic][level][currentWord]) {
+        wordData = jsonData[currentTopic][level][currentWord];
+        break;
+      }
+    }
+
     const fromWord = sourceLang === "english" ? currentWord : wordData[sourceLang];
     document.getElementById("wordDisplay").textContent = `Word: ${fromWord}`;
     document.getElementById("userInput").value = "";
@@ -320,12 +409,21 @@
 
   checkBtn.addEventListener("click", () => {
     const input = document.getElementById("userInput").value.trim().toLowerCase();
+
     let correct;
+    const levels = getSelectedLevels();
+    let wordData = null;
+    for (const level of levels) {
+      if (jsonData[currentTopic][level][currentWord]) {
+        wordData = jsonData[currentTopic][level][currentWord];
+        break;
+      }
+    }
 
     if (currentLang === "english") {
       correct = currentWord.toLowerCase();
     } else {
-      correct = jsonData[currentTopic][currentWord][currentLang].toLowerCase();
+      correct = wordData[currentLang].toLowerCase();
     }
 
     if (input === correct) {
@@ -340,12 +438,9 @@
     document.getElementById("nextBtn").style.display = "inline";
   });
 
-  nextBtn.addEventListener("click", () => {
-    nextCustomWord();
-  });
+  nextBtn.addEventListener("click", nextCustomWord);
 
   replayBtn.addEventListener("click", () => {
-    // نعيد تحميل الكلمات المختارة في التدريب السابق
     selectedWords = Array.from(document.querySelectorAll("input[name='customWord']:checked")).map(cb => cb.value);
     if(selectedWords.length === 0){
       alert("Please select words first!");
@@ -380,4 +475,5 @@
   }
 </script>
 </body>
+
 </html>
