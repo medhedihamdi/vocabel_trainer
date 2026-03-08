@@ -1,10 +1,102 @@
 {
+
+"Formal Expressions":{
+
+  "A":{
+
+    "Hello": {"arabic": "مرحبا", "french": "Bonjour", "german": "Hallo", "hungarian": "Helló"},
+"Good morning": {"arabic": "صباح الخير", "french": "Bonjour", "german": "Guten Morgen", "hungarian": "Jó reggelt"},
+"Good afternoon": {"arabic": "مساء الخير", "french": "Bon après-midi", "german": "Guten Tag", "hungarian": "Jó napot"},
+"Good evening": {"arabic": "مساء الخير", "french": "Bonsoir", "german": "Guten Abend", "hungarian": "Jó estét"},
+"Good night": {"arabic": "تصبح على خير", "french": "Bonne nuit", "german": "Gute Nacht", "hungarian": "Jó éjszakát"},
+"Thank you": {"arabic": "شكرا", "french": "Merci", "german": "Danke", "hungarian": "Köszönöm"},
+"Thanks a lot": {"arabic": "شكرا جزيلا", "french": "Merci beaucoup", "german": "Vielen Dank", "hungarian": "Nagyon köszönöm"},
+"You're welcome": {"arabic": "على الرحب والسعة", "french": "De rien", "german": "Gern geschehen", "hungarian": "Szívesen"},
+"Please": {"arabic": "من فضلك", "french": "S'il vous plaît", "german": "Bitte", "hungarian": "Kérem"},
+"Excuse me": {"arabic": "اعذرني", "french": "Excusez-moi", "german": "Entschuldigung", "hungarian": "Elnézést"},
+"Sorry": {"arabic": "آسف", "french": "Désolé", "german": "Es tut mir leid", "hungarian": "Sajnálom"},
+"Welcome": {"arabic": "أهلا وسهلا", "french": "Bienvenue", "german": "Willkommen", "hungarian": "Üdvözlöm"},
+"How are you": {"arabic": "كيف حالك", "french": "Comment allez-vous", "german": "Wie geht es Ihnen", "hungarian": "Hogy van"},
+"I am fine": {"arabic": "أنا بخير", "french": "Je vais bien", "german": "Mir geht es gut", "hungarian": "Jól vagyok"},
+"See you": {"arabic": "أراك لاحقا", "french": "À bientôt", "german": "Bis bald", "hungarian": "Hamarosan találkozunk"},
+"Take care": {"arabic": "اعتن بنفسك", "french": "Prenez soin de vous", "german": "Pass auf dich auf", "hungarian": "Vigyázz magadra"},
+"Goodbye": {"arabic": "وداعا", "french": "Au revoir", "german": "Auf Wiedersehen", "hungarian": "Viszontlátásra"},
+"Nice to meet you": {"arabic": "سعيد بلقائك", "french": "Ravi de vous rencontrer", "german": "Freut mich Sie kennenzulernen", "hungarian": "Örülök hogy megismerhetem"},
+"Have a nice day": {"arabic": "أتمنى لك يوما سعيدا", "french": "Bonne journée", "german": "Schönen Tag noch", "hungarian": "Szép napot"},
+"Good luck": {"arabic": "حظا موفقا", "french": "Bonne chance", "german": "Viel Glück", "hungarian": "Sok szerencsét"}
+
+  },
+
+  "B":{
+
+"I appreciate it": {"arabic": "أقدر ذلك", "french": "Je l'apprécie", "german": "Ich weiß es zu schätzen", "hungarian": "Nagyra értékelem"},
+"Much appreciated": {"arabic": "ممتن جدا", "french": "Très apprécié", "german": "Sehr geschätzt", "hungarian": "Nagyon értékelt"},
+"My pleasure": {"arabic": "سررت بذلك", "french": "Avec plaisir", "german": "Mit Vergnügen", "hungarian": "Örömmel"},
+"No problem": {"arabic": "لا مشكلة", "french": "Pas de problème", "german": "Kein Problem", "hungarian": "Semmi gond"},
+"Pardon me": {"arabic": "المعذرة", "french": "Pardon", "german": "Verzeihung", "hungarian": "Bocsánat"},
+"I beg your pardon": {"arabic": "أعتذر", "french": "Je vous demande pardon", "german": "Ich bitte um Entschuldigung", "hungarian": "Bocsánatot kérek"},
+"Allow me": {"arabic": "اسمح لي", "french": "Permettez-moi", "german": "Erlauben Sie mir", "hungarian": "Engedje meg"},
+"Just a moment": {"arabic": "لحظة من فضلك", "french": "Un instant s'il vous plaît", "german": "Einen Moment bitte", "hungarian": "Egy pillanat"},
+"After you": {"arabic": "تفضل قبلي", "french": "Après vous", "german": "Nach Ihnen", "hungarian": "Ön után"},
+"Please come in": {"arabic": "تفضل بالدخول", "french": "Entrez s'il vous plaît", "german": "Bitte kommen Sie herein", "hungarian": "Jöjjön be"},
+"Make yourself comfortable": {"arabic": "تفضل بالجلوس", "french": "Installez-vous", "german": "Machen Sie es sich bequem", "hungarian": "Érezze magát otthon"},
+"Let me help you": {"arabic": "دعني أساعدك", "french": "Laissez-moi vous aider", "german": "Lassen Sie mich Ihnen helfen", "hungarian": "Hadd segítsek"},
+"I understand": {"arabic": "أنا أفهم", "french": "Je comprends", "german": "Ich verstehe", "hungarian": "Értem"},
+"I see": {"arabic": "أرى", "french": "Je vois", "german": "Ich sehe", "hungarian": "Látom"},
+"That's fine": {"arabic": "لا بأس", "french": "C'est bien", "german": "Das ist in Ordnung", "hungarian": "Rendben van"},
+"Of course": {"arabic": "بالطبع", "french": "Bien sûr", "german": "Natürlich", "hungarian": "Természetesen"},
+"Certainly": {"arabic": "بالتأكيد", "french": "Certainement", "german": "Gewiss", "hungarian": "Bizonyára"},
+"That sounds good": {"arabic": "يبدو جيدا", "french": "Ça semble bien", "german": "Das klingt gut", "hungarian": "Jól hangzik"},
+"I agree": {"arabic": "أوافق", "french": "Je suis d'accord", "german": "Ich stimme zu", "hungarian": "Egyetértek"},
+"Take your time": {"arabic": "خذ وقتك", "french": "Prenez votre temps", "german": "Nehmen Sie sich Zeit", "hungarian": "Szánjon rá időt"}
+
+
+
+  },
+
+  "C":{
+
+    "I sincerely apologize": {"arabic": "أعتذر بصدق", "french": "Je vous présente mes sincères excuses", "german": "Ich entschuldige mich aufrichtig", "hungarian": "Őszintén elnézést kérek"},
+"Please accept my apologies": {"arabic": "يرجى قبول اعتذاري", "french": "Veuillez accepter mes excuses", "german": "Bitte akzeptieren Sie meine Entschuldigung", "hungarian": "Kérem fogadja el bocsánatkérésemet"},
+"I greatly appreciate your help": {"arabic": "أقدر مساعدتك كثيرا", "french": "J'apprécie beaucoup votre aide", "german": "Ich schätze Ihre Hilfe sehr", "hungarian": "Nagyon értékelem a segítségét"},
+"Thank you for your understanding": {"arabic": "شكرا لتفهمك", "french": "Merci de votre compréhension", "german": "Danke für Ihr Verständnis", "hungarian": "Köszönöm a megértését"},
+"I would be grateful": {"arabic": "سأكون ممتنا", "french": "Je serais reconnaissant", "german": "Ich wäre dankbar", "hungarian": "Hálás lennék"},
+"It would be my pleasure": {"arabic": "سيكون من دواعي سروري", "french": "Ce serait un plaisir", "german": "Es wäre mir ein Vergnügen", "hungarian": "Örömömre szolgálna"},
+"Please feel free": {"arabic": "لا تتردد", "french": "N'hésitez pas", "german": "Fühlen Sie sich frei", "hungarian": "Nyugodtan"},
+"I look forward to hearing from you": {"arabic": "أتطلع لسماع ردك", "french": "Dans l'attente de votre réponse", "german": "Ich freue mich auf Ihre Antwort", "hungarian": "Várom válaszát"},
+"I look forward to meeting you": {"arabic": "أتطلع للقائك", "french": "Au plaisir de vous rencontrer", "german": "Ich freue mich Sie zu treffen", "hungarian": "Várom hogy találkozzunk"},
+"Please let me know": {"arabic": "يرجى إخباري", "french": "Veuillez me faire savoir", "german": "Bitte lassen Sie mich wissen", "hungarian": "Kérem jelezze"},
+"I would like to thank you": {"arabic": "أود أن أشكرك", "french": "Je voudrais vous remercier", "german": "Ich möchte mich bedanken", "hungarian": "Szeretném megköszönni"},
+"It was a pleasure meeting you": {"arabic": "كان من دواعي سروري لقاؤك", "french": "Ce fut un plaisir de vous rencontrer", "german": "Es war mir eine Freude Sie zu treffen", "hungarian": "Öröm volt találkozni"},
+"Please accept my thanks": {"arabic": "يرجى قبول شكري", "french": "Veuillez accepter mes remerciements", "german": "Bitte nehmen Sie meinen Dank an", "hungarian": "Kérem fogadja köszönetemet"},
+"I hope everything is well": {"arabic": "آمل أن يكون كل شيء بخير", "french": "J'espère que tout va bien", "german": "Ich hoffe alles ist gut", "hungarian": "Remélem minden rendben"},
+"With best regards": {"arabic": "مع أطيب التحيات", "french": "Cordialement", "german": "Mit freundlichen Grüßen", "hungarian": "Üdvözlettel"},
+"Kind regards": {"arabic": "أطيب التحيات", "french": "Bien cordialement", "german": "Beste Grüße", "hungarian": "Üdvözlettel"},
+"Warm regards": {"arabic": "تحياتي الحارة", "french": "Chaleureuses salutations", "german": "Herzliche Grüße", "hungarian": "Szívélyes üdvözlettel"},
+"Respectfully": {"arabic": "مع خالص الاحترام", "french": "Respectueusement", "german": "Hochachtungsvoll", "hungarian": "Tisztelettel"},
+"Much obliged": {"arabic": "ممتن جدا", "french": "Fort obligé", "german": "Sehr verpflichtet", "hungarian": "Nagyon hálás"},
+"I remain at your disposal": {"arabic": "أنا في خدمتك", "french": "Je reste à votre disposition", "german": "Ich stehe zu Ihrer Verfügung", "hungarian": "Rendelkezésére állok"}
+
+
+
+
+
+
+  }
+
+
+
+
+},
+
  
   "Family": {
 
     "A":{
 
           "Family":        { "arabic": "عائلة",        "french": "la Famille",         "german": "die Familie",        "hungarian": "a Család" },
+          "Parent": { "arabic": "والد / والدين", "french": "parent", "german": "Elternteil / Eltern", "hungarian": "szülő" },
+"People": { "arabic": "الناس", "french": "les gens", "german": "Menschen", "hungarian": "emberek" },
     "Father": { "arabic": "أب", "french": "le Père", "german": "der Vater", "hungarian": "az Apa" },
     "Mother": { "arabic": "أم", "french": "la Mère", "german": "die Mutter", "hungarian": "az Anya" },
     "Brother": { "arabic": "أخ", "french": "le Frère", "german": "der Bruder", "hungarian": "a Fiútestvér" },
@@ -22,6 +114,7 @@
         "Husband": { "arabic": "زوج", "french": "le Mari", "german": "der Ehemann", "hungarian": "a Férj" },
     "Wife": { "arabic": "زوجة", "french": "la Femme", "german": "die Ehefrau", "hungarian": "a Feleség" },
       "Friend": { "arabic": "صديق", "french": "l'Ami", "german": "der Freund", "hungarian": "a Barát" },
+      "College": { "arabic": "زميل", "french": "le Collègue", "german": "der Kollege", "hungarian": "a Kolléga" },
     "Neighbor": { "arabic": "جار", "french": "le Voisin", "german": "der Nachbar", "hungarian": "a Szomszéd" }
 
 
@@ -377,10 +470,15 @@
     "Cruel": { "arabic": "قاسي", "french": "Cruel", "german": "Grausam", "hungarian": "Kegyetlen" },
 
      "Satisfied": { "arabic": "راضٍ", "french": "Satisfait", "german": "Zufrieden", "hungarian": "Elégedett" },
-    "Dissatisfied": { "arabic": "غير راضٍ", "french": "Insatisfait", "german": "Unzufrieden", "hungarian": "Elégedetlen" }
+    "Dissatisfied": { "arabic": "غير راضٍ", "french": "Insatisfait", "german": "Unzufrieden", "hungarian": "Elégedetlen" },
 
-
-
+"angry": { "arabic": "غاضب", "french": "En colère", "german": "Wütend", "hungarian": "Dühös" },
+"Be Nervous": { "arabic": "متوتر", "french": "Nerveux", "german": "Nervös", "hungarian": "Ideges" },
+"sad": { "arabic": "حزين", "french": "Triste", "german": "Traurig", "hungarian": "Szomorú" },
+ 
+      "Proud": { "arabic": "فخور", "french": "fier", "german": "stolz", "hungarian": "büszke" },
+      "Relieved": { "arabic": "مرتاح", "french": "soulagé", "german": "erleichtert", "hungarian": "megkönnyebbült" },
+      "Interested": { "arabic": "مهتم", "french": "intéressé", "german": "interessiert", "hungarian": "érdekelt" }
 
 
 
@@ -626,13 +724,21 @@
   "Open": { "arabic": "مفتوح", "french": "Ouvert", "german": "Offen", "hungarian": "Nyitva" },
 
 
+  "Turue": { "arabic": "صحيح", "french": "Vrai", "german": "Wahr", "hungarian": "Igaz" },
+  "False": { "arabic": "خاطئ", "french": "Faux", "german": "Falsch", "hungarian": "Hamis" },
+
+
+  "correct": { "arabic": "صحيح", "french": "Correct", "german": "Richtig", "hungarian": "Helyes" },
+  "Incorrect": { "arabic": "خاطئ", "french": "Incorrect", "german": "Falsch", "hungarian": "Helytelen" },
+ 
   
+ 
 
  
   
   "Excellent": { "arabic": "ممتاز", "french": "Excellent", "german": "Ausgezeichnet", "hungarian": "Kiváló" },
 
-  "Right": { "arabic": "صحيح", "french": "Correct", "german": "Richtig", "hungarian": "Helyes" },
+  "Right": { "arabic": "صحيح", "french": "Vrai", "german": "Richtig", "hungarian": "Helyes" },
   "Wrong": { "arabic": "خاطئ", "french": "Faux", "german": "Falsch", "hungarian": "Hibás" },
 
   "Many": { "arabic": "كثير", "french": "Beaucoup", "german": "Viele", "hungarian": "Sok" },
@@ -663,6 +769,9 @@
     "Tall": { "arabic": "طويل", "french": "Grand", "german": "Groß", "hungarian": "Magas" },
     "Short": { "arabic": "قصير", "french": "Petit", "german": "Klein", "hungarian": "Alacsony" },
 
+    "court": { "arabic": "قصير", "french": "Court", "german": "Kurz", "hungarian": "Rövid" },
+    "long": { "arabic": "طويل", "french": "Long", "german": "Lang", "hungarian": "Hosszú" },
+
     "High": { "arabic": "عالٍ", "french": "Haut", "german": "Hoch", "hungarian": "Magas" },
     "Low": { "arabic": "منخفض", "french": "Bas", "german": "Niedrig", "hungarian": "Alacsony" },
 
@@ -691,6 +800,16 @@
 
    "Fast": { "arabic": "سريع", "french": "Rapide", "german": "Schnell", "hungarian": "Gyors" },
   "Slow": { "arabic": "بطيء", "french": "Lent", "german": "Langsam", "hungarian": "Lassú" },
+
+    "Fresh": { "arabic": "طازج", "french": "frais", "german": "frisch", "hungarian": "friss" },
+    "spoiled": { "arabic": "فاسد", "french": "gâté", "german": "verdorben", "hungarian": "romlott" },
+    "expired": { "arabic": "منتهي الصلاحية", "french": "périmé", "german": "abgelaufen", "hungarian": "lejárt" },
+    
+      "Warm": { "arabic": "دافئ", "french": "chaud", "german": "warm", "hungarian": "meleg" },
+      "Clear": { "arabic": "واضح", "french": "clair", "german": "klar", "hungarian": "tiszta" },
+      "Dirty": { "arabic": "قذر", "french": "sale", "german": "schmutzig", "hungarian": "piszkos" },
+     
+      "Deep": { "arabic": "عميق", "french": "profond", "german": "tief", "hungarian": "mély" },
 
 
 "Wet": { "arabic": "مبلول", "french": "Mouillé", "german": "Nass", "hungarian": "Nedves" },
@@ -727,10 +846,11 @@
   "Shallow": { "arabic": "ضحل", "french": "Peu profond", "german": "Flach", "hungarian": "Sekély" },
 
    "Valuable": {"arabic": "قيم", "french": "Précieux", "german": "Wertvoll", "hungarian": "Értékes"},
-  "Rare": {"arabic": "نادر", "french": "Rare", "german": "Selten", "hungarian": "Ritka"}
+  "Rare": {"arabic": "نادر", "french": "Rare", "german": "Selten", "hungarian": "Ritka"},
 
 
-
+ "Disgudting": { "arabic": "مقرف", "french": "dégoutant", "german": "widerlich", "hungarian": "undorító" },
+      "Bright": { "arabic": "مشرق", "french": "brillant", "german": "hell", "hungarian": "fényes" }
   
 
   
@@ -1009,6 +1129,9 @@
 
       "A":{
           "Food":          { "arabic": "طعام",        "french": "la Nourriture",     "german": "das Essen",          "hungarian": "az Étel" },
+          "breakfast":     { "arabic": "فطور",        "french": "le Petit déjeuner", "german": "das Frühstück",       "hungarian": "a Reggeli" },
+            "lunch":         { "arabic": "غداء",        "french": "le Déjeuner",       "german": "das Mittagessen",     "hungarian": "az Ebéd" },
+            "dinner":        { "arabic": "عشاء",        "french": "le Dîner",          "german": "das Abendessen",      "hungarian": "a Vacsora" },
       "Bakery":           { "arabic": "مخبزة",         "french": "la Boulangerie",       "german": "die Bäckerei",       "hungarian": "a Pékség" },
       "Patisserie":       { "arabic": "محل بيع حلويات",  "french": "la Pâtisserie",         "german": "die Konditorei",      "hungarian": "a Cukrászda" },
       "Grocery store":    { "arabic": "بقال",           "french": "l'Épicerie",          "german": "das Lebensmittelgeschäft", "hungarian": "az Élelmiszerbolt" },
@@ -1042,12 +1165,15 @@
 
       "Honey":        { "arabic": "عسل",        "french": "le Miel",        "german": "der Honig",         "hungarian": "a Méz" },
       "Jam":          { "arabic": "مربى",       "french": "la Confiture",   "german": "die Marmelade",     "hungarian": "a Lekvár" },
+      "juice":        { "arabic": "عصير",       "french": "le Jus",         "german": "der Saft",          "hungarian": "a lé" },
+      "Soft Drink": { "arabic": "مشروب غازي",  "french": "la Boisson gazeuse",        "german": "die Erfrischungsgetränk",      "hungarian": "az üdítő" },
+       "Oil":         {"arabic": "زيت",          "french": "l'Huile",     "german": "das Öl",              "hungarian": "az Olaj"    },
+
 
       "Sauce":       { "arabic": "صلصة",    "french": "la Sauce",      "german": "die Soße",      "hungarian": "a Szósz" },
       "Soup":        { "arabic": "حساء",    "french": "la Soupe",      "german": "die Suppe",     "hungarian": "a Leves" },
       "Mayonnaise":  { "arabic": "مايونيز", "french": "la Mayonnaise", "german": "die Mayonnaise","hungarian": "a Majonéz" },
       "Ketchup":     { "arabic": "كاتشب",   "french": "le Ketchup",    "german": "der Ketchup",   "hungarian": "a Ketchup" },
- "Oil":         {"arabic": "زيت",          "french": "l'Huile",     "german": "das Öl",              "hungarian": "az Olaj"    },
 
       "Beer":          { "arabic": "جعة",        "french": "la Bière",        "german": "das Bier",          "hungarian": "a Sör" },
       "Raisin":        { "arabic": "زبيب",       "french": "le Raisin sec",   "german": "die Rosine",        "hungarian": "a Mazsola" },
@@ -1094,6 +1220,12 @@
 
       },
       "B":{
+
+        "mug": { "arabic": "كوب", "french": "la tasse", "german": "der Becher", "hungarian": "a bögre" },
+"sip": { "arabic": "رشفة", "french": "la gorgée", "german": "der Schluck", "hungarian": "a korty" },
+"bottle": { "arabic": "زجاجة", "french": "la bouteille", "german": "die Flasche", "hungarian": "az üveg" },
+"taste": { "arabic": "طعم", "french": "le goût", "german": "der Geschmack", "hungarian": "az íz" },
+"smell": { "arabic": "رائحة", "french": "l'odeur", "german": "der Geruch", "hungarian": "a szag" },
 
 
 
@@ -1264,6 +1396,11 @@
       "Toothpaste": { "arabic": "معجون أسنان", "french": "le Dentifrice", "german": "die Zahnpasta", "hungarian": "a Fogkrém" },
       "Soap": { "arabic": "صابون", "french": "le Savon", "german": "die Seife", "hungarian": "a Szappan" },
       "Shampoo": { "arabic": "شامبو", "french": "le Shampooing", "german": "das Shampoo", "hungarian": "a Sampon" },
+      
+      "Shelf": { "arabic": "رف", "french": "l'Étagère", "german": "das Regal", "hungarian": "a Polc" },
+      "trash ": { "arabic": "سلة المهملات", "french": "la Poubelle", "german": "der Mülleimer", "hungarian": "a Szemetes" },
+      "dustbin": { "arabic": "سلة الغبار", "french": "la Corbeille à papier", "german": "der Papierkorb", "hungarian": "a Papírkosár" },
+
 
       "Swimming Pool": { "arabic": "مسبح", "french": "la Piscine", "german": "das Schwimmbad", "hungarian": "az Úszómedence" }
 
@@ -1274,7 +1411,13 @@
 
 
     }, 
+
+
     "B":{
+
+      "Bench": { "arabic": "مقعد", "french": "le banc", "german": "die Bank", "hungarian": "a pad" },
+"Fence": { "arabic": "سياج", "french": "la clôture", "german": "der Zaun", "hungarian": "a kerítés" },
+"Background": { "arabic": "خلفية", "french": "l'arrière-plan", "german": "der Hintergrund", "hungarian": "a háttér" },
 
 
         
@@ -1350,6 +1493,8 @@
 
             "A":{
 
+           
+
                "Job":           { "arabic": "وظيفة",       "french": "le Métier",         "german": "der Beruf",          "hungarian": "a Munka" },
      "Doctor": { "arabic": "طبيب", "french": "le Médecin", "german": "der Arzt", "hungarian": "az Orvos" },
      "Teacher": { "arabic": "معلم", "french": "l'Enseignant", "german": "der Lehrer", "hungarian": "a Tanár" },
@@ -1411,8 +1556,13 @@
 
     "B":{
 
+
+
       "Tailor": { "arabic": "خياط", "french": "le Tailleur", "german": "der Schneider", "hungarian": "a Szabó" },
      "Translator": { "arabic": "مترجم", "french": "le Traducteur", "german": "der Übersetzer", "hungarian": "a Fordító" },
+
+        "Meeting": { "arabic": "اجتماع", "french": "la réunion", "german": "das Treffen", "hungarian": "a találkozó" },
+"Break": { "arabic": "استراحة", "french": "la pause", "german": "die Pause", "hungarian": "a szünet" },
 
      
      "Judge": { "arabic": "قاضي", "french": "le Juge", "german": "der Richter", "hungarian": "a Bíró" },
@@ -1452,6 +1602,9 @@
 
 
     "C":{
+
+
+"Career": { "arabic": "مهنة", "french": "la carrière", "german": "die Karriere", "hungarian": "a karrier" },
 
   "Beggar": { "arabic": "متسول", "french": "le Mendiant", "german": "der Bettler", "hungarian": "a Koldus" },
   "Unemployed": { "arabic": "عاطل", "french": "le Chômeur", "german": "der Arbeitsloser", "hungarian": "a Munkanélküli" },
@@ -1536,12 +1689,14 @@
 
  
 
-  "transport": {
+ "transportation": {
 
-"A":{
+      "A":{
 
- "Transport":     { "arabic": "نقل",         "french": "le Transport",      "german": "der Transport",      "hungarian": "a Szállítás" },
-
+        "Country": { "arabic": "بلد", "french": "le Pays", "german": "das Land", "hungarian": "az Ország" },
+        "City": { "arabic": "مدينة", "french": "la Ville", "german": "die Stadt", "hungarian": "a Város" },
+        "Village": { "arabic": "قرية", "french": "le Village", "german": "das Dorf", "hungarian": "a Falu" },
+        "Countryside": { "arabic": "ريف", "french": "la Campagne", "german": "das Land", "hungarian": "a Vidék" },
    
     "Street": { "arabic": "شارع", "french": "la Rue", "german": "die Straße", "hungarian": "az Utca" },
    
@@ -1595,10 +1750,19 @@
 
     "B":{
 
+      "Path": { "arabic": "مسار", "french": "le chemin", "german": "der Pfad", "hungarian": "az ösvény" },
+       "Lane": { "arabic": "مسلك", "french": "la Voie", "german": "die Fahrbahn", "hungarian": "a Sáv" },
+       "Track": { "arabic": "مسار", "french": "la Piste", "german": "die Strecke", "hungarian": "a Pálya" },
+"Steps": { "arabic": "درجات", "french": "les marches", "german": "die Stufen", "hungarian": "a lépcsők" },
+
        "Army": { "arabic": "جيش", "french": "l'Armée", "german": "die Armee", "hungarian": "a Hadsereg" },
     "Navy": { "arabic": "بحرية", "french": "la Marine", "german": "die Marine", "hungarian": "a Tengerészet" },
     "AirForce": { "arabic": "قوات جوية", "french": "la Force aérienne", "german": "die Luftwaffe", "hungarian": "a Légierő" },
     "MilitaryBase": { "arabic": "قاعدة عسكرية", "french": "la Base militaire", "german": "die Militärbasis", "hungarian": "a Katonai bázis" },
+
+    "Boarding Pass": { "arabic": "بطاقة صعود الطائرة", "french": "carte d'embarquement", "german": "Boardingkarte", "hungarian": "beszállókártya" },
+"Traffic": { "arabic": "مرور / حركة المرور", "french": "trafic", "german": "Verkehr", "hungarian": "forgalom" },
+"Runway": { "arabic": "مدرج", "french": "piste", "german": "Start- und Landebahn", "hungarian": "pálya" },
 
        "Travel Agency": { "arabic": "وكالة أسفار", "french": "l'Agence de voyage", "german": "das Reisebüro", "hungarian": "az Utazási iroda" },
     "Airline Company": { "arabic": "شركة طيران", "french": "la Compagnie aérienne", "german": "die Fluggesellschaft", "hungarian": "a Légitársaság" },
@@ -1693,9 +1857,26 @@
   "Do": { "arabic": "يفعل", "french": "Faire", "german": "Tun", "hungarian": "Csinál" },
   "Give": { "arabic": "يعطي", "french": "Donner", "german": "Geben", "hungarian": "Ad" },
   "Take": { "arabic": "يأخذ", "french": "Prendre", "german": "Nehmen", "hungarian": "Vesz" },
-  "Can": { "arabic": "يستطيع", "french": "Pouvoir", "german": "Können", "hungarian": "Tud / Képes" },
-   "Hide": { "arabic": "يخبي", "french": "Cacher", "german": "Verstecken", "hungarian": "Elrejteni" },
+  "let": { "arabic": "يترك", "french": "Laisser", "german": "Lassen", "hungarian": "Hagy" },
+  "Put":   { "arabic": "يضع",     "french": "mettre",               "german": "legen / stellen",       "hungarian": "rak" },
 
+   "start": { "arabic": "يبدأ", "french": "Démarrer", "german": "Starten", "hungarian": "Indít" },
+
+  
+  "bring": { "arabic": "يجلب", "french": "apporter", "german": "bringen", "hungarian": "hoz" },
+  "Prepare":          { "arabic": "يجهز",           "french": "préparer",            "german": "vorbereiten",          "hungarian": "készít" },
+   "Continue":        { "arabic": "يواصل",           "french": "continuer",            "german": "fortsetzen",            "hungarian": "folytat" },
+     "Stop":            { "arabic": "يتوقف",          "french": "arrêter",             "german": "anhalten",              "hungarian": "megáll" },
+     "Begin":           { "arabic": "يبدأ",            "french": "commencer",            "german": "beginnen",             "hungarian": "kezd" },
+     "Wait":            { "arabic": "ينتظر",           "french": "attendre",             "german": "warten",              "hungarian": "vár" },
+     "Help":            { "arabic": "يساعد",           "french": "aider",                "german": "helfen",              "hungarian": "segít" },
+     "Use":             { "arabic": "يستخدم",          "french": "utiliser",              "german": "benutzen",            "hungarian": "használ" },
+     "Complete":        { "arabic": "يكمل",            "french": "compléter",            "german": "abschließen",          "hungarian": "befejez" },
+    "Finish":          { "arabic": "ينهي",            "french": "terminer",             "german": "beenden",             "hungarian": "végez"  },
+      "Create":          { "arabic": "يخلق",            "french": "créer",               "german": "schaffen",              "hungarian": "létrehoz" },
+     "Destroy":         { "arabic": "يدمر",            "french": "détruire",             "german": "zerstören",           "hungarian": "elpusztít" },
+     "Keep": { "arabic": "يحافظ", "french": "garder", "german": "behalten", "hungarian": "megőriz" },
+"Fill": { "arabic": "يملأ", "french": "remplir", "german": "füllen", "hungarian": "tölt" },
  "Find": { "arabic": "يجد", "french": "Trouver", "german": "Finden", "hungarian": "Talál" },
     "Open": { "arabic": "يفتح", "french": "Ouvrir", "german": "Öffnen", "hungarian": "Kinyit" },
   "Close": { "arabic": "يغلق", "french": "Fermer", "german": "Schließen", "hungarian": "Becsuk" },
@@ -1719,13 +1900,16 @@
     "Hit":        { "arabic": "يضرب",       "french": "Frapper",        "german": "Schlagen",      "hungarian": "Üt" },
       "Drive":      { "arabic": "يقود",       "french": "Conduire",       "german": "Fahren",        "hungarian": "Vezet" },
     "Ride":       { "arabic": "يركب",       "french": "Monter",         "german": "Reiten",        "hungarian": "Lovagol" },
+
+
     "Enter":      { "arabic": "يدخل",       "french": "Entrer",         "german": "Eintreten",     "hungarian": "Belép" },
+    "Leave":      { "arabic": "يغادر",       "french": "Quitter",        "german": "Verlassen",     "hungarian": "Elhagy" },
     "Exit":       { "arabic": "يخرج",       "french": "Sortir",         "german": "Verlassen",     "hungarian": "Kilép" },
 "Go":          { "arabic": "يذهب",         "french": "Aller",           "german": "Gehen",         "hungarian": "Megy" },
   "Reach":       { "arabic": "يصل",          "french": "Atteindre",       "german": "Erreichen",     "hungarian": "Elér" },
   "Depart":      { "arabic": "يغادر",        "french": "Partir",          "german": "Abfahren",      "hungarian": "Elindul" },
   "Return":      { "arabic": "يعود",         "french": "Revenir",         "german": "Zurückkehren",  "hungarian": "Visszatér" },
-  "Cross":       { "arabic": "يعبر",         "french": "Traverser",       "german": "Überqueren",    "hungarian": "Átkel" },
+  
   "Descend":     { "arabic": "ينزل",         "french": "Descendre",       "german": "Hinuntergehen", "hungarian": "Lemegy" },
   "Ascend":      { "arabic": "يصعد",         "french": "Monter",          "german": "Hinaufsteigen", "hungarian": "Felmegy" },
   "Approach":    { "arabic": "يقترب",        "french": "S'approcher",     "german": "Sich nähern",   "hungarian": "Közeledik" },
@@ -1733,14 +1917,37 @@
   "Travel":      { "arabic": "يسافر",        "french": "Voyager",         "german": "Reisen",        "hungarian": "Utazik" },
   "Move":        { "arabic": "يتحرك",        "french": "Bouger",          "german": "Sich bewegen",  "hungarian": "Mozog" },
 
+
+
+  "Lift":            { "arabic": "يرفع",            "french": "lever",                "german": "heben",                 "hungarian": "fel" },
+"Go on Excursion": { "arabic": "يتنزّه",          "french": "faire une excursion",  "german": "einen Ausflug machen",  "hungarian": "kirándul" },
+"Cross":           { "arabic": "يعبر",            "french": "traverser",            "german": "überqueren",            "hungarian": "átmenni" },
+"Hike":            { "arabic": "يتنزّه سيرًا",    "french": "faire de la randonnée","german": "wandern",               "hungarian": "túrázik" },
+"Press":           { "arabic": "يضغط",            "french": "appuyer",              "german": "drücken",               "hungarian": "nyom" },
+
+"Dive":            { "arabic": "يغوص",            "french": "plonger",              "german": "eintauchen",            "hungarian": "elmerül" },
+
+"Put Inside":      { "arabic": "يضع في الداخل",   "french": "mettre dedans",        "german": "hineinlegen",           "hungarian": "betesz" },
+
  "Pass":        { "arabic": "يمر",          "french": "Passer",          "german": "Vorbeigehen",   "hungarian": "Elhalad" },
   "Chase":       { "arabic": "يطارد",        "french": "Chasser",         "german": "Verfolgen",     "hungarian": "Üldöz" },
   "Follow":      { "arabic": "يتبع",         "french": "Suivre",          "german": "Folgen",        "hungarian": "Követ" },
   "Lead":        { "arabic": "يقود",         "french": "Mener",           "german": "Führen",        "hungarian": "Vezet" },
   "Step":        { "arabic": "يخطو",         "french": "Marcher",         "german": "Treten",        "hungarian": "Lép" },
-  "Walk away":   { "arabic": "يبتعد",        "french": "S’éloigner",      "german": "Weggehen",      "hungarian": "Elmegy" }
+  "Walk away":   { "arabic": "يبتعد",        "french": "S’éloigner",      "german": "Weggehen",      "hungarian": "Elmegy" },
+"approach": { "arabic": "يقترب", "french": "approcher", "german": "nähern", "hungarian": "közelít" },
 
+"stand": { "arabic": "يقف", "french": "se tenir", "german": "stehen", "hungarian": "áll" },
 
+"leave": { "arabic": "يغادر", "french": "quitter", "german": "verlassen", "hungarian": "elhagy" },
+"gather": { "arabic": "يجمع", "french": "rassembler", "german": "sammeln", "hungarian": "gyűjt" },
+"check": { "arabic": "يتحقق", "french": "vérifier", "german": "überprüfen", "hungarian": "ellenőriz" },
+"pour": { "arabic": "يسكب", "french": "verser", "german": "gießen", "hungarian": "önt" },
+"stir": { "arabic": "يحرك", "french": "remuer", "german": "rühren", "hungarian": "kever" },
+"follow": { "arabic": "يتبع", "french": "suivre", "german": "folgen", "hungarian": "követ" },
+"get up": { "arabic": "ينهض", "french": "se lever", "german": "aufstehen", "hungarian": "felkel" },
+"stretch": { "arabic": "يمدد", "french": "s'étirer", "german": "strecken", "hungarian": "nyújt" },
+"pick up": { "arabic": "يلتقط", "french": "ramasser", "german": "aufheben", "hungarian": "felvesz" }
 
 
 }, 
@@ -1748,9 +1955,9 @@
 
 
     "B":{
-
+"Cross":       { "arabic": "يعبر",         "french": "Traverser",       "german": "Überqueren",    "hungarian": "Átkel" },
        "Lift":       { "arabic": "يرفع",       "french": "Soulever",       "german": "Heben",         "hungarian": "Emel" },
-
+       "Push":            { "arabic": "يدفع",            "french": "pousser",              "german": "stoßen",                "hungarian": "lök" },
        "Crawl":      { "arabic": "يزحف",       "french": "Ramper",         "german": "Kriechen",      "hungarian": "Mászik" },
     "Slide":      { "arabic": "ينزلق",      "french": "Glisser",        "german": "Rutschen",      "hungarian": "Csúszik" },
     "Roll":       { "arabic": "يتدحرج",     "french": "Rouler",         "german": "Rollen",        "hungarian": "Gurul" },
@@ -1768,9 +1975,11 @@
   "Leap":        { "arabic": "يقفز",         "french": "Bondir",          "german": "Springen",      "hungarian": "Ugrik" },
   "Launch":      { "arabic": "ينطلق",        "french": "Lancer",          "german": "Starten",       "hungarian": "Indít" },
   "Board":       { "arabic": "يصعد",         "french": "Embarquer",       "german": "Einsteigen",    "hungarian": "Felszáll" },
-  "Disembark":   { "arabic": "ينزل",         "french": "Débarquer",       "german": "Aussteigen",    "hungarian": "Leszáll" }
+  "Disembark":   { "arabic": "ينزل",         "french": "Débarquer",       "german": "Aussteigen",    "hungarian": "Leszáll" },
  
-
+  "Procrastinate": { "arabic": "يماطل",        "french": "Procrastiner",    "german": "Aufschieben",   "hungarian": "Halogat" },
+  "Delay":        { "arabic": "يؤخر",         "french": "Retarder",         "german": "Verzögern",     "hungarian": "Késleltet" },
+"Press":           { "arabic": "يضغط",            "french": "appuyer",              "german": "drücken",               "hungarian": "nyom" }
 
 
     },
@@ -1851,6 +2060,10 @@
 "Call":        { "arabic": "يتصل",         "french": "Appeler",        "german": "Anrufen",        "hungarian": "Hív" },
 "Repeat":      { "arabic": "يكرر",        "french": "Répéter",         "german": "Wiederholen",    "hungarian": "Ismétel" },
 
+"express": { "arabic": "يعبر", "french": "exprimer", "german": "ausdrücken", "hungarian": "kifejez" },
+"reply": { "arabic": "يرد", "french": "répondre", "german": "antworten", "hungarian": "válaszol" },
+"record": { "arabic": "يسجل", "french": "enregistrer", "german": "aufzeichnen", "hungarian": "rögzít" },
+
  "Translate":   { "arabic": "يترجم",        "french": "Traduire",       "german": "Übersetzen",     "hungarian": "Fordít" }
 
 }, 
@@ -1864,7 +2077,7 @@
   "Shout":       { "arabic": "يصرخ",       "french": "Crier",          "german": "Schreien",     "hungarian": "Kiabál" },
   "Yell":        { "arabic": "يصيح",       "french": "Hurler",         "german": "Brüllen",      "hungarian": "Ordít" },
   "Complain":    { "arabic": "يشكو",       "french": "Se plaindre",    "german": "Sich beschweren","hungarian": "Panaszkodik" },
- 
+ "Cheer": { "arabic": "يهتف / يشجع", "french": "encourager / acclamer", "german": "jubeln / anfeuern", "hungarian": "drukkol" },
   "Announce":    { "arabic": "يعلن",       "french": "Annoncer",       "german": "Ankündigen",   "hungarian": "Bejelent" },
   "Declare":     { "arabic": "يصرّح",      "french": "Déclarer",       "german": "Erklären",     "hungarian": "Kijelent" },
   "Promise":     { "arabic": "يعد",        "french": "Promettre",      "german": "Versprechen",  "hungarian": "Ígér" },
@@ -2010,7 +2223,8 @@
 
 
     "B":{
-
+"Calm Down": { "arabic": "يهدأ", "french": "se calmer", "german": "sich beruhigen", "hungarian": "megnyugszik" },
+"Have Fun": { "arabic": "يستمتع", "french": "s'amuser", "german": "sich amüsieren", "hungarian": "szórakozik" },
        "Pity":       { "arabic": "يشفق",        "french": "Plaindre",        "german": "Bedauern",        "hungarian": "Sajnál" },
   "Admire":     { "arabic": "يعجب بـ",     "french": "Admirer",         "german": "Bewundern",       "hungarian": "Csodál" },
   "Desire":     { "arabic": "يرغب",        "french": "Désirer",         "german": "Begehren",        "hungarian": "Vágyik" },
@@ -2138,12 +2352,29 @@
 "A":{
 
   "Think":       { "arabic": "يفكر",       "french": "Penser",        "german": "Denken",        "hungarian": "Gondol" },
+  "believe":     { "arabic": "يعتقد",      "french": "Croire",        "german": "Glauben",       "hungarian": "Hisz" },
+  "Doubt":       { "arabic": "يشك",        "french": "Douter",        "german": "Zweifeln",      "hungarian": "Kételkedik" },
 "Understand":  { "arabic": "يفهم",       "french": "Comprendre",    "german": "Verstehen",     "hungarian": "Ért" },
 "Know":        { "arabic": "يعرف",       "french": "Savoir",        "german": "Wissen",        "hungarian": "Tud" },
 "Remember":    { "arabic": "يتذكر",      "french": "Se souvenir",   "german": "Sich erinnern", "hungarian": "Emlékszik" },
+"remind": { "arabic": "يذكر", "french": "rappeler", "german": "erinnern", "hungarian": "emlékeztet" },
 "Forget":      { "arabic": "ينسى",       "french": "Oublier",       "german": "Vergessen",     "hungarian": "Elfelejt" },
 "Decide":      { "arabic": "يقرر",       "french": "Décider",       "german": "Entscheiden",   "hungarian": "Dönt" },
+"correct": { "arabic": "يصحح", "french": "corriger", "german": "korrigieren", "hungarian": "javít" },
+"connect": { "arabic": "يربط", "french": "connecter", "german": "verbinden", "hungarian": "csatlakoztat" },
 
+"Can": { "arabic": "يستطيع", "french": "Pouvoir", "german": "Können", "hungarian": "Tud / Képes" },
+ "Fail":            { "arabic": "يفشل",            "french": "échouer",              "german": "scheitern",           "hungarian": "megbukik" },
+     "Succeed":         { "arabic": "ينجح",            "french": "réussir",              "german": "erfolgreich sein",    "hungarian": "sikerül" },
+
+     "Choose": { "arabic": "يختار", "french": "choisir", "german": "wählen", "hungarian": "kiválaszt" },
+"Prepare": { "arabic": "يستعد", "french": "préparer", "german": "vorbereiten", "hungarian": "készül" },
+"Pay Attention": { "arabic": "ينتبه", "french": "faire attention", "german": "aufpassen", "hungarian": "figyel" },
+"Postpone": { "arabic": "يؤجل", "french": "reporter", "german": "aufschieben", "hungarian": "halogat" },
+"Schedule": { "arabic": "ينظّم", "french": "planifier", "german": "einteilen", "hungarian": "beoszt" },
+
+"Need": { "arabic": "يحتاج",    "french": "avoir besoin",          "german": "brauchen",   "hungarian": "szüksége van" },
+     "Want":            { "arabic": "يريد",            "french": "vouloir",               "german": "wollen",              "hungarian": "akar" },
 
       "Recognize":   { "arabic": "يتعرف", "french": "Reconnaître", "german": "Erkennen", "hungarian": "Felismer" },
     "Realize":     { "arabic": "يدرك", "french": "Réaliser", "german": "Erkennen", "hungarian": "Rájön" },
@@ -2157,16 +2388,16 @@
     "Improve":     { "arabic": "يحسن", "french": "Améliorer", "german": "Verbessern", "hungarian": "Fejleszt" },
      "Notice":      { "arabic": "يلاحظ",      "french": "Remarquer",     "german": "Bemerken",      "hungarian": "Észrevesz" },
     "Imagine":     { "arabic": "يتخيل",      "french": "Imaginer",      "german": "Sich vorstellen","hungarian": "Elképzel" },
-    "Believe":     { "arabic": "يعتقد",      "french": "Croire",        "german": "Glauben",       "hungarian": "Hisz" },
-    "Doubt":       { "arabic": "يشك",        "french": "Douter",        "german": "Zweifeln",      "hungarian": "Kételkedik" },
+  
     "Recall":      { "arabic": "يسترجع",     "french": "Rappeler",      "german": "Sich erinnern", "hungarian": "Felidéz" },
     "Learn":       { "arabic": "يتعلم",      "french": "Apprendre",     "german": "Lernen",        "hungarian": "Tanul" },
     "Teach":       { "arabic": "يُعلم",      "french": "Enseigner",     "german": "Lehren",        "hungarian": "Tanít" },
     "Study":       { "arabic": "يذاكر",      "french": "Étudier",       "german": "Studieren",     "hungarian": "Tanul (mélyebben)" },
     "Memorize":    { "arabic": "يحفظ",       "french": "Mémoriser",     "german": "Auswendig lernen", "hungarian": "Memorizál" },
      "Note":        { "arabic": "يلاحظ",      "french": "Noter",         "german": "Notieren",      "hungarian": "Jegyez" },
-    "Fail":        { "arabic": "يرسب", "french": "Échouer", "german": "Durchfallen", "hungarian": "Megal" }
-
+    
+"trust": { "arabic": "يثق", "french": "faire confiance", "german": "vertrauen", "hungarian": "megbízik" },
+"expect": { "arabic": "يتوقع", "french": "s'attendre", "german": "erwarten", "hungarian": "elvár" }
 
 
 }, 
@@ -2321,14 +2552,23 @@
 "A":{
 
   "See":        { "arabic": "يرى",        "french": "Voir",        "german": "Sehen",        "hungarian": "Lát" },
-  "Look":       { "arabic": "ينظر",       "french": "Regarder",    "german": "Schauen",      "hungarian": "Néz" },
+  "Look":       { "arabic": "ينظر",       "french": "Regarder",    "german": "Schauen",      "hungarian": "kiNéz" },
   "Watch":      { "arabic": "يشاهد",      "french": "Regarder",    "german": "Zuschauen",   "hungarian": "Néz" },
+   "Hide": { "arabic": "يخبي", "french": "Cacher", "german": "Verstecken", "hungarian": "Elrejteni" },
+   "Hide":            { "arabic": "يختبئ",           "french": "se cacher",            "german": "sich verstecken",       "hungarian": "elbúj" },
+     "Show":            { "arabic": "يظهر",            "french": "montrer",              "german": "zeigen",                "hungarian": "mutat" },
+     "seem":            { "arabic": "يبدو",            "french": "sembler",              "german": "scheinen",              "hungarian": "tűnik" },
+      "Appear":          { "arabic": "يظهر",            "french": "apparaître",          "german": "erscheinen",            "hungarian": "megjelenik" },
   "Hear":       { "arabic": "يسمع",       "french": "Entendre",    "german": "Hören",       "hungarian": "Hall" },
   "Listen":     { "arabic": "يستمع",      "french": "Écouter",     "german": "Zuhören",     "hungarian": "Hallgat" },
   "Detect":     { "arabic": "يكشف",       "french": "Détecter",    "german": "Erkennen",    "hungarian": "Észlel" },
    "Touch":      { "arabic": "يلمس",       "french": "Toucher",     "german": "Berühren",    "hungarian": "Érint" },
-    "Smell":      { "arabic": "يشم",        "french": "Sentir",      "german": "Riechen",     "hungarian": "Szagol" },
      "Taste":      { "arabic": "يتذوق",      "french": "Goûter",      "german": "Schmecken",   "hungarian": "Megkóstol" },
+
+     "eat":        { "arabic": "يأكل",          "french": "Manger",        "german": "Essen",          "hungarian": "Eszik" },
+     "drink":      { "arabic": "يشرب",         "french": "Boire",         "german": "Trinken",       "hungarian": "Iszik" },
+     "Feed":       { "arabic": "يطعم",            "french": "nourrir",              "german": "füttern",               "hungarian": "etet" },
+  
 
      "Bleed":        { "arabic": "ينزف",          "french": "Saigner",        "german": "Bluten",          "hungarian": "Vérzik" },
 "Cough":        { "arabic": "يسعل",          "french": "Tousser",        "german": "Husten",          "hungarian": "Köhög" },
@@ -2338,10 +2578,14 @@
 "Breathe":      { "arabic": "يتنفس",         "french": "Respirer",       "german": "Atmen",           "hungarian": "Lélegzik" },
 "Faint":        { "arabic": "يُغمى عليه",    "french": "S'évanouir",     "german": "Ohnmächtig werden", "hungarian": "Elájul" },
 
+"hurt":         { "arabic": "يؤلم",          "french": "Faire mal",      "german": "Wehtun",         "hungarian": "Fáj" },
+
 "Pain":         { "arabic": "يتألم",         "french": "Souffrir",       "german": "Leiden",          "hungarian": "Szenved" },
 "Rest":         { "arabic": "يرتاح",         "french": "Se reposer",     "german": "Sich ausruhen",   "hungarian": "Pihen" },
 "Sleep":        { "arabic": "ينام",          "french": "Dormir",         "german": "Schlafen",        "hungarian": "Alszik" },
+"dream":        { "arabic": "يحلم",          "french": "Rêver",          "german": "Träumen",         "hungarian": "Álmodik" },
 "Wake":         { "arabic": "يستيقظ",        "french": "Se réveiller",   "german": "Aufwachen",       "hungarian": "Felébred" },
+"wake up":      { "arabic": "يستيقظ",        "french": "Se réveiller",   "german": "Aufwachen",       "hungarian": "felkel" },
 
  "Feel": { "arabic": "يشعر", "french": "Ressentir", "german": "Fühlen", "hungarian": "Érez" },
   "Die": { "arabic": "يموت", "french": "Mourir", "german": "Sterben", "hungarian": "Meghal" },
@@ -2357,6 +2601,8 @@
     "B":{
 
        "Chew":       { "arabic": "يمضغ",       "french": "Mâcher",     "german": "Kauen",       "hungarian": "Rág" },
+  
+       "Spuke":      { "arabic": "يبصق",       "french": "Cracher",     "german": "Spucken",      "hungarian": "Köp" },
  
   "Caress":     { "arabic": "يداعب",      "french": "Caresser",    "german": "Streicheln",  "hungarian": "Simogat" },
   
@@ -2364,6 +2610,10 @@
 "Suck":       { "arabic": "يمص",        "french": "Sucer",        "german": "Saugen",       "hungarian": "Szív" },
   "Lick":       { "arabic": "يلحس",       "french": "Lécher",      "german": "Lecken",       "hungarian": "Nyalogat" },
    "Scream":     { "arabic": "يصرخ",       "french": "Hurler",    "german": "Schreien",    "hungarian": "Sikoltozik" },
+
+   "Stick": { "arabic": "يلتصق", "french": "coller", "german": "kleben", "hungarian": "tapad" },
+"Chirp": { "arabic": "يزقزق", "french": "pépier", "german": "zwitschern", "hungarian": "csipog" },
+"Buzz": { "arabic": "يطنّ", "french": "bourdonner", "german": "summen", "hungarian": "zümmög" },
 
   "Moan":       { "arabic": "يتأوه",      "french": "Gémir",   "german": "Stöhnen",   "hungarian": "Nyög" },
   "Bite":       { "arabic": "يعض",        "french": "Mordre",   "german": "Beißen",   "hungarian": "Harap" },
@@ -2415,6 +2665,8 @@
   "Nod":        { "arabic": "يومئ برأسه", "french": "Hôcher la tête", "german": "Nicken", "hungarian": "Bólint" },
   "Shake head": { "arabic": "يهز رأسه",  "french": "Secouer la tête", "german": "Kopfschütteln", "hungarian": "Fejrázás" }, 
  
+"sigh": { "arabic": "يتنهد", "french": "soupirer", "german": "seufzen", "hungarian": "sóhajt" },
+
   "Groan":      { "arabic": "يتأوه",      "french": "Grogner",  "german": "Stöhnen",   "hungarian": "Nyög" }
   
 
@@ -2458,21 +2710,30 @@
     "Fix":           { "arabic": "يصلح",            "french": "Réparer",          "german": "Reparieren",       "hungarian": "Javít" },
   "Break":         { "arabic": "يكسر",            "french": "Casser",           "german": "Zerbrechen",       "hungarian": "Eltör" },
   "Cover":         { "arabic": "يغطي",            "french": "Couvrir",          "german": "Bedecken",         "hungarian": "Befed" },
-  "Finish":        { "arabic": "ينهي",            "french": "Finir",            "german": "Beenden",          "hungarian": "Befejez" },
-  "Begin": { "arabic": "يبدأ", "french": "Commencer", "german": "Beginnen", "hungarian": "Kezd" },
- "Start": { "arabic": "يبدأ", "french": "Démarrer", "german": "Starten", "hungarian": "Indít" },
-"Continue": { "arabic": "يكمل", "french": "Continuer", "german": "Fortsetzen", "hungarian": "Folytatni" },
-  "Complete": { "arabic": "يتم", "french": "Compléter", "german": "Vervollständigen", "hungarian": "Befejezni" },
+  
+  "Comb":            { "arabic": "يمشّط",           "french": "peigner",              "german": "kämmen",                "hungarian": "fésül" },
 
-  "Assist": { "arabic": "يعاون", "french": "Assister / Aider", "german": "Helfen / Unterstützen", "hungarian": "Segíteni / Támogatni" },
+"Wipe":            { "arabic": "يمسح",            "french": "essuyer",              "german": "abwischen",             "hungarian": "töröl" },
+"Rinse":           { "arabic": "يشطف",            "french": "rincer",               "german": "ausspülen",             "hungarian": "öblít" },
+"Knead":           { "arabic": "يعجن",            "french": "pétrir",               "german": "kneten",                "hungarian": "összegyúr" },
+"Dry":             { "arabic": "يجفف",            "french": "sécher",               "german": "trocknen",              "hungarian": "szárít" },
+"Pack":            { "arabic": "يحزم",            "french": "faire ses bagages",    "german": "einpacken",             "hungarian": "bepakol" },
+"Get Dressed":     { "arabic": "يرتدي ملابسه",    "french": "s'habiller",           "german": "sich anziehen",         "hungarian": "felöltözik" },
+ 
+"brush": { "arabic": "يفرش", "french": "brosser", "german": "bürsten", "hungarian": "kefél" },
+"Wash": { "arabic": "يغسل", "french": "laver", "german": "waschen", "hungarian": "mos" },
+
+  "develop": { "arabic": "يطور", "french": "développer", "german": "entwickeln", "hungarian": "fejleszt" },
+
+
+ 
   "Resist": { "arabic": "يقاوم", "french": "Résister", "german": "Widerstehen", "hungarian": "Ellenállni" },
-  "Help": { "arabic": "يساعد", "french": "Aider", "german": "Helfen", "hungarian": "Segíteni" },
+
 
 
  "Repair":         { "arabic": "يُصلح",           "french": "Réparer",          "german": "Reparieren",       "hungarian": "Javít" },
  
-  "Pay":            { "arabic": "يدفع",            "french": "Payer",            "german": "Bezahlen",         "hungarian": "Fizet" },
-  "Stop":           { "arabic": "يتوقف",           "french": "S'arrêter",        "german": "Anhalten",         "hungarian": "Megáll" },
+ 
    "Grill":           { "arabic": "يشوي",            "french": "Griller",         "german": "Grillen",          "hungarian": "Grillez" },
   "Bake":            { "arabic": "يخبز",            "french": "Cuire au four",   "german": "Backen",           "hungarian": "Süt" },
    "Clean up":        { "arabic": "ينظف",           "french": "Nettoyer",           "german": "Säubern",                "hungarian": "Tisztít" },
@@ -2708,6 +2969,8 @@
 
   "Attack":         { "arabic": "يهاجم",        "french": "Attaquer",       "german": "Angreifen",       "hungarian": "Támad" },
   "Defend":         { "arabic": "يدافع",        "french": "Défendre",       "german": "Verteidigen",    "hungarian": "Védekezik" },
+"accompany": { "arabic": "يرافق", "french": "accompagner", "german": "begleiten", "hungarian": "kísér" },
+
 
   "Siege":          { "arabic": "يحاصر",        "french": "Assiéger",       "german": "Belagern",       "hungarian": "Oszlat" },
   "Conquer":        { "arabic": "يحتل",         "french": "Conquérir",      "german": "Erobern",        "hungarian": "Meghódít" },
@@ -2924,8 +3187,10 @@
     "Sell": { "arabic": "يبيع", "french": "Vendre", "german": "Verkaufen", "hungarian": "Elad" },
     "Buy": { "arabic": "اشترى", "french": "Acheter", "german": "Kaufen", "hungarian": "vesz" },
 
+   "Shop": { "arabic": "يتسوق / يقتني", "french": "faire des achats", "german": "einkaufen", "hungarian": "vásárol" },
+"Waste": { "arabic": "يهدر / يُبذّر", "french": "gaspiller", "german": "verschwenden", "hungarian": "pazarol" }
 
-
+,
        "Provide": { "arabic": "يزود", "french": "Fournir", "german": "Bereitstellen", "hungarian": "Biztosítani" },
     "Purchase": { "arabic": "يقتني", "french": "Acheter", "german": "Kaufen", "hungarian": "Vásárolni" },
     "Save": { "arabic": "يدخر", "french": "Épargner", "german": "Sparen", "hungarian": "Megspórol" },
@@ -3166,6 +3431,7 @@
  "Coast": { "arabic": "ساحل", "french": "la Côte", "german": "die Küste", "hungarian": "a Tengerpart" },
     "Sand": { "arabic": "رمل", "french": "le Sable", "german": "der Sand", "hungarian": "a Homok" },
     
+  
     "Clay": { "arabic": "طين", "french": "l'Argile", "german": "der Ton", "hungarian": "az Agyag" },
     "Gravel": { "arabic": "حصى", "french": "le Gravier", "german": "der Kies", "hungarian": "a Kavics" },
     "Pebble": { "arabic": "حصاة", "french": "le Galet", "german": "der Kieselstein", "hungarian": "a Kavicsszem" },
@@ -3200,6 +3466,22 @@
     "Aluminum":  { "arabic": "ألمنيوم",  "french": "l'Aluminium",   "german": "das Aluminium",   "hungarian": "az Alumínium" },
     "Rubber":    { "arabic": "مطاط",     "french": "le Caoutchouc",  "german": "der Gummi",       "hungarian": "a Gumi" },
     "Glue":      { "arabic": "صمغ",      "french": "la Colle",       "german": "der Kleber",      "hungarian": "a Ragasztó" },
+    "Glass": { "arabic": "زجاج", "french": "le verre", "german": "das Glas", "hungarian": "a üveg" },
+"Paper": { "arabic": "ورق", "french": "le papier", "german": "das Papier", "hungarian": "a papír" },
+"Gas": { "arabic": "غاز", "french": "le gaz", "german": "das Gas", "hungarian": "a gáz" },
+"Steam": { "arabic": "بخار", "french": "la vapeur", "german": "der Dampf", "hungarian": "a gőz" },
+
+ "Fishing": { "arabic": "صيد", "french": "la pêche", "german": "das Angeln", "hungarian": "a horgászás" },
+"Beach": { "arabic": "شاطئ", "french": "la plage", "german": "der Strand", "hungarian": "a strand" },
+"Branch": { "arabic": "غصن", "french": "la branche", "german": "der Ast", "hungarian": "a ág" },
+"Field": { "arabic": "حقل", "french": "le champ", "german": "das Feld", "hungarian": "a mező" },
+"Bush": { "arabic": "شجيرة", "french": "le buisson", "german": "der Busch", "hungarian": "a bokor" },
+"Hole": { "arabic": "حفرة", "french": "le trou", "german": "das Loch", "hungarian": "a gödör" },
+"Nest": { "arabic": "عش", "french": "le nid", "german": "das Nest", "hungarian": "a fészek" },
+
+"Black hole": { "arabic": "ثقب أسود", "french": "trou noir", "german": "schwarzes Loch", "hungarian": "fekete lyuk" },
+"Galaxy": { "arabic": "مجرة", "french": "galaxie", "german": "Galaxie", "hungarian": "galaxis" },
+
 
     "Soil": {"arabic": "تربة", "french": "Sol", "german": "Boden", "hungarian": "Talaj"},
   "Crops": {"arabic": "محاصيل", "french": "Cultures", "german": "Kulturen / Feldfrüchte", "hungarian": "Növények / Termények"},
@@ -3396,6 +3678,8 @@
   "Shape": {"arabic": "شكل", "french": "Forme", "german": "Form", "hungarian": "Forma"},
   "Form": {"arabic": "هيئة", "french": "Forme / Structure", "german": "Form / Gestalt", "hungarian": "Forma / Alak"},
     "Structure": {"arabic": "بنية", "french": " Structure", "german": " Gestalt", "hungarian": "Alak"},
+    
+"Part": { "arabic": "جزء", "french": "la partie", "german": "der Teil", "hungarian": "a rész" },
 
     "Red": {"arabic": "أحمر", "french": "Rouge", "german": "Rot", "hungarian": "Piros"},
     "Blue": {"arabic": "أزرق", "french": "Bleu", "german": "Blau", "hungarian": "Kék"},
@@ -3408,18 +3692,21 @@
     "Black": {"arabic": "أسود", "french": "Noir", "german": "Schwarz", "hungarian": "Fekete"},
     "White": {"arabic": "أبيض", "french": "Blanc", "german": "Weiß", "hungarian": "Fehér"},
     "Gray": {"arabic": "رمادي", "french": "Gris", "german": "Grau", "hungarian": "Szürke"},
+
+
     "Circle": {"arabic": "دائرة", "french": "Cercle", "german": "Kreis", "hungarian": "Kör"},
     "Square": {"arabic": "مربع", "french": "Carré", "german": "Quadrat", "hungarian": "Négyzet"},
     "Rectangle": {"arabic": "مستطيل", "french": "Rectangle", "german": "Rechteck", "hungarian": "Téglalap"},
     "Triangle": {"arabic": "مثلث", "french": "Triangle", "german": "Dreieck", "hungarian": "Háromszög"},
-    "Oval": {"arabic": "بيضاوي", "french": "Ovale", "german": "Oval", "hungarian": "Ovális"},
     "Star": {"arabic": "نجمة", "french": "Étoile", "german": "Stern", "hungarian": "Csillag"},
+    "Line": {"arabic": "خط", "french": "Ligne", "german": "Linie", "hungarian": "Vonal"},
+    "Point": {"arabic": "نقطة", "french": "Point", "german": "Punkt", "hungarian": "Pont"},
     "Heart": {"arabic": "قلب", "french": "Cœur", "german": "Herz", "hungarian": "Szív"}
 
 
 }, 
     "B":{
-
+"visible": {"arabic": "مرئي", "french": "Visible", "german": "Sichtbar", "hungarian": "Látható"},
        "Transparent": {"arabic": "شفاف", "french": "Transparent", "german": "Transparent", "hungarian": "Áttetsző"},
     "Opaque": {"arabic": "معتم", "french": "Opaque", "german": "Opak", "hungarian": "Átlátszatlan"},
  "Cyan": {"arabic": "سماوي", "french": "Cyan", "german": "Cyan", "hungarian": "Cián"},
@@ -3427,6 +3714,8 @@
     "Turquoise": {"arabic": "فيروزي", "french": "Turquoise", "german": "Türkis", "hungarian": "Türkiz"},
     "Beige": {"arabic": "بيج", "french": "Beige", "german": "Beige", "hungarian": "Bézs"},
     "Violet": {"arabic": "بنفسجى", "french": "Violet", "german": "llila", "hungarian": "lila"},
+
+    "Arrow": {"arabic": "سهم", "french": "Flèche", "german": "Pfeil", "hungarian": "Nyíl"},
  "Diamond": {"arabic": "معين", "french": "Diamant", "german": "Raute", "hungarian": "Rombusz"},
     "Pentagon": {"arabic": "خماسي", "french": "Pentagone", "german": "Fünfeck", "hungarian": "Ötszög"},
     "Hexagon": {"arabic": "سداسي", "french": "Hexagone", "german": "Sechseck", "hungarian": "Hatszög"},
@@ -3435,6 +3724,7 @@
     "Sphere": {"arabic": "كرة", "french": "Sphère", "german": "Kugel", "hungarian": "Gömb"},
     "Cone": {"arabic": "مخروط", "french": "Cône", "german": "Kegel", "hungarian": "Kúp"},
     "Cube": {"arabic": "مكعب", "french": "Cube", "german": "Würfel", "hungarian": "Kocka"},
+     "Oval": {"arabic": "بيضاوي", "french": "Ovale", "german": "Oval", "hungarian": "Ovális"},
     "Pyramid": {"arabic": "هرم", "french": "Pyramide", "german": "Pyramide", "hungarian": "Piramis"}
 
 
@@ -3583,12 +3873,31 @@
   "These":        { "arabic": "هؤلاء",             "french": "Ceux-ci / Celles-ci","german": "Diese",               "hungarian": "Ezek" },
   "Those":        { "arabic": "أولئك",             "french": "Ceux-là / Celles-là","german": "Jene",                "hungarian": "Azok" },
   "Here":         { "arabic": "هنا",               "french": "Ici",                "german": "Hier",                "hungarian": "Itt" },
-  "There":        { "arabic": "هناك",              "french": "Là-bas",             "german": "Dort",                "hungarian": "Ott" }
+  "There":        { "arabic": "هناك",              "french": "Là-bas",             "german": "Dort",                "hungarian": "Ott" },
+  "To here":      { "arabic": "إلى هنا",            "french": "Vers ici",           "german": "Hierher",             "hungarian": "Erre" },
+  "To there":     { "arabic": "إلى هناك",           "french": "Vers là-bas",          "german": "Dorthin",             "hungarian": "Arra" },
+  "From here":    { "arabic": "من هنا",             "french": "D'ici",               "german": "Von hier",            "hungarian": "Innenről" },
+  "From there":   { "arabic": "من هناك",            "french": "De là-bas",            "german": "Von dort",            "hungarian": "Onnan" },
+  "Everywhere":   { "arabic": "في كل مكان",         "french": "Partout",             "german": "Überall",             "hungarian": "Mindenhol" },
+  "Nowhere":      { "arabic": "في لا مكان",         "french": "Nulle part",           "german": "Nirgendwo",           "hungarian": "Sehol" },
+  "Anywhere":     { "arabic": "في أي مكان",         "french": "N'importe où",         "german": "Irgendwo",            "hungarian": "Bárhol" },
+"All":          { "arabic": "كل",               "french": "Tout / Tous",        "german": "Alle / Alles",        "hungarian": "Mind / Minden" },
+  "Some":         { "arabic": "بعض",              "french": "Quelques / Certains","german": "Einige / Manche",     "hungarian": "Néhány / Egyesek" },
 
-}, 
-    "B":{
-     
-  "Each One":      { "arabic": "كل واحد",           "french": "Chacun",             "german": "Jeder Einzelne",      "hungarian": "Mindegyik" },
+  "Very": {"arabic": "جداً", "french": "Très", "german": "Sehr", "hungarian": "Nagyon"},
+"So": {"arabic": "جداً / إلى حد", "french": "Si", "german": "So", "hungarian": "Olyan"},
+"Too": {"arabic": "أكثر من اللازم", "french": "Trop", "german": "Zu", "hungarian": "Túl"},
+
+"Around": {"arabic": "تقريبًا", "french": "Autour de", "german": "Ungefähr", "hungarian": "Körül"},
+"Only": {"arabic": "فقط", "french": "Seulement", "german": "Nur", "hungarian": "Csak"},
+"Just": {"arabic": "فقط", "french": "Juste", "german": "Nur", "hungarian": "Csak"},
+"Even": {"arabic": "حتى", "french": "Même", "german": "Sogar", "hungarian": "Még"},
+"Enough": {"arabic": "بما يكفي", "french": "Assez", "german": "Genug", "hungarian": "Elég"},
+"Half": {"arabic": "نصف", "french": "Moitié", "german": "Halb", "hungarian": "Félig"},
+"Double": {"arabic": "ضعف", "french": "Double", "german": "Doppelt", "hungarian": "Dupla"},
+"Once": {"arabic": "مرة", "french": "Une fois", "german": "Einmal", "hungarian": "Egyszer"},
+
+ "Each One":      { "arabic": "كل واحد",           "french": "Chacun",             "german": "Jeder Einzelne",      "hungarian": "Mindegyik" },
   "Every One":     { "arabic": "كل شخص",           "french": "Tout le monde",      "german": "Alle",                "hungarian": "Mindenki" },
   "Same One":      { "arabic": "نفس الشخص",         "french": "Le même",            "german": "Der gleiche",         "hungarian": "Ugyanaz" },
   "Other One":     { "arabic": "الآخر",             "french": "L'autre",            "german": "Der andere",          "hungarian": "A másik" },
@@ -3598,21 +3907,78 @@
   "Someone":      { "arabic": "شخص ما",            "french": "Quelqu'un",          "german": "Jemand",              "hungarian": "Valaki" },
   "Anyone":       { "arabic": "أي أحد",            "french": "N'importe qui",      "german": "Irgendjemand",        "hungarian": "Bárki" },
   "No One":        { "arabic": "لا أحد",            "french": "Personne",           "german": "Niemand",             "hungarian": "Senki" },
-   "All":          { "arabic": "كل",               "french": "Tout / Tous",        "german": "Alle / Alles",        "hungarian": "Mind / Minden" },
-  "Some":         { "arabic": "بعض",              "french": "Quelques / Certains","german": "Einige / Manche",     "hungarian": "Néhány / Egyesek" }
-
-
-
-    },
-    "C":{
-
-        "This One":      { "arabic": "هذا الشخص/الشيء",  "french": "Celui-ci / Celle-ci","german": "Dieses hier",         "hungarian": "Ez itt" },
+   "Evryone":      { "arabic": "الجميع",            "french": "Tout le monde",      "german": "Alle",                "hungarian": "Mindenki" },
+  
+ "This One":      { "arabic": "هذا الشخص/الشيء",  "french": "Celui-ci / Celle-ci","german": "Dieses hier",         "hungarian": "Ez itt" },
   "That One":      { "arabic": "ذلك الشخص/الشيء",  "french": "Celui-là / Celle-là","german": "Jenes da",            "hungarian": "Az ott" },
   "Over Here":     { "arabic": "هنا قريبًا",        "french": "Par ici",            "german": "Hierher",             "hungarian": "Erre" },
   "Over There":    { "arabic": "هناك بعيدًا",       "french": "Par là",             "german": "Dorthin",             "hungarian": "Arra" },
 "Both":         { "arabic": "كلاهما",            "french": "Tous les deux",      "german": "Beide",               "hungarian": "Mindkettő" }
 
 
+}, 
+    "B":{
+
+      "Twice": {"arabic": "مرتين", "french": "Deux fois", "german": "Zweimal", "hungarian": "Kétszer"},
+"Really": {"arabic": "حقًا", "french": "Vraiment", "german": "Wirklich", "hungarian": "Igazán"},
+"Right": {"arabic": "بالضبط", "french": "Juste", "german": "Genau", "hungarian": "Pontosan"},
+"Mostly": {"arabic": "غالبًا", "french": "Surtout", "german": "Meistens", "hungarian": "Leginkább"},  
+
+"Quite": {"arabic": "إلى حد ما", "french": "Assez", "german": "Ziemlich", "hungarian": "Eléggé"},
+"Almost": {"arabic": "تقريبًا", "french": "Presque", "german": "Fast", "hungarian": "Majdnem"},
+"Nearly": {"arabic": "تقريبًا", "french": "Presque", "german": "Beinahe", "hungarian": "Majdnem"},
+"About": {"arabic": "حوالي", "french": "Environ", "german": "Etwa", "hungarian": "Körülbelül"},
+
+     "Mainly": {"arabic": "بشكل رئيسي", "french": "Principalement", "german": "Hauptsächlich", "hungarian": "Főleg"},
+     "Highly": {"arabic": "بدرجة كبيرة", "french": "Hautement", "german": "Hoch", "hungarian": "Nagyon"},
+"Deeply": {"arabic": "بعمق", "french": "Profondément", "german": "Tief", "hungarian": "Mélyen"},
+"Strongly": {"arabic": "بقوة", "french": "Fortement", "german": "Stark", "hungarian": "Erősen"},
+"Fairly": {"arabic": "إلى حد ما", "french": "Assez", "german": "Ziemlich", "hungarian": "Eléggé"},
+"Pretty": {"arabic": "إلى حد كبير", "french": "Assez", "german": "Ziemlich", "hungarian": "Elég"},
+"Rather": {"arabic": "نوعًا ما", "french": "Plutôt", "german": "Ziemlich", "hungarian": "Eléggé"},
+"Completely": {"arabic": "تمامًا", "french": "Complètement", "german": "Komplett", "hungarian": "Teljesen"},
+"Totally": {"arabic": "كليًا", "french": "Totalement", "german": "Völlig", "hungarian": "Teljesen"},
+"Entirely": {"arabic": "كليًا", "french": "Entièrement", "german": "Gänzlich", "hungarian": "Teljesen"},
+"Partly": {"arabic": "جزئيًا", "french": "Partiellement", "german": "Teilweise", "hungarian": "Részben"},
+"Partially": {"arabic": "جزئيًا", "french": "Partiellement", "german": "Teilweise", "hungarian": "Részben"},
+"Approximately": {"arabic": "تقريبًا", "french": "Approximativement", "german": "Ungefähr", "hungarian": "Megközelítőleg"},
+"Roughly": {"arabic": "تقريبًا", "french": "Grossièrement", "german": "Grob", "hungarian": "Nagyjából"},
+"Virtually": {"arabic": "تقريبًا", "french": "Virtuellement", "german": "Praktisch", "hungarian": "Szinte"},
+"Practically": {"arabic": "تقريبًا", "french": "Pratiquement", "german": "Praktisch", "hungarian": "Gyakorlatilag"},
+"Especially": {"arabic": "خصوصًا", "french": "Surtout", "german": "Besonders", "hungarian": "Különösen"},
+"Particularly": {"arabic": "بشكل خاص", "french": "Particulièrement", "german": "Besonders", "hungarian": "Különösen"},
+"Specifically": {"arabic": "تحديدًا", "french": "Spécifiquement", "german": "Speziell", "hungarian": "Kifejezetten"},
+"Simply": {"arabic": "ببساطة", "french": "Simplement", "german": "Einfach", "hungarian": "Egyszerűen"},
+"Merely": {"arabic": "مجرد", "french": "Simplement", "german": "Bloß", "hungarian": "Csupán"}
+ 
+
+
+
+    },
+    "C":{
+
+       
+
+"Precisely": {"arabic": "بدقة", "french": "Précisément", "german": "Präzise", "hungarian": "Pontosan"},
+"Exactly": {"arabic": "بالضبط", "french": "Exactement", "german": "Genau", "hungarian": "Pontosan"},
+"Fully": {"arabic": "كليًا", "french": "Complètement", "german": "Vollständig", "hungarian": "Teljesen"},
+"Hardly": {"arabic": "بالكاد", "french": "À peine", "german": "Kaum", "hungarian": "Alig"},
+"Scarcely": {"arabic": "بالكاد", "french": "À peine", "german": "Kaum", "hungarian": "Alig"},
+"Barely": {"arabic": "بالكاد", "french": "À peine", "german": "Kaum", "hungarian": "Alig"},
+"Thrice": {"arabic": "ثلاث مرات", "french": "Trois fois", "german": "Dreimal", "hungarian": "Háromszor"},
+"Triple": {"arabic": "ثلاثة أضعاف", "french": "Triple", "german": "Dreifach", "hungarian": "Háromszoros"},
+"Incredibly": {"arabic": "بشكل لا يصدق", "french": "Incroyablement", "german": "Unglaublich", "hungarian": "Hihetetlenül"},
+"Terribly": {"arabic": "بشدة", "french": "Terriblement", "german": "Furchtbar", "hungarian": "Szörnyen"},
+"Awfully": {"arabic": "بشدة", "french": "Affreusement", "german": "Schrecklich", "hungarian": "Szörnyen"},
+"Exceptionally": {"arabic": "بشكل استثنائي", "french": "Exceptionnellement", "german": "Außergewöhnlich", "hungarian": "Kivételesen"},
+"Moderately": {"arabic": "باعتدال", "french": "Modérément", "german": "Mäßig", "hungarian": "Mérsékelten"},
+"Somewhat": {"arabic": "إلى حد ما", "french": "Quelque peu", "german": "Etwas", "hungarian": "Valamennyire"},
+"Chiefly": {"arabic": "بشكل رئيسي", "french": "Principalement", "german": "Vor allem", "hungarian": "Főképp"},
+"Primarily": {"arabic": "أساسًا", "french": "Principalement", "german": "Primär", "hungarian": "Elsősorban"},
+"Explicitly": {"arabic": "بوضوح", "french": "Explicitement", "german": "Ausdrücklich", "hungarian": "Kifejezetten"},
+"Notably": {"arabic": "بشكل ملحوظ", "french": "Notamment", "german": "Bemerkenswert", "hungarian": "Különösen"},
+"Namely": {"arabic": "أي", "french": "À savoir", "german": "Nämlich", "hungarian": "Nevezetesen"},
+"AboveAll": {"arabic": "قبل كل شيء", "french": "Surtout", "german": "Vor allem", "hungarian": "Mindenekelőtt"}
 
     }
 
@@ -3648,6 +4014,7 @@
     "Because":     { "arabic": "لأن",            "french": "Parce que",      "german": "Weil",              "hungarian": "Mert" },
     "Although":    { "arabic": "رغم أن",         "french": "Bien que",       "german": "Obwohl",            "hungarian": "Bár" },
     "If":          { "arabic": "إذا",            "french": "Si",             "german": "Wenn",              "hungarian": "Ha" },
+    
     "When":        { "arabic": "عندما",          "french": "Quand",          "german": "Wenn / Als",        "hungarian": "Amikor" },
     "While":       { "arabic": "بينما",          "french": "Pendant que",    "german": "Während",           "hungarian": "Miközben" },
     "Before":      { "arabic": "قبل",            "french": "Avant que",      "german": "Bevor",             "hungarian": "Mielőtt" },
@@ -3660,7 +4027,9 @@
  "Therefore":    { "arabic": "لذلك",               "french": "Donc",             "german": "Deshalb",          "hungarian": "Ezért" },
    "Else": { "arabic":" وإلا ", "french": "Sinon", "german": "Sonst", "hungarian": "Különben" },
   "For": { "arabic": " من أجل", "french": "Pour", "german": "Für", "hungarian": " -ért" },
-  "Like":               { "arabic": "مثل",           "french": "Comme",             "german": "Wie",               "hungarian": "Mint" }
+
+  "Like":    { "arabic": "مثل",     "french": "Comme",       "german": "Wie",       "hungarian": "Mint" }
+  
 
 
 
@@ -3873,6 +4242,153 @@
 
 
 
+    "Adverbs":{
+      "A":{
+
+        "Maybe": {"arabic": "ربما", "french": "Peut-être", "german": "Vielleicht", "hungarian": "Talán"},
+"Perhaps": {"arabic": "ربما", "french": "Peut-être", "german": "Vielleicht", "hungarian": "Talán"},
+"Clearly": {"arabic": "بوضوح", "french": "Clairement", "german": "Klar", "hungarian": "Világosan"},
+"Obviously": {"arabic": "من الواضح", "french": "Évidemment", "german": "Offensichtlich", "hungarian": "Nyilvánvalóan"},
+"Certainly": {"arabic": "بالتأكيد", "french": "Certainement", "german": "Sicherlich", "hungarian": "Bizonyára"},
+"Probably": {"arabic": "على الأرجح", "french": "Probablement", "german": "Wahrscheinlich", "hungarian": "Valószínűleg"},
+"Personally": {"arabic": "شخصيًا", "french": "Personnellement", "german": "Persönlich", "hungarian": "Személyesen"},
+
+"Almost": {"arabic": "تقريبًا", "french": "Presque", "german": "Fast", "hungarian": "Majdnem"},
+"Nearly": {"arabic": "يكاد", "french": "Presque", "german": "Beinahe", "hungarian": "Majdnem"},
+"Just": {"arabic": "فقط", "french": "Juste", "german": "Nur", "hungarian": "Csak"},
+"Only": {"arabic": "فقط", "french": "Seulement", "german": "Nur", "hungarian": "Csak"},
+"Even": {"arabic": "حتى", "french": "Même", "german": "Sogar", "hungarian": "Még"},
+"Simply": {"arabic": "ببساطة", "french": "Simplement", "german": "Einfach", "hungarian": "Egyszerűen"},
+"Quite": {"arabic": "إلى حد ما", "french": "Assez", "german": "Ziemlich", "hungarian": "Eléggé"},
+
+"Quickly": {"arabic": "بسرعة", "french": "Rapidement", "german": "Schnell", "hungarian": "Gyorsan"},
+"Slowly": {"arabic": "ببطء", "french": "Lentement", "german": "Langsam", "hungarian": "Lassan"},
+"Easily": {"arabic": "بسهولة", "french": "Facilement", "german": "Leicht", "hungarian": "Könnyen"},
+"Quietly": {"arabic": "بهدوء", "french": "Silencieusement", "german": "Leise", "hungarian": "Csendesen"},
+"Loudly": {"arabic": "بصوت عال", "french": "Brusquement", "german": "Laut", "hungarian": "Hangosan"},
+"Happily": {"arabic": "بسعادة", "french": "Heureusement", "german": "Glücklich", "hungarian": "Boldogan"},
+"Sadly": {"arabic": "بحزن", "french": "Tristement", "german": "Traurig", "hungarian": "Szomorúan"},
+"Carefully": {"arabic": "بحذر", "french": "Soigneusement", "german": "Sorgfältig", "hungarian": "Óvatosan"},
+"Carelessly": {"arabic": "بإهمال", "french": "Négligemment", "german": "Nachlässig", "hungarian": "Figyelmetlenül"},
+"Politely": {"arabic": "بأدب", "french": "Poliment", "german": "Höflich", "hungarian": "Udvariasan"},
+"Rudely": {"arabic": "بوقاحة", "french": "Grossièrement", "german": "Unhöflich", "hungarian": "Udvariatlanul"},
+"Calmly": {"arabic": "بهدوء", "french": "Calmement", "german": "Ruhig", "hungarian": "Nyugodtan"},
+"Angrily": {"arabic": "بغضب", "french": "Avec colère", "german": "Wütend", "hungarian": "Dühösen"},
+"Bravely": {"arabic": "بشجاعة", "french": "Bravement", "german": "Mutig", "hungarian": "Bátran"},
+"Honestly": {"arabic": "بصدق", "french": "Honnêtement", "german": "Ehrlich", "hungarian": "Őszintén"},
+"Softly": {"arabic": "برفق", "french": "Doucement", "german": "Sanft", "hungarian": "Finoman"},
+"Gently": {"arabic": "بلطف", "french": "Doucement", "german": "Sanft", "hungarian": "Gyengéden"},
+"Warmly": {"arabic": "بحرارة", "french": "Chaleureusement", "german": "Herzlich", "hungarian": "Szívélyesen"},
+"Difficultly": {"arabic": "بصعوبة", "french": "Difficilement", "german": "Schwer", "hungarian": "Nehezen"},
+
+
+"Nicely": {"arabic": "بلطف", "french": "Gentiment", "german": "Nett", "hungarian": "Kedvesen"},
+
+"Badly": {"arabic": "بشكل سيء", "french": "Mal", "german": "Schlecht", "hungarian": "Rosszul"},
+"Well": {"arabic": "جيدًا", "french": "Bien", "german": "Gut", "hungarian": "Jól"},
+"Hard": {"arabic": "بشدة", "french": "Durement", "german": "Hart", "hungarian": "Keményen"}
+
+
+
+
+
+
+
+
+      },
+
+      "B":{
+        "Honestly": {"arabic": "بصراحة", "french": "Honnêtement", "german": "Ehrlich gesagt", "hungarian": "Őszintén"},
+"Frankly": {"arabic": "بصراحة تامة", "french": "Franchement", "german": "Offen gesagt", "hungarian": "Őszintén szólva"},
+"Surely": {"arabic": "بالتأكيد", "french": "Sûrement", "german": "Sicher", "hungarian": "Biztosan"},
+"Naturally": {"arabic": "بطبيعة الحال", "french": "Naturellement", "german": "Natürlich", "hungarian": "Természetesen"},
+"Luckily": {"arabic": "لحسن الحظ", "french": "Heureusement", "german": "Zum Glück", "hungarian": "Szerencsére"},
+"Unfortunately": {"arabic": "للأسف", "french": "Malheureusement", "german": "Leider", "hungarian": "Sajnos"},
+"Seriously": {"arabic": "بجدية", "french": "Sérieusement", "german": "Ernsthaft", "hungarian": "Komolyan"},
+
+"Sharply": {"arabic": "بحدة", "french": "Brusquement", "german": "Scharf", "hungarian": "Élesen"},
+"Firmly": {"arabic": "بحزم", "french": "Fermement", "german": "Fest", "hungarian": "Határozottan"},
+"Smoothly": {"arabic": "بسلاسة", "french": "Doucement", "german": "Reibungslos", "hungarian": "Simán"},
+"Boldly": {"arabic": "بجرأة", "french": "Audacieusement", "german": "Kühn", "hungarian": "Merészen"},
+"Gracefully": {"arabic": "برشاقة", "french": "Gracieusement", "german": "Anmutig", "hungarian": "Kecsesen"},
+"Clumsily": {"arabic": "بشكل أخرق", "french": "Maladroitement", "german": "Ungeschickt", "hungarian": "Ügyetlenül"},
+"Deliberately": {"arabic": "عن قصد", "french": "Délibérément", "german": "Absichtlich", "hungarian": "Szándékosan"},
+"Reluctantly": {"arabic": "بتردد", "french": "À contrecœur", "german": "Widerwillig", "hungarian": "Vonakodva"},
+"Willingly": {"arabic": "برغبة", "french": "Volontiers", "german": "Bereitwillig", "hungarian": "Készségesen"},
+"Casually": {"arabic": "بشكل عفوي", "french": "Décontracté", "german": "Lässig", "hungarian": "Lazán"},
+"Openly": {"arabic": "بصراحة", "french": "Ouvertement", "german": "Offen", "hungarian": "Nyíltan"},
+"Secretly": {"arabic": "سرًا", "french": "Secrètement", "german": "Heimlich", "hungarian": "Titokban"},
+"Openheartedly": {"arabic": "بصدق", "french": "Sincèrement", "german": "Offenherzig", "hungarian": "Őszintén"},
+
+"Playfully": {"arabic": "بمرح", "french": "En jouant", "german": "Verspielt", "hungarian": "Játékosan"},
+"Wildly": {"arabic": "بجنون", "french": "Follement", "german": "Wild", "hungarian": "Vadul"},
+"Carelessly": {"arabic": "بإهمال", "french": "Négligemment", "german": "Sorglos", "hungarian": "Gondatlanul"},
+"Faithfully": {"arabic": "بإخلاص", "french": "Fidèlement", "german": "Treulich", "hungarian": "Hűségesen"},
+"Patiently": {"arabic": "بصبر", "french": "Patiemment", "german": "Geduldig", "hungarian": "Türelmesen"},
+"Eagerly": {"arabic": "بحماس", "french": "Avec empressement", "german": "Eifrig", "hungarian": "Lelkesen"}
+
+
+},
+
+
+ "C":{
+
+        "Undoubtedly": {"arabic": "بلا شك", "french": "Sans doute", "german": "Zweifellos", "hungarian": "Kétségtelenül"},
+"Interestingly": {"arabic": "المثير للاهتمام", "french": "Fait intéressant", "german": "Interessanterweise", "hungarian": "Érdekes módon"},
+"Strangely": {"arabic": "بشكل غريب", "french": "Étrangement", "german": "Seltsamerweise", "hungarian": "Furcsa módon"},
+"Surprisingly": {"arabic": "بشكل مفاجئ", "french": "Étonnamment", "german": "Überraschenderweise", "hungarian": "Meglepő módon"},
+"Regrettably": {"arabic": "مما يؤسف له", "french": "Malheureusement", "german": "Bedauerlicherweise", "hungarian": "Sajnálatos módon"},
+"Confidentially": {"arabic": "بشكل سري", "french": "Confidentiellement", "german": "Vertraulich", "hungarian": "Bizalmasan"},
+
+"Somewhat": {"arabic": "إلى حد ما", "french": "Quelque peu", "german": "Etwas", "hungarian": "Valamennyire"},
+"Virtually": {"arabic": "تقريبًا", "french": "Virtuellement", "german": "Praktisch", "hungarian": "Szinte"},
+"Practically": {"arabic": "تقريبًا", "french": "Pratiquement", "german": "Praktisch", "hungarian": "Gyakorlatilag"},
+"Hardly": {"arabic": "بالكاد", "french": "À peine", "german": "Kaum", "hungarian": "Alig"},
+"Barely": {"arabic": "بالكاد", "french": "À peine", "german": "Kaum", "hungarian": "Alig"},
+"Scarcely": {"arabic": "بالكاد", "french": "À peine", "german": "Kaum", "hungarian": "Alig"},
+
+"Meticulously": {"arabic": "بدقة شديدة", "french": "Méticuleusement", "german": "Akribisch", "hungarian": "Aprólékosan"},
+"Relentlessly": {"arabic": "بلا توقف", "french": "Sans relâche", "german": "Unerbittlich", "hungarian": "Könyörtelenül"},
+"Unwittingly": {"arabic": "دون قصد", "french": "Involontairement", "german": "Unwissentlich", "hungarian": "Akaratlanul"},
+"Methodically": {"arabic": "بشكل منهجي", "french": "Méthodiquement", "german": "Methodisch", "hungarian": "Módszeresen"},
+"Vigorously": {"arabic": "بقوة", "french": "Vigoureusement", "german": "Kräftig", "hungarian": "Erőteljesen"},
+"Covertly": {"arabic": "بشكل خفي", "french": "Furtivement", "german": "Verdeckt", "hungarian": "Titokban"},
+"Explicitly": {"arabic": "بوضوح تام", "french": "Explicitement", "german": "Ausdrücklich", "hungarian": "Kifejezetten"},
+"Implicitly": {"arabic": "ضمنيًا", "french": "Implicitement", "german": "Implizit", "hungarian": "Hallgatólagosan"},
+"Systematically": {"arabic": "بشكل منهجي", "french": "Systématiquement", "german": "Systematisch", "hungarian": "Rendszeresen"},
+"Competently": {"arabic": "بكفاءة", "french": "Compétemment", "german": "Kompetent", "hungarian": "Hozzáértően"},
+"Efficiently": {"arabic": "بكفاءة", "french": "Efficacement", "german": "Effizient", "hungarian": "Hatékonyan"},
+"Professionally": {"arabic": "باحتراف", "french": "Professionnellement", "german": "Professionell", "hungarian": "Professzionálisan"},
+"Consciously": {"arabic": "بوعي", "french": "Consciemment", "german": "Bewusst", "hungarian": "Tudatosan"},
+"Unconsciously": {"arabic": "بدون وعي", "french": "Inconsciemment", "german": "Unbewusst", "hungarian": "Öntudatlanul"},
+"Respectfully": {"arabic": "باحترام", "french": "Respectueusement", "german": "Respektvoll", "hungarian": "Tisztelettel"},
+"Subtly": {"arabic": "بشكل خفي", "french": "Subtilement", "german": "Subtil", "hungarian": "Finoman"},
+"Intentionally": {"arabic": "عن عمد", "french": "Intentionnellement", "german": "Absichtlich", "hungarian": "Szándékosan"},
+"Unintentionally": {"arabic": "بدون قصد", "french": "Involontairement", "german": "Unabsichtlich", "hungarian": "Akaratlanul"},
+"Strategically": {"arabic": "بشكل استراتيجي", "french": "Stratégiquement", "german": "Strategisch", "hungarian": "Stratégiailag"},
+"Logically": {"arabic": "بمنطق", "french": "Logiquement", "german": "Logisch", "hungarian": "Logikusan"}
+
+
+
+
+
+
+
+      }
+
+
+
+
+      },
+
+     
+
+
+
+   
+
+
+
 
 
 
@@ -3913,9 +4429,11 @@
     "Spring": { "arabic": "الربيع",   "french": "le printemps", "german": "der Frühling", "hungarian": "a tavasz" },
     "Summer": { "arabic": "الصيف",    "french": "l'été",        "german": "der Sommer",   "hungarian": "a nyár" },
     "Autumn": { "arabic": "الخريف",   "french": "l'automne",    "german": "der Herbst",   "hungarian": "az ősz" },
-    "Winter": { "arabic": "الشتاء",   "french": "l'hiver",      "german": "der Winter",   "hungarian": "a tél" },   "Today":        { "arabic": "اليوم",         "french": "aujourd'hui",     "german": "heute",          "hungarian": "ma" },
+    "Winter": { "arabic": "الشتاء",   "french": "l'hiver",      "german": "der Winter",   "hungarian": "a tél" },  
     "Yesterday":    { "arabic": "أمس",           "french": "hier",            "german": "gestern",        "hungarian": "tegnap" },
     "Tomorrow":     { "arabic": "غداً",          "french": "demain",          "german": "morgen",         "hungarian": "holnap" },
+    "Today": { "arabic": "اليوم", "french": "aujourd'hui", "german": "heute", "hungarian": "ma" },
+    "Now": { "arabic": "الآن", "french": "maintenant", "german": "jetzt", "hungarian": "most" },
     
    
     
@@ -3942,12 +4460,31 @@
 
 
     "B":{
+
+      "Once": { "arabic": "مرة", "french": "une fois", "german": "einmal", "hungarian": "egyszer" },
+"Past": { "arabic": "الماضي", "french": "le passé", "german": "die Vergangenheit", "hungarian": "a múlt" },
+"Present": { "arabic": "الحاضر", "french": "le présent", "german": "die Gegenwart", "hungarian": "a jelen" },
+"Future": { "arabic": "المستقبل", "french": "le futur", "german": "die Zukunft", "hungarian": "a jövő" },
+"While": { "arabic": "مدة", "french": "un moment", "german": "eine Weile", "hungarian": "egy ideig" },
+
+
+"Free Time": { "arabic": "وقت فراغ", "french": "le temps libre", "german": "die Freizeit", "hungarian": "a szabadidő" },
+
+
+"Next Week": { "arabic": "الأسبوع القادم", "french": "la semaine prochaine", "german": "die nächste Woche", "hungarian": "a jövő hét" },
+"Next Month": { "arabic": "الشهر القادم", "french": "le mois prochain", "german": "der nächste Monat", "hungarian": "a jövő hónap" },
+"Next Year": { "arabic": "العام القادم", "french": "l'année prochaine", "german": "das nächste Jahr", "hungarian": "a jövő év" },
+"Last Week": { "arabic": "الأسبوع السابق", "french": "la semaine dernière", "german": "die letzte Woche", "hungarian": "a múlt hét" },
+"Last Month": { "arabic": "الشهر السابق", "french": "le mois dernier", "german": "der letzte Monat", "hungarian": "a múlt hónap" },
+"Last Year": { "arabic": "العام السابق", "french": "l'année dernière", "german": "das letzte Jahr", "hungarian": "a múlt év" },
+
        "Dawn":         { "arabic": "فجر",         "french": "l'aube",         "german": "die Morgendämmerung", "hungarian": "a hajnal" },
     "Sunrise":      { "arabic": "شروق",        "french": "le lever du soleil", "german": "der Sonnenaufgang", "hungarian": "a napkelte" },
     "Sunset":       { "arabic": "غروب",        "french": "le coucher du soleil", "german": "der Sonnenuntergang", "hungarian": "a napnyugta" },
  "Holiday":      { "arabic": "عطلة",          "french": "les vacances",        "german": "die Ferien/der Urlaub",  "hungarian": "a szabadság" },
   " Workday":      { "arabic": "يوم عمل",       "french": "le jour ouvré",      "german": "der Werktag",        "hungarian": "a munkanap" },
-    "Weekend":      { "arabic": "عطلة نهاية الأسبوع", "french": "le week-end",   "german": "das Wochenende",     "hungarian": "a hétvége" }
+    "Weekend":      { "arabic": "عطلة نهاية الأسبوع", "french": "le week-end",   "german": "das Wochenende",     "hungarian": "a hétvége" },
+"Break": { "arabic": "استراحة", "french": "la pause", "german": "die Pause", "hungarian": "a szünet"}
 
     },
 
@@ -4134,13 +4671,13 @@
   "Education":     { "arabic": "التعليم",   "french": "l'Éducation",     "german": "die Bildung",      "hungarian": "az Oktatás" },
 
 
+
 "Name": { "arabic": "اسم", "french": "Nom", "german": "Name", "hungarian": "Név" },
   "Professor": { "arabic": "بروفسور", "french": "Professeur d’université", "german": "Professor", "hungarian": "Professzor" },
-     "Verb":          { "arabic": "فعل",         "french": "le Verbe",          "german": "das Verb",           "hungarian": "az Ige" },
-    "Subject":       { "arabic": "فاعل / موضوع","french": "le Sujet",          "german": "das Subjekt",        "hungarian": "az Alany / Téma" },
+    
     "The Object":        { "arabic": "مفعول به / شيء", "french": "l'Objet",       "german": "das Objekt",         "hungarian": "a Tárgy" },
-    "Phrase":        { "arabic": "عبارة",       "french": "la Phrase",         "german": "die Phrase",         "hungarian": "a Kifejezés" },
-    "Word":          { "arabic": "كلمة",        "french": "le Mot",            "german": "das Wort",           "hungarian": "a Szó" },
+   
+   
 "Library": { "arabic": "مكتبة", "french": "la Bibliothèque", "german": "die Bibliothek", "hungarian": "a Könyvtár" },
       "Laboratory": { "arabic": "مختبر", "french": "le Laboratoire", "german": "das Labor", "hungarian": "a Laboratórium" },
     "Research Center": { "arabic": "مركز أبحاث", "french": "le Centre de recherche", "german": "das Forschungszentrum", "hungarian": "a Kutatóközpont" },
@@ -4171,10 +4708,31 @@
 
 "Certificate":    { "arabic": "شهادة",          "french": "le Certificat",         "german": "das Zertifikat",         "hungarian": "a Bizonyítvány" },
   "Grade":          { "arabic": "درجة",           "french": "la Note",               "german": "die Note",               "hungarian": "az Osztályzat" }  ,
-  "Graduation":     { "arabic": "تخرج",           "french": "le Diplôme",            "german": "der Abschluss",          "hungarian": "a Diploma" }
+  "Graduation":     { "arabic": "تخرج",           "french": "le Diplôme",            "german": "der Abschluss",          "hungarian": "a Diploma" },
 
 
+"Title": { "arabic": "عنوان", "french": "le Titre", "german": "der Titel", "hungarian": "a Cím" },
+  "Letter": { "arabic": "حرف", "french": "la lettre", "german": "der Buchstabe", "hungarian": "a betű" },
+"Word": { "arabic": "كلمة", "french": "le mot", "german": "das Wort", "hungarian": "a szó" },
+"Sentence": { "arabic": "جملة", "french": "la phrase", "german": "der Satz", "hungarian": "a mondat" },
+ "Phrase":        { "arabic": "عبارة",       "french": "la Phrase",         "german": "die Phrase",         "hungarian": "a Kifejezés" },
+"Text": { "arabic": "نص", "french": "le texte", "german": "der Text", "hungarian": "a szöveg" },
+"Paragraph": { "arabic": "فقرة", "french": "le paragraphe", "german": "der Absatz", "hungarian": "a bekezdés" },
+"Introduction": { "arabic": "مقدمة", "french": "l'introduction", "german": "die Einleitung", "hungarian": "a bevezetés" },
+"Ending": { "arabic": "خاتمة", "french": "la fin", "german": "das Ende", "hungarian": "a befejezés" },
+"Conclusion": { "arabic": "خاتمة", "french": "la conclusion", "german": "der Schluss", "hungarian": "a következtetés" },
+"Verb": { "arabic": "فعل", "french": "le verbe", "german": "das Verb", "hungarian": "a ige" },
+"Subject": { "arabic": "فاعل", "french": "le sujet", "german": "das Subjekt", "hungarian": "a alany" },
+"Object": { "arabic": "مفعول به", "french": "l'objet", "german": "das Objekt", "hungarian": "a tárgy" },
+"Adverb": { "arabic": "ظرف", "french": "l'adverbe", "german": "das Adverb", "hungarian": "a határozó" },
+"Chapter": { "arabic": "محور", "french": "le chapitre", "german": "das Kapitel", "hungarian": "a fejezet" },
+"Topic": { "arabic": "موضوع", "french": "le sujet", "german": "das Thema", "hungarian": "a téma" },
+"Example": { "arabic": "مثال", "french": "l'exemple", "german": "das Beispiel", "hungarian": "a példa" },
+"Message": { "arabic": "رسالة", "french": "le message", "german": "die Nachricht", "hungarian": "a üzenet" },
 
+
+"Classroom": { "arabic": "فصل", "french": "la salle de classe", "german": "das Klassenzimmer", "hungarian": "a tanterem" },
+"Map": { "arabic": "خريطة", "french": "la carte", "german": "die Karte", "hungarian": "a térkép" }
 
 
 
@@ -4232,10 +4790,23 @@
   "Participation":  { "arabic": "مشاركة",         "french": "la Participation",      "german": "die Teilnahme",          "hungarian": "a Részvétel" },
   "Discipline":     { "arabic": "انضباط",         "french": "la Discipline",         "german": "die Disziplin",          "hungarian": "a Fegyelem" },
   "Mentor":         { "arabic": "مرشد",           "french": "le Mentor",             "german": "der Mentor",             "hungarian": "a Mentor" },
-  "Issue":         { "arabic": "مشكلة",      "french": "Problème",    "german": "Problem",      "hungarian": "Ügy" }
+  "Issue":         { "arabic": "مشكلة",      "french": "Problème",    "german": "Problem",      "hungarian": "Ügy" },
  
 
 
+"Order": { "arabic": "نظام", "french": "l'ordre", "german": "die Ordnung", "hungarian": "a rend" },
+"Rules": { "arabic": "قواعد", "french": "les règles", "german": "die Regeln", "hungarian": "a szabályok" },
+"Decision": { "arabic": "قرار", "french": "la décision", "german": "die Entscheidung", "hungarian": "a döntés" },
+"Development": { "arabic": "تطور", "french": "le développement", "german": "die Entwicklung", "hungarian": "a fejlődés" },
+"Practice": { "arabic": "ممارسة", "french": "la pratique", "german": "die Übung", "hungarian": "a gyakorlat" },
+"Pronunciation": { "arabic": "نطق", "french": "la prononciation", "german": "die Aussprache", "hungarian": "a kiejtés" },
+"Mistake": { "arabic": "خطأ", "french": "l'erreur", "german": "der Fehler", "hungarian": "a hiba" },
+"Imagination": { "arabic": "خيال", "french": "l'imagination", "german": "die Vorstellungskraft", "hungarian": "a képzelet" },
+"Idea": { "arabic": "فكرة", "french": "l'idée", "german": "die Idee", "hungarian": "az ötlet" },
+"Attention": { "arabic": "انتباه", "french": "l'attention", "german": "die Aufmerksamkeit", "hungarian": "a figyelem" },
+"Habit": { "arabic": "عادة", "french": "l'habitude", "german": "die Gewohnheit", "hungarian": "a szokás" },
+"Progress": { "arabic": "تقدم", "french": "le progrès", "german": "der Fortschritt", "hungarian": "a haladás" },
+"Experience": { "arabic": "خبرة", "french": "l'expérience", "german": "die Erfahrung", "hungarian": "a tapasztalat" }
 
 
 
@@ -4246,6 +4817,10 @@
 
 
     "C":{
+
+      "presentation": { "arabic": "عرض", "french": "la Présentation", "german": "die Präsentation", "hungarian": "a Prezentáció" },
+
+      "sequel": { "arabic": "تكملة", "french": "la suite", "german": "die Fortsetzung", "hungarian": "a folytatás" },
 
        "Feedback":      { "arabic": "ملاحظات",          "french": "Retour",                "german": "Rückmeldung",             "hungarian": "Visszajelzés" },
   "Display":       { "arabic": "عرض",              "french": "Afficher",              "german": "Anzeigen",                "hungarian": "Megjelenít" } ,
@@ -4307,6 +4882,12 @@
      "Journey":       { "arabic": "رحلة",               "french": "le Voyage",             "german": "die Reise",              "hungarian": "az Utazás" },
 
     "Stadium": { "arabic": "ملعب", "french": "le Stade", "german": "das Stadion", "hungarian": "a Stadion" },
+
+    "music": { "arabic": "موسيقى", "french": "la musique", "german": "die Musik", "hungarian": "a zene" },
+"picture": { "arabic": "صورة", "french": "l'image", "german": "das Bild", "hungarian": "a kép" },
+"adventure": { "arabic": "مغامرة", "french": "l'aventure", "german": "das Abenteuer", "hungarian": "a kaland" },
+"gift": { "arabic": "هدية", "french": "le cadeau", "german": "das Geschenk", "hungarian": "az ajándék" },
+
      
     "Pub": { "arabic": "حانة", "french": "le Bar", "german": "die Kneipe", "hungarian": "a Kocsma" },
     "Nightclub": { "arabic": "ملهى ليلي", "french": "la Boîte de nuit", "german": "der Nachtclub", "hungarian": "az Éjszakai klub" },
@@ -4712,7 +5293,7 @@
   "A":{
 
      "Peace": { "arabic": "سلام", "french": "Paix", "german": "Frieden", "hungarian": "Béke" },
-
+"Obstacle": { "arabic": "عائق", "french": "l'obstacle", "german": "das Hindernis", "hungarian": "az akadály" },
      "Security": { "arabic": "أمن", "french": "Sécurité", "german": "Sicherheit", "hungarian": "Biztonság" },
   "Conflict": { "arabic": "صراع", "french": "Conflit", "german": "Konflikt", "hungarian": "Konfliktus" },
   "International Relations": { "arabic": "العلاقات الدولية", "french": "Relations internationales", "german": "Internationale Beziehungen", "hungarian": "Nemzetközi kapcsolatok" },
@@ -4836,12 +5417,18 @@
 
 "A":{
 
+ 
+"goal": {"arabic": "هدف", "french": "Objectif", "german": "Ziel", "hungarian": "Cél"},
+" believe":{"arabic": "الإيمان", "french": "la Croyance", "german": "der Glaube", "hungarian": "a Hit"},
+"Worship":{"arabic": "عبادة", "french": "Adoration", "german": "Anbetung", "hungarian": "Imádat"},
+"Peace": {"arabic": "سلام", "french": "Paix", "german": "Frieden", "hungarian": "Béke"},
+
   "Anger": {"arabic": "غضب", "french": "Colère", "german": "Zorn", "hungarian": "Harag"},
       "Fear": {"arabic": "خوف", "french": "Peur", "german": "Angst", "hungarian": "Félelem"},
       "Sadness": {"arabic": "حزن", "french": "Tristesse", "german": "Traurigkeit", "hungarian": "Szomorúság"},
       "Jealousy": {"arabic": "غيرة", "french": "Jalousie", "german": "Eifersucht", "hungarian": "Irígység"},
 
-       "Charity / Almsgiving": {"arabic": "صدقة", "french": "Charité", "german": "Almosen", "hungarian": "Adomány"},
+       "Charity /Almsgiving": {"arabic": "صدقة", "french": "Charité", "german": "Almosen", "hungarian": "Adomány"},
   "Gift / Donation": {"arabic": "هبة", "french": "Don", "german": "Geschenk / Spende", "hungarian": "Ajándék"},
   "Magic": {"arabic": "سحر", "french": "Magie", "german": "Magie", "hungarian": "Mágia"},
   
