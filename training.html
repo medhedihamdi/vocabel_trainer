@@ -1,200 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Free Training</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<title>Multi-Language Translation Table</title>
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+  table-layout: auto;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+th:first-child,
+td:first-child {
+  width: 1%;
+  text-align: center;
+}
+
+table select,
+table button {
+  margin: 5px 0;
+  display: block;
+  width: 100%;
+  max-width: 300px;
+}
+
+input[type="text"] {
+  width: 120px;
+}
+</style>
 </head>
+
 <body>
-  <div class="container">
 
-    <button onclick="location.href='index.html'">🔙 Back to Homepage</button>
+<div class="container">
 
-    <div class="settings-container">
-      <h3>Select Topic:</h3>
-      <select id="mainDropdown"><option value="">--Select--</option></select>
+<button onclick="location.href='index.html'">🔙 Back to the homepage</button>
 
-      <h3>Select Translation Language:</h3>
-      <select id="languageDropdown"><option value="">--Select--</option></select>
+<h2>Translation Table</h2>
 
-      <h3>Select Source Language:</h3>
-      <select id="sourceLangDropdown"><option value="">--Select--</option></select>
+<label>Select Topic:</label>
+<select id="topicDropdown">
+  <option value="">--Select--</option>
+</select>
 
-      <button id="randomBtn" disabled>Start Free Training</button>
-    </div>
+<label>Select Level:</label>
+<select id="levelDropdown" disabled>
+  <option value="">--Select--</option>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+  <option value="A+B">A+B</option>
+  <option value="A+C">A+C</option>
+  <option value="B+C">B+C</option>
+  <option value="ALL">ALL</option>
+</select>
 
-    <button id="exitQuizBtn" style="display:none; margin-top:10px;">⏹ Exit & Return to Settings</button>
+<label>Select Your Language:</label>
+<select id="fromLangDropdown">
+  <option value="">--Select--</option>
+</select>
 
-    <div id="quiz" style="display:none; margin-top:20px;">
-      <p id="wordDisplay" style="font-weight:bold;"></p>
-      <input type="text" id="userInput" placeholder="Write translation" />
-      <button id="checkBtn">Check Answer</button>
-      <button id="nextBtn" style="display:none;">Next</button>
+<label>Select Translation Language 1:</label>
+<select id="toLangDropdown1">
+  <option value="">--Select--</option>
+</select>
 
-      <p id="feedback"></p>
-      <p id="correctAnswer"></p>
-    </div>
+<label>Select Translation Language 2:</label>
+<select id="toLangDropdown2">
+  <option value="">--Select--</option>
+</select>
 
-  </div>
+<label>Select Translation Language 3:</label>
+<select id="toLangDropdown3">
+  <option value="">--Select--</option>
+</select>
+
+<label>Select Translation Language 4:</label>
+<select id="toLangDropdown4">
+  <option value="">--Select--</option>
+</select>
+
+<button id="showTableBtn" disabled>Show Table</button>
+
+<table id="translationTable" style="display:none;">
+  <thead>
+    <tr id="tableHeadRow">
+      <th>#</th>
+      <th></th>
+      <th>Word</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+</div>
 
 <script>
-  let jsonData = {};
-  let currentWord = "";
-  let currentTopic = "";
-  let currentLang = "";
-  let sourceLang = "";
 
-  const mainDropdown = document.getElementById("mainDropdown");
-  const languageDropdown = document.getElementById("languageDropdown");
-  const sourceLangDropdown = document.getElementById("sourceLangDropdown");
-  const randomBtn = document.getElementById("randomBtn");
-  const exitQuizBtn = document.getElementById("exitQuizBtn");
-  const quiz = document.getElementById("quiz");
-  const settingsContainer = document.querySelector(".settings-container");
+let jsonData = {};
+let selectedTopic = '';
+let selectedLevel = '';
+let availableLanguages = [];
 
-  fetch("vocab.json")
-    .then(res => res.json())
-    .then(data => {
-      jsonData = data;
-      for (const topic in data) {
-        const opt = document.createElement("option");
-        opt.value = topic;
-        opt.textContent = topic;
-        mainDropdown.appendChild(opt);
+const topicDropdown = document.getElementById('topicDropdown');
+const levelDropdown = document.getElementById('levelDropdown');
+const fromLangDropdown = document.getElementById('fromLangDropdown');
+const toLangDropdown1 = document.getElementById('toLangDropdown1');
+const toLangDropdown2 = document.getElementById('toLangDropdown2');
+const toLangDropdown3 = document.getElementById('toLangDropdown3');
+const toLangDropdown4 = document.getElementById('toLangDropdown4');
+const showTableBtn = document.getElementById('showTableBtn');
+
+const allDropdowns = [
+  fromLangDropdown,
+  toLangDropdown1,
+  toLangDropdown2,
+  toLangDropdown3,
+  toLangDropdown4
+];
+
+function resetLanguageDropdowns() {
+  allDropdowns.forEach(dropdown => {
+    dropdown.innerHTML = '<option value="">--Select--</option>';
+  });
+}
+
+function getSelectedLevels(level) {
+  switch (level) {
+    case "A": return ["A"];
+    case "B": return ["B"];
+    case "C": return ["C"];
+    case "A+B": return ["A", "B"];
+    case "A+C": return ["A", "C"];
+    case "B+C": return ["B", "C"];
+    case "ALL": return ["A", "B", "C"];
+    default: return [];
+  }
+}
+
+fetch('vocab-l.json')
+.then(res => res.json())
+.then(data => {
+  jsonData = data;
+
+  for (const topic in data) {
+    const option = document.createElement('option');
+    option.value = topic;
+    option.textContent = topic;
+    topicDropdown.appendChild(option);
+  }
+});
+
+topicDropdown.addEventListener('change', function () {
+  selectedTopic = this.value;
+  selectedLevel = '';
+  levelDropdown.disabled = !selectedTopic;
+  levelDropdown.selectedIndex = 0;
+  resetLanguageDropdowns();
+  showTableBtn.disabled = true;
+});
+
+levelDropdown.addEventListener('change', function () {
+  selectedLevel = this.value;
+  resetLanguageDropdowns();
+  showTableBtn.disabled = true;
+
+  if (!selectedTopic || !selectedLevel) return;
+
+  const levels = getSelectedLevels(selectedLevel);
+  let firstEntry = null;
+
+  for (const lvl of levels) {
+    if (jsonData[selectedTopic][lvl]) {
+      const entries = Object.values(jsonData[selectedTopic][lvl]);
+
+      if (entries.length > 0) {
+        firstEntry = entries[0];
+        break;
       }
+    }
+  }
+
+  if (!firstEntry) return;
+
+  availableLanguages = ["english", ...Object.keys(firstEntry)];
+
+  allDropdowns.forEach(dropdown => {
+    availableLanguages.forEach(lang => {
+      const option = document.createElement('option');
+      option.value = lang;
+      option.textContent = lang;
+      dropdown.appendChild(option.cloneNode(true));
+    });
+  });
+});
+
+function checkEnable() {
+  showTableBtn.disabled = !(
+    topicDropdown.value &&
+    levelDropdown.value &&
+    fromLangDropdown.value &&
+    toLangDropdown1.value
+  );
+}
+
+fromLangDropdown.addEventListener('change', checkEnable);
+toLangDropdown1.addEventListener('change', checkEnable);
+
+function createHideableCell(word) {
+  const cell = document.createElement('td');
+
+  const span = document.createElement('span');
+  span.textContent = word;
+
+  const hideBtn = document.createElement('button');
+  hideBtn.textContent = 'Hide';
+
+  cell.appendChild(span);
+  cell.appendChild(hideBtn);
+
+  hideBtn.addEventListener('click', function () {
+    cell.innerHTML = '';
+
+    const input = document.createElement('input');
+    input.type = 'text';
+
+    const checkBtn = document.createElement('button');
+    checkBtn.textContent = 'Check';
+
+    const result = document.createElement('span');
+
+    checkBtn.addEventListener('click', function () {
+      const userAnswer = input.value.trim().toLowerCase();
+      const correctAnswer = word.trim().toLowerCase();
+
+      if (userAnswer === correctAnswer) {
+        result.textContent = ' Correct';
+        result.style.color = 'green';
+      } else {
+        result.textContent = ' Wrong';
+        result.style.color = 'red';
+      }
+
+      setTimeout(() => {
+        cell.innerHTML = '';
+        cell.appendChild(span);
+        cell.appendChild(hideBtn);
+      }, 1500);
     });
 
-  mainDropdown.addEventListener("change", function () {
-    currentTopic = this.value;
-    if (!jsonData[currentTopic]) {
-      languageDropdown.innerHTML = '<option value="">--Select--</option>';
-      sourceLangDropdown.innerHTML = '<option value="">--Select--</option>';
-      checkEnableButtons();
-      return;
+    cell.appendChild(input);
+    cell.appendChild(checkBtn);
+    cell.appendChild(result);
+  });
+
+  return cell;
+}
+
+showTableBtn.addEventListener('click', function () {
+
+  const fromLang = fromLangDropdown.value;
+
+  const toLangs = [
+    toLangDropdown1.value,
+    toLangDropdown2.value,
+    toLangDropdown3.value,
+    toLangDropdown4.value
+  ].filter(Boolean);
+
+  const table = document.getElementById('translationTable');
+  const tableHeadRow = document.getElementById('tableHeadRow');
+  const tableBody = document.querySelector('#translationTable tbody');
+
+  tableHeadRow.innerHTML = '<th>#</th><th></th><th>Word</th>';
+  tableBody.innerHTML = '';
+
+  toLangs.forEach(lang => {
+    const th = document.createElement('th');
+    th.textContent = `Translation (${lang})`;
+    tableHeadRow.appendChild(th);
+  });
+
+  const selectedLevels = getSelectedLevels(selectedLevel);
+
+  let counter = 1;
+
+  selectedLevels.forEach(level => {
+    if (!jsonData[selectedTopic][level]) return;
+
+    for (const [englishWord, translations] of Object.entries(jsonData[selectedTopic][level])) {
+
+      const row = document.createElement('tr');
+
+      const numberCell = document.createElement('td');
+      numberCell.textContent = counter++;
+      row.appendChild(numberCell);
+
+      const toggleCell = document.createElement('td');
+      const toggleBtn = document.createElement('button');
+      toggleBtn.textContent = '−';
+      toggleCell.appendChild(toggleBtn);
+      row.appendChild(toggleCell);
+
+      const fromWord =
+        fromLang === 'english'
+        ? englishWord
+        : translations[fromLang] || '-';
+
+      row.appendChild(createHideableCell(fromWord));
+
+      toLangs.forEach(lang => {
+        const word =
+          lang === 'english'
+          ? englishWord
+          : translations[lang] || '-';
+
+        row.appendChild(createHideableCell(word));
+      });
+
+      tableBody.appendChild(row);
+
+      toggleBtn.addEventListener('click', function () {
+        row.style.display = 'none';
+      });
     }
-
-    const firstKey = Object.keys(jsonData[currentTopic])[0];
-    const langs = Object.keys(jsonData[currentTopic][firstKey]);
-
-    languageDropdown.innerHTML = '<option value="">--Select--</option>';
-    sourceLangDropdown.innerHTML = '<option value="">--Select--</option>';
-
-    langs.concat("english").forEach(lang => {
-      const opt1 = document.createElement("option");
-      opt1.value = lang;
-      opt1.textContent = lang;
-      languageDropdown.appendChild(opt1);
-
-      const opt2 = document.createElement("option");
-      opt2.value = lang;
-      opt2.textContent = lang;
-      sourceLangDropdown.appendChild(opt2);
-    });
-
-    languageDropdown.selectedIndex = 0;
-    sourceLangDropdown.selectedIndex = 0;
-    currentLang = "";
-    sourceLang = "";
-
-    checkEnableButtons();
   });
 
-  languageDropdown.addEventListener("change", () => {
-    currentLang = languageDropdown.value;
-    checkEnableButtons();
-  });
+  table.style.display = 'table';
 
-  sourceLangDropdown.addEventListener("change", () => {
-    sourceLang = sourceLangDropdown.value;
-    checkEnableButtons();
-  });
+});
 
-  function checkEnableButtons() {
-    const enabled = currentTopic && currentLang && sourceLang;
-    randomBtn.disabled = !enabled;
-  }
-
-  randomBtn.addEventListener("click", () => {
-    startQuiz();
-    nextWord();
-  });
-
-  exitQuizBtn.addEventListener("click", () => {
-    resetSettings();
-    settingsContainer.style.display = "block";
-    quiz.style.display = "none";
-    exitQuizBtn.style.display = "none";
-  });
-
-  function startQuiz() {
-    settingsContainer.style.display = "none";
-    quiz.style.display = "block";
-    exitQuizBtn.style.display = "inline-block";
-  }
-
-  function resetSettings() {
-    currentWord = "";
-    currentTopic = "";
-    currentLang = "";
-    sourceLang = "";
-
-    mainDropdown.selectedIndex = 0;
-
-    // Reset language and source language dropdowns but keep their options intact
-    languageDropdown.selectedIndex = 0;
-    sourceLangDropdown.selectedIndex = 0;
-
-    randomBtn.disabled = true;
-
-    document.getElementById("wordDisplay").textContent = "";
-    document.getElementById("userInput").value = "";
-    document.getElementById("feedback").textContent = "";
-    document.getElementById("correctAnswer").textContent = "";
-    document.getElementById("nextBtn").style.display = "none";
-  }
-
-  function nextWord() {
-    const entries = Object.entries(jsonData[currentTopic]);
-    const filtered = entries.filter(([key, val]) => sourceLang === "english" || val[sourceLang]);
-    const [wordKey, wordData] = filtered[Math.floor(Math.random() * filtered.length)];
-
-    currentWord = wordKey;
-    const wordShown = sourceLang === "english" ? wordKey : wordData[sourceLang];
-
-    document.getElementById("wordDisplay").textContent = `Word (${sourceLang}): ${wordShown}`;
-    document.getElementById("userInput").value = "";
-    document.getElementById("feedback").textContent = "";
-    document.getElementById("correctAnswer").textContent = "";
-    document.getElementById("nextBtn").style.display = "none";
-  }
-
-  const checkBtn = document.getElementById("checkBtn");
-  const nextBtn = document.getElementById("nextBtn");
-
-  checkBtn.addEventListener("click", () => {
-    const input = document.getElementById("userInput").value.trim().toLowerCase();
-    let correct;
-    if (currentLang === "english") {
-      correct = currentWord.toLowerCase();
-    } else {
-      correct = jsonData[currentTopic][currentWord][currentLang].toLowerCase();
-    }
-
-    if (input === correct) {
-      document.getElementById("feedback").textContent = "✅ Correct!";
-      document.getElementById("feedback").style.color = "green";
-    } else {
-      document.getElementById("feedback").textContent = "❌ Wrong!";
-      document.getElementById("feedback").style.color = "red";
-    }
-
-    document.getElementById("correctAnswer").textContent = `Correct answer: ${correct}`;
-    document.getElementById("nextBtn").style.display = "inline";
-  });
-
-  nextBtn.addEventListener("click", () => {
-    nextWord();
-  });
 </script>
+
 </body>
 </html>
