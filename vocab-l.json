@@ -16943,6 +16943,28 @@
         "hungarian": "Bárhol",
         "spanish": "En cualquier lugar"
       },
+      "somewhere": {
+        "arabic": "في مكان ما",
+        "french": "quelque part",
+        "german": "irgendwo",
+        "hungarian": "valahol",
+        "spanish": "en algún lugar"
+      },
+      "same_place": {
+        "arabic": "نفس المكان",
+        "french": "le même endroit",
+        "german": "derselbe Ort",
+        "hungarian": "ugyanaz a hely",
+        "spanish": "el mismo lugar"
+      },
+      "other_place": {
+        "arabic": "مكان آخر",
+        "french": "un autre endroit",
+        "german": "ein anderer Ort",
+        "hungarian": "más hely",
+        "spanish": "otro lugar"
+      },
+
       "All": {
         "arabic": "كل",
         "french": "Tout / Tous",
@@ -17027,6 +17049,7 @@
         "hungarian": "Dupla",
         "spanish": "Doble"
       },
+
       "Each One": {
         "arabic": "كل واحد",
         "french": "Chacun",
@@ -17090,13 +17113,22 @@
         "hungarian": "Senki",
         "spanish": "Nadie"
       },
-      "Evryone": {
-        "arabic": "الجميع",
-        "french": "Tout le monde",
-        "german": "Alle",
-        "hungarian": "Mindenki",
-        "spanish": "Todos"
+
+      "same_one": {
+        "arabic": "نفس الشخص / نفس الشيء",
+        "french": "le même",
+        "german": "derselbe",
+        "hungarian": "ugyanaz",
+        "spanish": "el mismo"
       },
+      "another": {
+        "arabic": "آخر",
+        "french": "un autre",
+        "german": "ein anderer",
+        "hungarian": "egy másik",
+        "spanish": "otro"
+      },
+
       "This One": {
         "arabic": "هذا الشخص/الشيء",
         "french": "Celui-ci / Celle-ci",
@@ -17111,20 +17143,7 @@
         "hungarian": "Az ott",
         "spanish": "Aquél"
       },
-      "Over Here": {
-        "arabic": "هنا قريبًا",
-        "french": "Par ici",
-        "german": "Hierher",
-        "hungarian": "Erre",
-        "spanish": "Por aquí"
-      },
-      "Over There": {
-        "arabic": "هناك بعيدًا",
-        "french": "Par là",
-        "german": "Dorthin",
-        "hungarian": "Arra",
-        "spanish": "Allí"
-      },
+
       "Both": {
         "arabic": "كلاهما",
         "french": "Tous les deux",
@@ -17160,6 +17179,7 @@
         "hungarian": "természetesen",
         "spanish": "Por supuesto"
       },
+
       "Always": {
         "arabic": "دائما",
         "french": "toujours",
@@ -17188,6 +17208,14 @@
         "hungarian": "egyszer",
         "spanish": "Una vez"
       },
+
+      "never": {
+        "arabic": "أبدا",
+        "french": "jamais",
+        "german": "nie",
+        "hungarian": "soha",
+        "spanish": "Nunca"
+      },
       "Then": {
         "arabic": "ثم",
         "french": "puis",
@@ -17195,6 +17223,21 @@
         "hungarian": "aztán",
         "spanish": "Entonces"
       },
+       "next": {
+    "arabic": "القادم / التالي",
+    "french": "prochain / suivant",
+    "german": "nächste",
+    "hungarian": "következő",
+    "spanish": "próximo / siguiente"
+  },
+  "previous": {
+    "arabic": "السابق / الماضي",
+    "french": "précédent / dernier",
+    "german": "vorherige / letzte",
+    "hungarian": "előző",
+    "spanish": "anterior / pasado"
+  }
+,
       "Previously": {
         "arabic": "سابقا",
         "french": "auparavant",
@@ -17209,19 +17252,27 @@
         "hungarian": "hamarosan",
         "spanish": "Pronto"
       },
-      "Until": {
-        "arabic": "حتى",
-        "french": "jusqu'à",
-        "german": "bis",
-        "hungarian": "amíg",
-        "spanish": "Hasta"
-      },
       "Later": {
         "arabic": "لاحقا",
         "french": "plus tard",
         "german": "später",
         "hungarian": "majd",
         "spanish": "Más tarde"
+      },
+
+      "early": {
+        "arabic": "مبكرًا",
+        "french": "tôt",
+        "german": "früh",
+        "hungarian": "korán",
+        "spanish": "temprano"
+      },
+      "late": {
+        "arabic": "متأخرًا",
+        "french": "tard",
+        "german": "spät",
+        "hungarian": "későn",
+        "spanish": "tarde"
       }
     },
     "B": {
@@ -17477,6 +17528,22 @@
         "hungarian": "Még",
         "spanish": "Incluso"
       },
+
+      "Over Here": {
+        "arabic": "هنا قريبًا",
+        "french": "Par ici",
+        "german": "Hierher",
+        "hungarian": "Erre",
+        "spanish": "Por aquí"
+      },
+      "Over There": {
+        "arabic": "هناك بعيدًا",
+        "french": "Par là",
+        "german": "Dorthin",
+        "hungarian": "Arra",
+        "spanish": "Allí"
+      },
+
       "Merely": {
         "arabic": "مجرد",
         "french": "Simplement",
@@ -17637,13 +17704,15 @@
         "hungarian": "És",
         "spanish": "Y"
       },
-      "But": {
-        "arabic": "لكن",
-        "french": "Mais",
-        "german": "Aber",
-        "hungarian": "De",
-        "spanish": "Pero"
+
+      "with": {
+        "arabic": "مع",
+        "french": "Avec",
+        "german": "Mit",
+        "hungarian": "-val / -vel",
+        "spanish": "Con"
       },
+     
       "Or": {
         "arabic": "أو",
         "french": "Ou",
@@ -17651,6 +17720,10 @@
         "hungarian": "Vagy",
         "spanish": "O"
       },
+
+
+     
+
       "So": {
         "arabic": "لذا",
         "french": "Donc",
@@ -17658,6 +17731,15 @@
         "hungarian": "Ezért",
         "spanish": "Entonces"
       },
+
+      "For": {
+        "arabic": " من أجل",
+        "french": "Pour",
+        "german": "Für",
+        "hungarian": " -ért",
+        "spanish": "Para"
+      },
+
       "Because": {
         "arabic": "لأن",
         "french": "Parce que",
@@ -17665,6 +17747,17 @@
         "hungarian": "Mert",
         "spanish": "Porque"
       },
+
+        "Because of": {
+        "arabic": "بسبب",
+        "french": "À cause de",
+        "german": "Wegen",
+        "hungarian": "Miatt",
+        "spanish": "Debido a"
+      },
+
+
+
       "Although": {
         "arabic": "رغم أن",
         "french": "Bien que",
@@ -17672,6 +17765,23 @@
         "hungarian": "Bár",
         "spanish": "A pesar de"
       },
+
+      "even": {
+        "arabic": "حتى",
+        "french": "Même",
+        "german": "Sogar",
+        "hungarian": "Még",
+        "spanish": "Incluso" 
+      },
+
+       "But": {
+        "arabic": "لكن",
+        "french": "Mais",
+        "german": "Aber",
+        "hungarian": "De",
+        "spanish": "Pero"
+      },
+
       "If": {
         "arabic": "إذا",
         "french": "Si",
@@ -17679,6 +17789,24 @@
         "hungarian": "Ha",
         "spanish": "Si"
       },
+
+
+  "what": {
+    "arabic": "الذي / ما",
+    "french": "ce que / que",
+    "german": "was / das",
+    "hungarian": "amit",
+    "spanish": "lo que / que"
+  },
+  "that": {
+    "arabic": "أنّ / أن",
+    "french": "que",
+    "german": "dass",
+    "hungarian": "hogy",
+    "spanish": "que"
+  },
+
+
       "When": {
         "arabic": "عندما",
         "french": "Quand",
@@ -17693,20 +17821,62 @@
         "hungarian": "Miközben",
         "spanish": "Mientras"
       },
-      "Before": {
+
+ "before": {
         "arabic": "قبل",
+        "french": "Avant",
+        "german": "Vor",
+        "hungarian": "Előtt",
+        "spanish": "Antes"
+      },
+
+      "after": {
+        "arabic": "بعد",
+        "french": "Après",
+        "german": "Nach",
+        "hungarian": "Után",
+        "spanish": "Después"
+      },
+
+      "from": {
+        "arabic": "من",
+        "french": "De",
+        "german": "Von",
+        "hungarian": "-tól / -től",
+        "spanish": "De"
+      },
+
+      "to": {
+        "arabic": "إلى",
+        "french": "À",
+        "german": "Zu",
+        "hungarian": "-íg",
+        "spanish": "A"
+      },
+
+      "Before": {
+        "arabic": "قبل أن",
         "french": "Avant que",
         "german": "Bevor",
         "hungarian": "Mielőtt",
         "spanish": "Antes"
       },
       "After": {
-        "arabic": "بعد",
+        "arabic": "بعد أن",
         "french": "Après que",
         "german": "Nachdem",
         "hungarian": "Miután",
         "spanish": "Después"
       },
+
+       "Since": {
+        "arabic": "منذ / بما أن",
+        "french": "Depuis / Puisque",
+        "german": "Seit / Da",
+        "hungarian": "Mivel / Amióta",
+        "spanish": "Desde"
+      },
+
       "Until": {
         "arabic": "حتى",
         "french": "Jusqu'à ce que",
@@ -17721,20 +17891,8 @@
         "hungarian": "Hacsak nem",
         "spanish": "A menos que"
       },
-      "Since": {
-        "arabic": "منذ / بما أن",
-        "french": "Depuis / Puisque",
-        "german": "Seit / Da",
-        "hungarian": "Mivel / Amióta",
-        "spanish": "Desde"
-      },
-      "Because of": {
-        "arabic": "بسبب",
-        "french": "À cause de",
-        "german": "Wegen",
-        "hungarian": "Miatt",
-        "spanish": "Debido a"
-      },
+     
+    
       "Then": {
         "arabic": "ثم",
         "french": "Ensuite",
@@ -17756,13 +17914,8 @@
         "hungarian": "Különben",
         "spanish": "Demás"
       },
-      "For": {
-        "arabic": " من أجل",
-        "french": "Pour",
-        "german": "Für",
-        "hungarian": " -ért",
-        "spanish": "Para"
-      },
+      
+
       "Like": {
         "arabic": "مثل",
         "french": "Comme",
@@ -18058,6 +18211,15 @@
         "hungarian": "Alá",
         "spanish": "Bajo"
       },
+
+      "in": {
+        "arabic": "في",
+        "french": "Dans",
+        "german": "In",
+        "hungarian": "-ban / -ben",
+        "spanish": "En"
+      },
+
       "Between": {
         "arabic": "بين",
         "french": "Entre",
@@ -18107,20 +18269,192 @@
         "hungarian": "nyugat",
         "spanish": "Oeste"
       },
-      "diagonal": {
-        "arabic": "قطري",
-        "french": "diagonal",
-        "german": "diagonal",
-        "hungarian": "átlós",
-        "spanish": "diagonal"
+
+      "in_top": {
+        "arabic": "في الأعلى",
+        "french": "en haut",
+        "german": "oben",
+        "hungarian": "fent",
+        "spanish": "arriba"
       },
-      "central": {
-        "arabic": "مركزي",
-        "french": "central",
-        "german": "zentral",
-        "hungarian": "központi",
-        "spanish": "central"
+      "in_bottom": {
+        "arabic": "في الأسفل",
+        "french": "en bas",
+        "german": "unten",
+        "hungarian": "lent",
+        "spanish": "abajo"
       },
+      "above": {
+        "arabic": "فوق",
+        "french": "au-dessus",
+        "german": "über",
+        "hungarian": "fölött",
+        "spanish": "encima"
+      },
+      "below": {
+        "arabic": "تحت",
+        "french": "en dessous",
+        "german": "unter",
+        "hungarian": "alatt",
+        "spanish": "debajo"
+      },
+      "in_front": {
+        "arabic": "أمام",
+        "french": "devant",
+        "german": "vor",
+        "hungarian": "előtt",
+        "spanish": "delante"
+      },
+      "behind": {
+        "arabic": "خلف",
+        "french": "derrière",
+        "german": "hinter",
+        "hungarian": "mögött",
+        "spanish": "detrás"
+      },
+      "right": {
+        "arabic": "يمين",
+        "french": "droite",
+        "german": "rechts",
+        "hungarian": "jobb",
+        "spanish": "derecha"
+      },
+      "left": {
+        "arabic": "يسار",
+        "french": "gauche",
+        "german": "links",
+        "hungarian": "bal",
+        "spanish": "izquierda"
+      },
+
+      "from_right": {
+        "arabic": "من اليمين",
+        "french": "de la droite",
+        "german": "von rechts",
+        "hungarian": "jobbról",
+        "spanish": "desde la derecha"
+      },
+      "to_right": {
+        "arabic": "إلى اليمين",
+        "french": "vers la droite",
+        "german": "nach rechts",
+        "hungarian": "jobbra",
+        "spanish": "hacia la derecha"
+      },
+      "from_left": {
+        "arabic": "من اليسار",
+        "french": "de la gauche",
+        "german": "von links",
+        "hungarian": "balról",
+        "spanish": "desde la izquierda"
+      },
+      "to_left": {
+        "arabic": "إلى اليسار",
+        "french": "vers la gauche",
+        "german": "nach links",
+        "hungarian": "balra",
+        "spanish": "hacia la izquierda"
+      },
+      "from_up": {
+        "arabic": "من فوق",
+        "french": "d'en haut",
+        "german": "von oben",
+        "hungarian": "fentről",
+        "spanish": "desde arriba"
+      },
+      "to_up": {
+        "arabic": "إلى فوق",
+        "french": "vers le haut",
+        "german": "nach oben",
+        "hungarian": "felfelé",
+        "spanish": "hacia arriba"
+      },
+      "from_down": {
+        "arabic": "من تحت",
+        "french": "d'en bas",
+        "german": "von unten",
+        "hungarian": "lentről",
+        "spanish": "desde abajo"
+      },
+      "to_down": {
+        "arabic": "إلى تحت",
+        "french": "vers le bas",
+        "german": "nach unten",
+        "hungarian": "lefelé",
+        "spanish": "hacia abajo"
+      },
+      "from_front": {
+        "arabic": "من الأمام",
+        "french": "de l'avant",
+        "german": "von vorne",
+        "hungarian": "elölről",
+        "spanish": "desde delante"
+      },
+      "to_front": {
+        "arabic": "إلى الأمام",
+        "french": "vers l'avant",
+        "german": "nach vorne",
+        "hungarian": "előre",
+        "spanish": "hacia delante"
+      },
+      "from_back": {
+        "arabic": "من الخلف",
+        "french": "de l'arrière",
+        "german": "von hinten",
+        "hungarian": "hátulról",
+        "spanish": "desde atrás"
+      },
+      "to_back": {
+        "arabic": "إلى الخلف",
+        "french": "vers l'arrière",
+        "german": "nach hinten",
+        "hungarian": "hátra",
+        "spanish": "hacia atrás"
+      },
+      "inside": {
+        "arabic": "داخل",
+        "french": "à l'intérieur",
+        "german": "innen",
+        "hungarian": "belül",
+        "spanish": "dentro"
+      },
+      "in_inside": {
+        "arabic": "في الداخل",
+        "french": "dans l'intérieur",
+        "german": "im Inneren",
+        "hungarian": "a belsőben",
+        "spanish": "en el interior"
+      },
+      "from_inside": {
+        "arabic": "من الداخل",
+        "french": "de l'intérieur",
+        "german": "von innen",
+        "hungarian": "belülről",
+        "spanish": "desde dentro"
+      },
+
+      "outside": {
+        "arabic": "خارج",
+        "french": "à l'extérieur",
+        "german": "außen",
+        "hungarian": "kívül",
+        "spanish": "fuera"
+      },
+      "in_outside": {
+        "arabic": "في الخارج",
+        "french": "dans l'extérieur",
+        "german": "im Äußeren",
+        "hungarian": "a külsőben",
+        "spanish": "en el exterior"
+      },
+      "from_outside": {
+        "arabic": "من الخارج",
+        "french": "de l'extérieur",
+        "german": "von außen",
+        "hungarian": "kívülről",
+        "spanish": "desde fuera"
+      },
+
       "inward": {
         "arabic": "نحو الداخل",
         "french": "vers l'intérieur",
@@ -18135,6 +18469,7 @@
         "hungarian": "kifelé",
         "spanish": "exterior"
       },
+
       "upper": {
         "arabic": "علوي",
         "french": "supérieur",
@@ -18240,41 +18575,7 @@
         "hungarian": "-hoz/-hez/-höz",
         "spanish": "A"
       },
-      "above": {
-        "arabic": "فوق",
-        "french": "au-dessus",
-        "german": "über",
-        "hungarian": "fölött",
-        "spanish": "arriba"
-      },
-      "below": {
-        "arabic": "تحت",
-        "french": "en dessous",
-        "german": "unter",
-        "hungarian": "alatt",
-        "spanish": "abajo"
-      },
-      "between": {
-        "arabic": "بين",
-        "french": "entre",
-        "german": "zwischen",
-        "hungarian": "között",
-        "spanish": "entre"
-      },
-      "behind": {
-        "arabic": "خلف",
-        "french": "derrière",
-        "german": "hinter",
-        "hungarian": "mögött",
-        "spanish": "detrás"
-      },
-      "in front of": {
-        "arabic": "أمام",
-        "french": "devant",
-        "german": "vor",
-        "hungarian": "előtt",
-        "spanish": "delante de"
-      },
+
       "next to": {
         "arabic": "بجانب",
         "french": "à côté de",
@@ -18282,20 +18583,7 @@
         "hungarian": "mellett",
         "spanish": "junto a"
       },
-      "inside": {
-        "arabic": "داخل",
-        "french": "à l'intérieur",
-        "german": "innen",
-        "hungarian": "belül",
-        "spanish": "adentro"
-      },
-      "outside": {
-        "arabic": "خارج",
-        "french": "à l'extérieur",
-        "german": "außen",
-        "hungarian": "kívül",
-        "spanish": "afuera"
-      },
+
       "around": {
         "arabic": "حول",
         "french": "autour de",
@@ -18380,20 +18668,7 @@
         "hungarian": "Közel ",
         "spanish": "Cerca"
       },
-      "right": {
-        "arabic": "يمين",
-        "french": "droite",
-        "german": "rechts",
-        "hungarian": "jobb",
-        "spanish": "bien"
-      },
-      "left": {
-        "arabic": "يسار",
-        "french": "gauche",
-        "german": "links",
-        "hungarian": "bal",
-        "spanish": "izquierda"
-      },
+
       "up": {
         "arabic": "  إلى الأعلى ",
         "french": "en haut",
@@ -18444,6 +18719,21 @@
         "german": "auf",
         "hungarian": "ra/re",
         "spanish": "al"
+      },
+
+      "diagonal": {
+        "arabic": "قطري",
+        "french": "diagonal",
+        "german": "diagonal",
+        "hungarian": "átlós",
+        "spanish": "diagonal"
+      },
+      "central": {
+        "arabic": "مركزي",
+        "french": "central",
+        "german": "zentral",
+        "hungarian": "központi",
+        "spanish": "central"
       }
     },
     "C": {
@@ -19138,6 +19428,21 @@
         "hungarian": "vasárnap",
         "spanish": "Domingo"
       },
+
+      "next week": {
+    "arabic": "الأسبوع القادم",
+    "french": "la semaine prochaine",
+    "german": "nächste Woche",
+    "hungarian": "jövő héten",
+    "spanish": "la próxima semana"
+  },
+  "last week": {
+    "arabic": "الأسبوع الماضي / السابق",
+    "french": "la semaine dernière",
+    "german": "letzte Woche",
+    "hungarian": "múlt héten",
+    "spanish": "la semana pasada"
+  },
       "January": {
         "arabic": "يناير",
         "french": "janvier",
